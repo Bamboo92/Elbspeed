@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-    />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description"/>
 
-	<link rel="stylesheet" href="style.css">
-    <title>Elbspeed</title>
-  </head>
-  <body>
-    <div class="App">
-
-        <img src="images/logo.svg" class="App-logo" alt="logo"/>
-        <header class="App-header">
-            <h1 class="App-title">Buche jetzt ein<br/>
-                <b class="App-title-special-word">Auto</b>
-                <button class="start-button">entdecken</button>
-            </h1>
-      
-            <b class="car-bg-txt">AUDI</b>
-            <img src="images/audi.svg" class="car-logo" alt="audi"/>
-        </header>
-      
-          <form action="/submit-form" method="post">
-              <label id="calendar-label" For="calendar">Abholdatum</label>
-              <label id="dropdown-location-label" For="dropdownLocation">Ort</label>
-              <label id="dropdown-brand-label" For="dropdownBrand">Modell</label>
-      
-              <input type="date" id="calendar" name="calendar" class="input"/>
-              <select id="dropdown-location" name="dropdownLocation" class="input">
-                  <option value="option1">Hamburg-Wandsbek</option>
-              </select>
-              <select id="dropdown-brand" name="dropdownBrand" class="input">
-                  <option value="option1">BMW M4 Competetion</option>
-              </select>
-              <input id="search-btn" type="submit" value="" class="input"/>
-          </form>
-      </div>
-  </body>
+        <link rel="stylesheet" href="style.css">
+        <title>Elbspeed</title>
+    </head>
+    <body>
+        <div class="App">
+            <img src="images/logo.svg" class="App-logo" alt="logo"/>
+            <header class="App-header">
+                <h1 class="App-title">Buche jetzt ein<br/>
+                    <b class="App-title-special-word">Auto</b>
+                    <button class="start-button">entdecken</button>
+                </h1>
+        
+                <b class="car-bg-txt">AUDI</b>
+                <img src="images/audi.svg" class="car-logo" alt="audi"/>
+            </header>
+        
+            <form action="/submit-form" method="post">
+                <label id="calendar-label" For="calendar">Abholdatum</label>
+                <label id="dropdown-location-label" For="dropdownLocation">Ort</label>
+                <label id="dropdown-brand-label" For="dropdownBrand">Modell</label>
+        
+                <input type="date" id="calendar" name="calendar" class="input"/>
+                <select id="dropdown-location" name="dropdownLocation" class="input">
+                    <option value="option1">Hamburg-Wandsbek</option>
+                </select>
+                <select id="dropdown-brand" name="dropdownBrand" class="input">
+                    <option value="option1">BMW M4 Competetion</option>
+                </select>
+                <input id="search-btn" type="submit" value="" class="input"/>
+            </form>
+        </div>
+    </body>
 </html>
