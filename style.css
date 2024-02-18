@@ -184,6 +184,11 @@ p {
     padding-bottom: 1.5rem;
 }
 
+.services {
+    display: flex;
+    flex-direction: row;
+}
+
 .services-card {
     background-color: var(--highlite-white);
     border-radius: 15px;
@@ -191,10 +196,6 @@ p {
     padding: 30px;
 }
 
-div {
-    display: flex;
-    flex-direction: row;
-}
 
 @media (min-width: 1200px) {
     .App-title {
