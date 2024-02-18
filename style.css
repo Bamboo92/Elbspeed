@@ -207,24 +207,31 @@ p {
 }
 
 .special {
-    background-color: red;
-    width: 10%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    padding-top: clamp(10px, 10vw, 190px);
 }
 
-.specia-img {
-    align-self: first baseline;
+.special-img {
+    z-index: 1;
+    width: 60%;
+    max-width: 1200px;
+    margin-right: -40px;
+    border-radius: 0 15px 15px 0;
 }
 
 .special-card {
     background-color: var(--highlite-white);
-    border-radius: 15px;
-    width: 20rem;
-    padding: clamp(10px, 3vw, 40px);
+    border-radius: 15px 0 0 15px;
+    width: 50%;
+    max-height: 550px;
+    height: 20vw;
+    padding-block: clamp(20px, 6vw, 60px);
+    padding-inline: clamp(60px, 6vw, 60px);
     font-size: clamp(7px, 1.5vw, 20px);
-    align-self: last baseline;
 }
 
 @media (min-width: 1200px) {
