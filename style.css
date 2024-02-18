@@ -3,6 +3,7 @@
 :root {
 --highlite-white: #FFFFFF;
 
+--gray2: #E0D3D3;
 --gray3: #BAAFAF;
 
 --950: #430C0C;
@@ -149,140 +150,145 @@ margin-left: 60px;
 h2 {
     display: flex;
     flex-direction: row;
-    align-content: right;
-    background-image: "images/header_line.svg";
-    background-repeat: no-repeat;
-    background-position: right;
     align-items: center;
     padding-block: 4rem;
-    font-size: clamp(10px, 2vmin, 20px);
-    min-width: fit-content;
 }
 
-.header-line-left, .header-line-right {
-    color: var(--gray3);
-    font-size: 1rem;
-    font-weight: 500;
-    padding-inline: 1rem;
-    align-self: flex-start;
+.header-title {
+    font-size: clamp(10px, 2vmin, 20px);
+    min-width: -moz-fit-content;
+    min-width: -webkit-fill-available;
+    min-width: fit-content;
+    padding-inline: 1.5rem;
+    font-weight: lighter;
+}
+
+.divider {
+    width: clamp(5px, 15vw, 200px);
+    height: 0.1rem;
+    background-color: var(--gray2);
 }
 
 @media (min-width: 1200px) {
-.App-title {
-    font-size: clamp(50px, 4vmax, 90px);
-    top: clamp(80px, 5vmax, 100px);
-}
+    .App-title {
+        font-size: clamp(50px, 4vmax, 90px);
+        top: clamp(80px, 5vmax, 100px);
+    }
 
-.App-title-special-word {
-    font-size: clamp(90px, 6vw, 120px);
-}
+    .App-title-special-word {
+        font-size: clamp(90px, 6vw, 120px);
+    }
 
-.start-button {
-    padding-inline: clamp(20px, 1vw, 60px);
-    padding-block: clamp(20px, 2vh, 30px);
-    font-size: 2vmin;
-    margin-left:30px;
-    bottom: clamp(0px, 2vmax, 30px);
-}
+    .start-button {
+        padding-inline: clamp(20px, 1vw, 60px);
+        padding-block: clamp(20px, 2vh, 30px);
+        font-size: 2vmin;
+        margin-left:30px;
+        bottom: clamp(0px, 2vmax, 30px);
+    }
 
-.car-bg-txt {
-    font-size: clamp(300px, 20vw, 400px);
-    bottom: 10px;
-    left: clamp(100px, 10vw, 290px);
-    padding-top: 0;
-}
+    .car-bg-txt {
+        font-size: clamp(300px, 20vw, 400px);
+        bottom: 10px;
+        left: clamp(100px, 10vw, 290px);
+        padding-top: 0;
+    }
 
-.car-logo {
-    width: clamp(530px, 40vw, 800px);
-    right: clamp(350px , 10vw, 500px);
-    top: clamp(100px, 8vw, 140px);
-}
+    .car-logo {
+        width: clamp(530px, 40vw, 800px);
+        right: clamp(350px , 10vw, 500px);
+        top: clamp(100px, 8vw, 140px);
+    }
 }
 
 @media (min-width: 900px) and (max-width: 1200px) {
-.App-title {
-    font-size: clamp(30px, 5vw, 50px);
-}
+    .App-title {
+        font-size: clamp(30px, 5vw, 50px);
+    }
 
-.App-title-special-word {
-    font-size: clamp(40px, 6vw, 70px);
-}
+    .App-title-special-word {
+        font-size: clamp(40px, 6vw, 70px);
+    }
 
-.start-button {
-    padding: 15px 32px;
-    font-size: 1.5vmin;
-    margin-left:20px;
-    bottom: 19px;
-}
+    .start-button {
+        padding: 15px 32px;
+        font-size: 1.5vmin;
+        margin-left:20px;
+        bottom: 19px;
+    }
 
-.car-bg-txt {
-    font-size: clamp(200px, 25vw, 250px);
-    bottom: 50px;
-    left: 100px;
-    padding-top: 60px;
-}
+    .car-bg-txt {
+        font-size: clamp(200px, 25vw, 250px);
+        bottom: 50px;
+        left: 100px;
+        padding-top: 60px;
+    }
 
-.car-logo {
-    width: 45vw;
-    right: clamp(280px , 4vw, 300px);
-}
+    .car-logo {
+        width: 45vw;
+        right: clamp(280px , 4vw, 300px);
+    }
 }
 
 @media (max-width: 900px) {
-.App-header {
-    height: clamp(50px, 25vw, 300px);
-}
+    .App-header {
+        height: clamp(50px, 25vw, 300px);
+    }
 
-.App-title {
-    font-size: clamp(20px, 5vw, 40px);
-    left: clamp(100px, 25vmin, 230px);
-}
+    .App-title {
+        font-size: clamp(20px, 5vw, 40px);
+        left: clamp(100px, 25vmin, 230px);
+    }
 
-.App-title-special-word {
-    font-size: clamp(20px, 6vw, 50px);
-}
+    .App-title-special-word {
+        font-size: clamp(20px, 6vw, 50px);
+    }
 
-.start-button {
-    padding-inline: clamp(10px, 2vw, 20px);
-    padding-block: clamp(5px, 1vw, 10px);
-    font-size: clamp(11px, 2vw, 17px);
-    margin-left: 10px;
-    bottom: clamp(0px, 1vw, 7px);
-}
+    .start-button {
+        padding-inline: clamp(10px, 2vw, 20px);
+        padding-block: clamp(5px, 1vw, 10px);
+        font-size: clamp(11px, 2vw, 17px);
+        margin-left: 10px;
+        bottom: clamp(0px, 1vw, 7px);
+    }
 
-.car-bg-txt {
-    font-size: clamp(100px, 20vw, 180px);
-    bottom: 3vmin;
-    left: clamp(0px, 5vmin, 100px);
-    padding-top: 100px;
-}
+    .car-bg-txt {
+        font-size: clamp(100px, 20vw, 180px);
+        bottom: 3vmin;
+        left: clamp(0px, 5vmin, 100px);
+        padding-top: 100px;
+    }
 
-.car-logo {
-    width: 40vw;
-    right: 150px;
-}
+    .car-logo {
+        width: 40vw;
+        right: 150px;
+    }
 
-form {
-    padding-inline: clamp(10px, 2vmin, 20px);
-    padding-block: clamp(10px, 2vmin, 10px);
-    margin-top: clamp(80px, 2vmin, 40px);;
-}
+    form {
+        padding-inline: clamp(10px, 2vmin, 20px);
+        padding-block: clamp(10px, 2vmin, 10px);
+        margin-top: clamp(80px, 2vmin, 40px);;
+    }
 
-label {
-    background-size: clamp(5px, 3vmin, 15px);
-    font-size: clamp(5px, 2vmin, 12px);
-    padding-inline: 2vw;
-}
+    label {
+        background-size: clamp(5px, 3vmin, 15px);
+        font-size: clamp(5px, 2vmin, 12px);
+        padding-inline: 2vw;
+    }
 
-.input {
-    font-size: clamp(7px, 2vmin, 15px);
-    padding-inline: 2vw;
-}
+    .input {
+        font-size: clamp(7px, 2vmin, 15px);
+        padding-inline: 2vw;
+    }
 
-#search-btn {
-    background-size: 3vmin;
-    width: clamp(8px, 6vmin, 60px);
-    height: clamp(8px, 6vmin, 60px);
-    margin-left: clamp(20px, 2vmin, 40px);;
-}
+    #search-btn {
+        background-size: 3vmin;
+        width: clamp(8px, 6vmin, 60px);
+        height: clamp(8px, 6vmin, 60px);
+        margin-left: clamp(20px, 2vmin, 40px);;
+    }
+
+    h2 {
+        padding-block: 1rem;
+    }
 }
