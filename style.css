@@ -237,7 +237,7 @@ h2 {
 
     .App-title {
         font-size: clamp(20px, 5vw, 40px);
-        left: clamp(100px, 25vmin, 230px);
+        left: clamp(125px, 25vmin, 230px);
     }
 
     .App-title-special-word {
