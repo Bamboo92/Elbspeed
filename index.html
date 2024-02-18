@@ -10,7 +10,8 @@
     </head>
     <body>
         <div class="App">
-            <img src="images/logo.svg" class="App-logo" alt="logo"/>
+            <img src="images/logo.svg" class="App-logo" alt="elbspeed-logo"/>
+
             <header class="App-header">
                 <h1 class="App-title">Buche jetzt ein<br/>
                     <b class="App-title-special-word">Auto</b>
@@ -22,19 +23,23 @@
             </header>
         
             <form action="/submit-form" method="post">
-                <label id="calendar-label" For="calendar">Abholdatum</label>
-                <label id="dropdown-location-label" For="dropdownLocation">Ort</label>
-                <label id="dropdown-brand-label" For="dropdownBrand">Modell</label>
-        
+                
+                <label id="calendar-label" For="calendar">Abholdatum <b>⌵</b></label>
+                <label id="dropdown-location-label" For="dropdownLocation">Ort <b>⌵</b></label>
+                <label id="dropdown-brand-label" For="dropdownBrand">Modell <b>⌵</b></label>
+
                 <input type="date" id="calendar" name="calendar" class="input"/>
-                <select id="dropdown-location" name="dropdownLocation" class="input">
+                <select id="dropdown-location" name="dropdownLocation" class="input" aria-label="dropdown-location">
                     <option value="option1">Hamburg-Wandsbek</option>
                 </select>
-                <select id="dropdown-brand" name="dropdownBrand" class="input">
+                <select id="dropdown-brand" name="dropdownBrand" class="input" aria-label="dropdown-brand">
+                    <p>BMW</p>
                     <option value="option1">BMW M4 Competetion</option>
                 </select>
-                <input id="search-btn" type="submit" value="" class="input"/>
+                <input id="search-btn" type="submit" value="" class="input" aria-label="search-btn"/>
             </form>
+            
+            <h2><p class="header-line-left">――――――――――――</p>Unsere Dienstleistungen<p class="header-line-right">――――――――――――</p></h2>
         </div>
     </body>
 </html>
