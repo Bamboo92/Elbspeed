@@ -148,14 +148,15 @@ margin-left: 60px;
 }
 
 h2 {
+    color: var(--700);
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-block: 4rem;
+    padding-top: 4rem;
 }
 
 .header-title {
-    font-size: clamp(10px, 2vmin, 20px);
+    font-size: clamp(10px, 2.2vmin, 20px);
     min-width: -moz-fit-content;
     min-width: -webkit-fill-available;
     min-width: fit-content;
@@ -167,6 +168,10 @@ h2 {
     width: clamp(5px, 15vw, 200px);
     height: 0.1rem;
     background-color: var(--gray2);
+}
+
+p {
+    font-size: clamp(8px, 1.5vmin, 18px);;
 }
 
 @media (min-width: 1200px) {
@@ -255,13 +260,13 @@ h2 {
     .car-bg-txt {
         font-size: clamp(100px, 20vw, 180px);
         bottom: 3vmin;
-        left: clamp(0px, 5vmin, 100px);
+        left: clamp(40px, 5vmin, 100px);
         padding-top: 100px;
     }
 
     .car-logo {
         width: 40vw;
-        right: 150px;
+        right: 110px;
     }
 
     form {
@@ -289,6 +294,7 @@ h2 {
     }
 
     h2 {
-        padding-block: 1rem;
+        padding-top: 1rem;
+        margin-bottom: 0px;
     }
 }
