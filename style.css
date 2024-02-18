@@ -234,6 +234,11 @@ p {
     font-size: clamp(7px, 1.5vw, 20px);
 }
 
+.special-header {
+    color: var(-700);
+}
+
+
 @media (min-width: 1200px) {
     .App-title {
         font-size: clamp(50px, 4vmax, 90px);
