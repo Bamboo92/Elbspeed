@@ -31,6 +31,7 @@ body {
 
     background-color: var(--50);
     color: var(--950);
+    scroll-behavior: smooth;
 }
 
 code {
@@ -97,14 +98,14 @@ ul {
 }
 
 li {
-    padding: 1vw;
+    padding-block: 1vw;
 }
 
 footer{
     font-size: clamp(7px, 1.5vw, 20px);
     display: flex;
     flex-direction: row;
-    column-gap: 2vw;
+    column-gap: 1vw;
 }
 
 .App-logo {
@@ -229,6 +230,7 @@ h4 {
 }
 
 #inventory {
+    scroll-behavior: smooth;
     padding-left: 90px;
     column-gap: 5vw;
     overflow-x: scroll;
