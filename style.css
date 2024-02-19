@@ -98,7 +98,7 @@ ul {
 }
 
 li {
-    padding-block: 1vw;
+    padding-block: .5vw;
 }
 
 footer{
@@ -157,15 +157,15 @@ footer{
     color: var(--600);
 }
 
-form {
-background-color: var(--highlite-white);
-padding-inline: 50px;
-padding-block: 30px;
-border-radius: 50px;
-display: grid;
-grid-template-columns: repeat(3, 1fr) auto;
-width: clamp(10px, 80vw, 900px);
-box-shadow: 5px 5px 10px 0px rgba(123, 86, 86, 0.05);
+#search-form {
+    background-color: var(--highlite-white);
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px 0px rgba(123, 86, 86, 0.05);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    padding-inline: 50px;
+    padding-block: 30px;
+    width: clamp(10px, 80vw, 900px);
 }
 
 .input {
@@ -385,7 +385,73 @@ h4 {
 .footer-nav {
     display: flex;
     flex-direction: row;
-    gap: 5vw;
+
+}
+
+.footer-nav > ul:first-of-type {
+    padding-right:  10vw;
+}
+
+#newsletter-form {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--highlite-white);
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px 0px rgba(123, 86, 86, 0.05);
+    padding-right: clamp(2px, 1vw, 10px);
+    padding-left: clamp(2px, 2vw, 40px);
+    padding-block: clamp(2px, 1vw, 10px);
+    column-gap: clamp(2px, 3vw, 40px);
+    width: fit-content;
+}
+
+#newsletter-h5{
+    padding-left: 1vw;
+}
+
+#newsletter-btn {
+    width: clamp(2px, 5vw, 60px);
+    height: clamp(2px, 5vw, 60px);
+    background-image: url('images/open_arrow_right.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--600);
+    color: var(--highlite-white);
+    border-radius: 50px;
+}
+
+#newsletter-input {
+    border: none;
+    outline: none;
+    width: fit-content;
+    font-size: clamp(7px, 1.5vw, 20px);
+}
+
+#socialmedia {
+    display: flex;
+    flex-direction: row;
+    column-gap: clamp(1px, 2vw, 20px);
+    padding-left: 0px;
+}
+
+#socialmedia-image-li{
+    padding-top: 1vw;
+    padding-left: 1vw;
+}
+
+.socialmedia-img {
+    width: clamp(3px, 3vw, 40px);
+}
+
+.legal-nav {
+    display: flex;
+    flex-direction: row;
+    padding: 3vw;
+    column-gap: 5vw;
+}
+
+#guide {
+    padding: 10vw;
 }
 
 @media (min-width: 1200px) {
@@ -497,7 +563,7 @@ h4 {
         right: 110px;
     }
 
-    form {
+    #search-form {
         padding-inline: clamp(10px, 2vmin, 20px);
         padding-block: clamp(10px, 2vmin, 10px);
         margin-top: clamp(80px, 2vmin, 40px);;

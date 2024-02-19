@@ -7,7 +7,7 @@
 
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
         <link rel="stylesheet" href="style.css">
-        <title>Elbspeed</title>
+        <title>Elbspeed Autovermietung</title>
     </head>
     <body>
         <div class="App">
@@ -23,7 +23,7 @@
                 <img src="images/bmw_m4_competition.svg" class="car-logo" alt="audi" title="Audi" loading="lazy"/>
             </header>
         
-            <form action="/submit-form" method="post">
+            <form id="search-form" action="/submit-form" method="post">
                 <label id="calendar-label" For="calendar">Abholdatum <b>⌵</b></label>
                 <label id="dropdown-location-label" For="dropdownLocation">Ort <b>⌵</b></label>
                 <label id="dropdown-brand-label" For="dropdownBrand">Modell <b>⌵</b></label>
@@ -45,7 +45,7 @@
 
             <h2>
                 <div class="divider"></div>
-                <span class="header-title">Sortiment</span>
+                <span id="rent-car-header" class="header-title">Sortiment</span>
                 <div class="divider"></div>
             </h2>
 
@@ -126,27 +126,53 @@
             </section>
 
             <footer>
-                <aside>
-                    <h5>Titel</h5>
-                </aside>
                 <nav class="footer-nav">
                     <ul>
+                        <li><h5 id="newsletter-h5">Bleiben Sie informiert und inspiriert</h5></li>
+                        <li>
+                            <form id="newsletter-form" action="/meineFormularVerarbeitung" method="post">
+                                <input id="newsletter-input" type="email" name="newsletterEmail" placeholder="E-Mail-Adresse" required>
+                                <input class="btn" id="newsletter-btn" type="submit" title="Subscribe Button" value="">
+                            </form>
+                        </li>
+                        <li id="socialmedia-image-li">
+                            <ul id="socialmedia">
+                                <li>
+                                    <a href="https://www.tiktok.com/@elbspeed">
+                                        <img src="images/tiktok_logo.svg" class="socialmedia-img" alt="TikTok" title="TikTok Logo" loading="lazy"/>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/elb.speed">
+                                        <img src="images/instagram_logo.svg" class="socialmedia-img" alt="Instagram" title="Instagram Logo" loading="lazy"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
                         <li><h5>Vermietung</h5></li>
-                        <li><a href="#inventory">Auswahl</a></li>
-                        <li><a href="url_der_anderen_seite.html">Verkaufe dein Auto</a></li>
-                        <li><a href="url_der_anderen_seite.html">Feedback</a></li>
+                        <li><a href="#rent-car-header">Auto Buchen</a></li>
+                        <li><a href="">Verkaufe dein Auto</a></li>
+                        <li><a href="">Feedback</a></li>
                     </ul>
                     <ul>
                         <li><h5>Ressourcen</h5></li>
                         <li><a href="guides.html">Guides</a></li>
-                        <li><a href="url_der_anderen_seite.html">FAQ</a></li>
                         <li><a href="url_der_anderen_seite.html">Hilfezentrum</a></li>
+                        <li><a href="">FAQ</a></li>
                     </ul>
                     <ul>
                         <li><h5>Über uns</h5></li>
                         <li><a href="url_der_anderen_seite.html">Unternehmen</a></li>
                         <li><a href="url_der_anderen_seite.html">Kontakt</a></li>
                     </ul>
+                </nav>
+            </footer>
+            <footer>
+                <nav class="legal-nav">
+                    <a href="impressum.html">Impressum</a>
+                    <a href="url_der_anderen_seite.html">Kontakt</a>
                 </nav>
             </footer>
         </div>
