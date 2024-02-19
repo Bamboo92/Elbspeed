@@ -35,6 +35,10 @@
                 <select id="dropdown-brand" name="dropdownBrand" class="input" aria-label="dropdown-brand">
                     <p>BMW</p>
                     <option value="option1">BMW M4 Competetion</option>
+                    <p>Mercedes</p>
+                    <option value="option2">Mercedes-AMG GT</option>
+                    <p>Porsche</p>
+                    <option value="option3">Porsche 718 Cayman</option>
                 </select>
                 <input id="search-btn" type="submit" value="" class="input" aria-label="search-btn"/>
             </form>
@@ -52,7 +56,7 @@
                 <article class="card">
                     <h3 id="inventory-header">M4 Competition</h3>
                     <aside class="inventory-aside">
-                        <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2023</span></p>
+                        <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2019</span></p>
                         <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">G82</span></p>
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">279€</span><span class="detail-value">am Tag</span></p>
@@ -60,14 +64,26 @@
                     <button class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
 
-                <img src="images/bmw_m3_competition_thumbnail.svg" class="inventory-thumbnail" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
+                <img src="images/porsche_718_cayman_thumbnail.svg" class="inventory-thumbnail" alt="Porsche 718 Cayman" title="Porsche 718 Cayman Desert Road" loading="lazy"/>
                 <article class="card">
-                    <h3 id="inventory-header">M4 Competition</h3>
+                    <h3 id="inventory-header">Porsche 718 Cayman</h3>
+                    <aside class="inventory-aside">
+                        <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2020</span></p>
+                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">GTS 4.0</span></p>
+                        <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
+                        <p id="detail-cost" class="detail"><span class="detail-title">412€</span><span class="detail-value">am Tag</span></p>
+                    </aside>
+                    <button class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                </article>
+
+                <img src="images/mercedes_amg_gt_coupe_thumbnail.svg" class="inventory-thumbnail" alt="Mercedes-AMG GT Coupe" title="Mercedes-AMG GT Coupe on race track" loading="lazy"/>
+                <article class="card">
+                    <h3 id="inventory-header">Mercedes-AMG GT</h3>
                     <aside class="inventory-aside">
                         <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2023</span></p>
-                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">G82</span></p>
+                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">GT 55</span></p>
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
-                        <p id="detail-cost" class="detail"><span class="detail-title">279€</span><span class="detail-value">am Tag</span></p>
+                        <p id="detail-cost" class="detail"><span class="detail-title">332€</span><span class="detail-value">am Tag</span></p>
                     </aside>
                     <button class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
@@ -85,17 +101,17 @@
                 <article class="card" id="services-card">
                     <img src="images/car_ic.svg" class="services-icon" alt="audi" title="Car Icon" loading="lazy"/>
                     <h3>Top Autovermietung</h3>
-                    <footer>Entdecken Sie bei uns exklusive Autovermietungsservices und genießen Sie einzigartige Vorteile, die speziell auf Ihre Bedürfnisse abgestimmt sind!</footer>
+                    <p>Entdecken Sie bei uns exklusive Autovermietungsservices und genießen Sie einzigartige Vorteile, die speziell auf Ihre Bedürfnisse abgestimmt sind!</p>
                 </article>
                 <article class="card" id="services-card">
                     <img src="images/wallet_ic.svg" class="services-icon" alt="Wallet" title="Wallet Icon"loading="lazy"/>
                     <h3>Top Flexible Zahlungsoptionen</h3>
-                    <footer>Wir garantieren Ihnen eine bequeme Buchungserfahrung. Die sichere, Abwicklung ist darauf ausgelegt, auf Ihren Bedarf zugeschnitten zu sein.</footer>
+                    <p>Wir garantieren Ihnen eine bequeme Buchungserfahrung. Die sichere, Abwicklung ist darauf ausgelegt, auf Ihren Bedarf zugeschnitten zu sein.</p>
                 </article>
                 <article class="card" id="services-card">
                     <img src="images/bus_ic.svg" class="services-icon" alt="Bus" title="Bus Icon" loading="lazy"/>
                     <h3>ÖPNV-Anbindung</h3>
-                    <footer>Unsere Autovermietung bietet Ihnen höchsten Komfort: Die Bushaltestelle ist nur 2 Minuten (190m) entfernt, sodass Sie Ihr Mietfahrzeug mühelos abholen können.</footer>
+                    <p>Unsere Autovermietung bietet Ihnen höchsten Komfort: Die Bushaltestelle ist nur 2 Minuten (190m) entfernt, sodass Sie Ihr Mietfahrzeug mühelos abholen können.</p>
                 </article>
             </section>
 
@@ -108,6 +124,35 @@
                     <button class="btn" id="special-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
             </section>
+
+            <footer>
+                <aside>
+                    <h5>Titel</h5>
+                </aside>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><h5>Titel</h5></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                    </ul>
+                    <ul>
+                        <li><h5>Titel</h5></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                    </ul>
+                    <ul>
+                        <li><h5>Titel</h5></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                        <li><a href="url_der_anderen_seite.html">Linktext</a></li>
+                    </ul>
+                </nav>
+            </footer>
         </div>
     </body>
 </html>

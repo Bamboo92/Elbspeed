@@ -5,6 +5,7 @@
 
     --gray2: #E0D3D3;
     --gray3: #BAAFAF;
+    --gray4: #726666;
 
     --950: #430C0C;
     --900: #7B2121;
@@ -67,8 +68,43 @@ section {
     justify-content: center;
 }
 
+h2 {
+    color: var(--700);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: clamp(10px, 5vw, 100px);
+    margin-bottom: 0;
+}
+
 h3 {
     color: var(--700);
+}
+
+h5{
+    color: var(--700);
+    font-size: clamp(7px, 1.5vw, 20px);
+    margin-bottom: 1vw;
+}
+
+a {
+    text-decoration: none;
+    color: var(--gray4);
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 1vw;
+}
+
+footer{
+    font-size: clamp(7px, 1.5vw, 20px);
+    display: flex;
+    flex-direction: row;
+    column-gap: 2vw;
 }
 
 .App-logo {
@@ -170,15 +206,6 @@ justify-self: end;
 margin-left: 60px;
 }
 
-h2 {
-    color: var(--700);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-top: clamp(10px, 5vw, 100px);
-    margin-bottom: 0;
-}
-
 .header-title {
     font-size: clamp(10px, 2.2vmin, 25px);
     min-width: -moz-fit-content;
@@ -202,9 +229,11 @@ h4 {
 }
 
 #inventory {
+    padding-left: 90px;
     column-gap: 5vw;
     overflow-x: scroll;
     justify-content: flex-start;
+    width: 100%;
 }
 
 #inventory::-webkit-scrollbar {
@@ -221,7 +250,7 @@ h4 {
     max-width: 400px;
     border-radius: 15px;
     z-index: 1;
-    margin-right: -7vw;
+    margin-right: -9.5vw;
     margin-top: 5vw;
 }
 
@@ -231,7 +260,6 @@ h4 {
     font-weight: 400;
     font-size: clamp(7px, 3vw, 30px);
 }
-
 
 .inventory-aside {
     display: flex;
@@ -352,6 +380,12 @@ h4 {
     flex-basis: 20;
 }
 
+.footer-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+}
+
 @media (min-width: 1200px) {
     .App-title {
         font-size: clamp(50px, 4vmax, 90px);
@@ -384,7 +418,6 @@ h4 {
     }
     
     .inventory-thumbnail {
-        margin-right: -5.5vw;
         margin-top: 1vw;
     }
 
