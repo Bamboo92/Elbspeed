@@ -16,7 +16,7 @@
             <header class="App-header">
                 <h1 class="App-title">Buche jetzt ein<br/>
                     <strong class="App-title-special-word">Auto</strong>
-                    <button class="start-btn">entdecken</button>
+                    <button class="btn" id="start-btn">entdecken</button>
                 </h1>
         
                 <b class="car-bg-txt">BMW</b>
@@ -38,7 +38,40 @@
                 </select>
                 <input id="search-btn" type="submit" value="" class="input" aria-label="search-btn"/>
             </form>
-            
+
+            <h2>
+                <div class="divider"></div>
+                <span class="header-title">Sortiment</span>
+                <div class="divider"></div>
+            </h2>
+
+            <h4>Unsere Auswahl erweiter sich kontinuierlich mit deiner Hilfe!</h4>
+
+            <section id="inventory">
+                <img src="images/bmw_m3_competition_thumbnail.svg" class="inventory-thumbnail" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
+                <article class="card">
+                    <h3 id="inventory-header">M4 Competition</h3>
+                    <aside class="inventory-aside">
+                        <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2023</span></p>
+                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">G82</span></p>
+                        <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
+                        <p id="detail-cost" class="detail"><span class="detail-title">279€</span><span class="detail-value">am Tag</span></p>
+                    </aside>
+                    <button class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                </article>
+
+                <img src="images/bmw_m3_competition_thumbnail.svg" class="inventory-thumbnail" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
+                <article class="card">
+                    <h3 id="inventory-header">M4 Competition</h3>
+                    <aside class="inventory-aside">
+                        <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2023</span></p>
+                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">G82</span></p>
+                        <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
+                        <p id="detail-cost" class="detail"><span class="detail-title">279€</span><span class="detail-value">am Tag</span></p>
+                    </aside>
+                    <button class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                </article>
+            </section>
 
             <h2>
                 <div class="divider"></div>
@@ -48,18 +81,18 @@
 
             <h4>Entdecken Sie erstklassige Autovermietungsservices bei uns!</h4>
 
-            <section class="services">
-                <article class="services-card">
+            <section id="services">
+                <article class="card" id="services-card">
                     <img src="images/car_ic.svg" class="services-icon" alt="audi" title="Car Icon" loading="lazy"/>
                     <h3>Top Autovermietung</h3>
                     <footer>Entdecken Sie bei uns exklusive Autovermietungsservices und genießen Sie einzigartige Vorteile, die speziell auf Ihre Bedürfnisse abgestimmt sind!</footer>
                 </article>
-                <article class="services-card">
+                <article class="card" id="services-card">
                     <img src="images/wallet_ic.svg" class="services-icon" alt="Wallet" title="Wallet Icon"loading="lazy"/>
-                    <h3>Top Autovermietung</h3>
-                    <footer>zahlung</footer>
+                    <h3>Top Flexible Zahlungsoptionen</h3>
+                    <footer>Wir garantieren Ihnen eine bequeme Buchungserfahrung. Die sichere, Abwicklung ist darauf ausgelegt, auf Ihren Bedarf zugeschnitten zu sein.</footer>
                 </article>
-                <article class="services-card">
+                <article class="card" id="services-card">
                     <img src="images/bus_ic.svg" class="services-icon" alt="Bus" title="Bus Icon" loading="lazy"/>
                     <h3>ÖPNV-Anbindung</h3>
                     <footer>Unsere Autovermietung bietet Ihnen höchsten Komfort: Die Bushaltestelle ist nur 2 Minuten (190m) entfernt, sodass Sie Ihr Mietfahrzeug mühelos abholen können.</footer>
@@ -67,12 +100,12 @@
             </section>
 
             
-            <section class="special">
+            <section id="special">
                 <img src="images/special_bmw_m4_competition.png" class="special-img" alt="BMW M4 Competition" title="BMW M4 Competition Dynamic pose" loading="lazy"/>
-                <article class="special-card">
+                <article class="card" id="special-card">
                     <h3 class="special-header">Spezielle Informationen</h3>
                     <p>Das ist ein sppaeneder Artikel über uns.</p>
-                    <footer id="btn-footer"><button class="special-btn">Mehr dazu⠀⠀⠀⠀⠀⠀⠀⠀⠀ᐳ</button></footer>
+                    <button class="btn" id="special-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
             </section>
         </div>
