@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <link rel="stylesheet" href="style.css">
+        <title>Buchung Elbspeed Autovermietung</title>
+    </head>
+    <body id="guide">
+        <a href="index.html"><img src="images/logo.svg" class="App-logo" alt="elbspeed-logo" title="Elbspeed"/></a>
+        <h1>Buchen</h1>
+        <div id="rent-div">
+            <main id="rent-main">
+                <form class="card" id="contact-form" action="index.html" method="POST">
+                    <label id="contact-label-car" for="car"></label>
+                    <label id="contact-label-street" for="street"></label>
+                    <label id="contact-label-birthdate" for="birthdate"></label>
+                    <label id="contact-label-birthplace" for="birthplace"></label>
+                    <label id="contact-label-tel" for="tel"></label>
+                    <label id="contact-label-email" for="email"></label>
+                    <input class="contact-input" type="text" id="car" name="car" placeholder="BMW M4 Competition" required readonly><br>
+                    <label id="contact-label-name" for="name">Daten</label><br>
+                    <input class="contact-input" type="text" id="name" name="name" placeholder="Name" required><br>
+                    <input class="contact-input" type="text" id="street" name="street" placeholder="Adresse" required><br>
+                    <div class="rent-dates">
+                        <input class="contact-input" type="date" id="birthdate" name="birthdate" placeholder="Geburtsdatum" required><br>
+                        <p></p>
+                        <input class="contact-input" type="text" id="birthplace" name="birthplace" placeholder="Geburtsort" required><br>
+                    </div>
+                    <input class="contact-input" type="tel" id="tel" name="tel" placeholder="Telefonnummer" required><br>
+                    <input class="contact-input" type="email" id="email" name="email" placeholder="E-Mail-Adresse" required><br>
+
+                    <div class="rent-dates">
+                        <label id="contact-label-abholdatum" for="abholdatum">Abholdatum</label><br>
+                        <p></p>
+                        <input class="contact-input" type="date" id="abholdatum" name="abholdatum" required><br>
+                        <p></p>
+                        <label id="contact-label-abgabedatum" for="abgabedatum">Abgabedatum</label><br>
+                        <p></p>
+                        <input class="contact-input" type="date" id="abgabedatum" name="abgabedatum" required><br>
+                    </div>
+                    <label class="contact-label-empty" for="nachricht">Anmerkungen</label><br>                
+                    <textarea id="nachricht" name="nachricht" rows="4" placeholder="z.B. Abholung oder Rückgabe an anderem Standort, mehrere Fahrer ... " required></textarea><br>
+                    <footer class="rent-agree">
+                        <div>
+                            <input class="contact-input" type="checkbox" id="agree" name="agree" required>
+                            <label for="agree">Ich akzeptiere die <a href="datenschutzerklärung.html">Datenschutzerklärung</a>.</label>
+                        </div>
+                        <div>
+                            <input class="contact-input" type="checkbox" id="agree" name="agree" required>
+                            <label for="agree">Ich akzeptiere die <a href="guides.html">Allgemeinen Mietbedingungen</a>.</label>
+                        </div>
+                    </footer>
+                    <br>
+                    <button class="btn" id="contact-btn" type="submit"><span class="detail-title">Senden</span><span class="detail-value">ᐳ</span></button>
+                    <br>
+                </form>
+                <section id="contact">
+                    <ul id="contact-ul">
+                        <li class="rent-li">
+                            <article class="card" id="contact-article">
+                                    <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">900PS</span></p>
+                                    <p class="detail"><span class="detail-title">Kraftstoff:</span><span class="detail-value">Benzin</span></p>
+                                    <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">G82</span></p>
+                                    <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2019</span></p>
+                            </article>
+                        </li>
+                        <li class="rent-li">
+                            <article class="card" id="contact-article">
+                                    <p class="detail"><span class="detail-title">Kaution:</span><span class="detail-value">1 000€</span></p>
+                                    <p class="detail"><span class="detail-title">SB:</span><span class="detail-value">2 500€</span></p>
+                                    <p class="detail"><span class="detail-title">Tag:</span><span class="detail-value">279€ inkl. 150km</span></p>
+                                    <p class="detail"><span class="detail-title">Tag Wochenende:</span><span class="detail-value">329€ inkl. 150km</span></p>
+                                    <p class="detail"><span class="detail-title">Fr-So:</span><span class="detail-value">659€ inkl. 350km</span></p>
+                                    <p class="detail"><span class="detail-title">Fr-Mo:</span><span class="detail-value">759€ inkl. 500km<</span></p>
+                                    <p class="detail"><span class="detail-title">Woche:</span><span class="detail-value">1 399€ inkl. 1 000km</span></p>
+                                    <p class="detail"><span class="detail-title">Monat:</span><span class="detail-value">2 799€ inkl. 2 000km</span></p>
+                                    <details>
+                                        <summary>Extra km:</summary>
+                                        <p>Bei vorheriger Vereinbarung kostet jeder zusätzliche Kilometer über 100 Kilometer hinaus 1,5€. Ohne vorherige Absprache steigt der Preis auf 2€ pro zusätzlichem Kilometer.</p>
+                                    </details>
+                                    <p class="detail"><span class="detail-title"></span><span class="detail-value">Alles inkl. mwst.</span></p>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+
+            <aside class="slideshow-container">
+                <style>
+                    .mySlides {
+                        display: none;
+                        margin: 0;
+                        width: 100%;
+                    }
+                    img {vertical-align: middle;}
+                    .slideshow-container {
+                        height: auto;
+                        width: 100%;
+                        max-width: 1000px;
+                        position: relative;
+                    }
+                    .prevnext-div {
+                        height: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 95%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                    .prev, .next {
+                        cursor: pointer;
+                        text-align: center;
+                        color: var(--400);
+                        background-color: var(--100);
+                        font-weight: bold;
+                        width: auto;
+                        font-size: clamp(3px, 4vw, 40px);
+                        transition: 0.6s ease;
+                        border-radius: 0 5px 5px 0;
+                        -webkit-user-select: none;
+                        user-select: none;
+                        text-align: center;
+                        padding-block: .3vw;
+                        padding-inline: .2vw;
+                    }
+                    .prev {
+                        border-radius: 5px 0 0 5px;
+                    }
+                    .prev:hover, .next:hover {
+                        color: var(--600);
+                    }
+                    .numbertext {
+                        color: var(--50);
+                        font-size: clamp(3px, 2vw, 20px);
+                        padding-top: clamp(5px, 2vw, 20px);
+                        padding-left: clamp(6px, 2vw, 20px);
+                        position: absolute;
+                    }
+                    .dots {
+                        text-align: center;
+                        padding-top: clamp(3px, 2vw, 20px);
+                    }
+                    .dot {
+                        cursor: pointer;
+                        align-self: center;
+                        height: clamp(3px, 1.5vw, 20px);
+                        width: clamp(3px, 1.5vw, 20px);
+                        margin-inline: .1vw;
+                        background-color: var(--200);
+                        border-radius: 50%;
+                        display: inline-block;
+                    }
+                    .active, .dot:hover {
+                        background-color: var(--400);
+                    }
+                    .fade {
+                        animation-name: fade;
+                        animation-duration: 1.5s;
+                    }
+                    @keyframes fade {
+                        from {opacity: .4} 
+                        to {opacity: 1}
+                    }
+                </style>
+
+                <div class="slideshow-container">
+                    <figure class="mySlides fade">
+                        <figcaption class="numbertext">1 / 4</figcaption>
+                        <img src="images/bmw_m4_competition_top_view.svg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Top View"/>
+                    </figure>
+                    
+                    <figure class="mySlides fade">
+                        <figcaption class="numbertext">2 / 4</figcaption>
+                        <img src="images/bmw_m4_competition_interior.svg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Top View"/>
+                    </figure>
+                    
+                    <figure class="mySlides fade">
+                        <figcaption class="numbertext">3 / 4</figcaption>
+                        <img src="images/bmw_m4_competition_detail_shot.svg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Top View"/>
+                    </figure>
+
+                    <figure class="mySlides fade">
+                        <figcaption class="numbertext">4 / 4</figcaption>
+                        <img src="images/bmw_m4_competition_seats.svg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Top View"/>
+                    </figure>
+                    <div class="prevnext-div">
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+                    </div>
+                </div>
+
+                <nav class="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </nav>
+
+                <script>
+                    let slideIndex = 1;
+                    showSlides(slideIndex);
+                    function plusSlides(n) {
+                        showSlides(slideIndex += n);
+                    }
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+                    function showSlides(n) {
+                        let i;
+                        let slides = document.getElementsByClassName("mySlides");
+                        let dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {slideIndex = 1}    
+                        if (n < 1) {slideIndex = slides.length}
+                        for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";  
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex-1].style.display = "block";  
+                        dots[slideIndex-1].className += " active";
+                    }
+                </script>
+            </aside>
+        </div>
+    </body>
+</html>

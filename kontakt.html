@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <link rel="stylesheet" href="style.css">
+        <title>Datenschutzerklärung Elbspeed Autovermietung</title>
+    </head>
+    <body id="guide">
+        <a href="index.html"><img src="images/logo.svg" class="App-logo" alt="elbspeed-logo" title="Elbspeed"/></a>
+        <h1>Kontakt</h1>
+        <section id="contact">
+            <ul id="contact-ul">
+                <li>
+                    <article class="card" id="contact-article">
+                        <p class="detail"><span class="detail-title">Ansprechpartner:</span><span class="detail-value">Sabur Omari</span></p>
+                        <p class="detail"><span class="detail-title">Telefonnummer:</span><span class="detail-value"><a href="tel:+4917621124419">+49 176 21124419</a></span></p>
+                        <p class="detail"><span class="detail-title">Email:</span><span class="detail-value"><a href="mailto:info@elb-speed.de">info@elb-speed.de</a></span></p>
+                    </article>
+                </li>
+                <li id="socialmedia-image-li">
+                    <ul id="socialmedia">
+                        <li>
+                            <a href="https://www.tiktok.com/@elbspeed">
+                                <img src="images/tiktok_logo.svg" class="socialmedia-img" alt="TikTok" title="TikTok Logo" loading="lazy"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/elb.speed">
+                                <img src="images/instagram_logo.svg" class="socialmedia-img" alt="Instagram" title="Instagram Logo" loading="lazy"/>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="card" id="contact-form" action="index.html" method="POST">
+                <label id="contact-label" for="name">Daten</label><br>
+                <input class="contact-input" type="text" id="name" name="name" placeholder="Name" required><br> 
+                <input class="contact-input" type="email" id="email" name="email" placeholder="E-Mail-Adresse" required><br>
+
+                <label id="contact-label" for="betreff">Nachricht</label><br>
+                <input class="contact-input" type="text" id="betreff" name="betreff" placeholder="Betreff" required><br>
+                <textarea id="nachricht" name="nachricht" rows="4" placeholder="Anliegen" required></textarea><br>
+
+                <label class="contact-label-empty" for="email"></label><br>
+                <button class="btn" id="contact-btn" type="submit"><span class="detail-title">Senden</span><span class="detail-value">ᐳ</span></button>
+                <label class="contact-label-empty" for="nachricht"></label><br>
+            </form>
+        </section>
+    </body>
+</html>

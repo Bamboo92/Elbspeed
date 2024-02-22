@@ -52,7 +52,7 @@
             <h4>Unsere Auswahl erweiter sich kontinuierlich mit deiner Hilfe!</h4>
 
             <section id="inventory">
-                <img src="images/bmw_m3_competition_thumbnail.svg" class="inventory-thumbnail" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
+                <img src="images/bmw_m4_competition_thumbnail.svg" class="inventory-thumbnail" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
                 <article class="card">
                     <h3 id="inventory-header">M4 Competition</h3>
                     <aside class="inventory-aside">
@@ -61,7 +61,7 @@
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">279€</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button type="button" onclick="window.location.href='buchung.html'" class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
 
                 <img src="images/porsche_718_cayman_thumbnail.svg" class="inventory-thumbnail" alt="Porsche 718 Cayman" title="Porsche 718 Cayman Desert Road" loading="lazy"/>
@@ -73,7 +73,7 @@
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">412€</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button type="button" onclick="window.location.href='buchung.html'" class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
 
                 <img src="images/mercedes_amg_gt_coupe_thumbnail.svg" class="inventory-thumbnail" alt="Mercedes-AMG GT Coupe" title="Mercedes-AMG GT Coupe on race track" loading="lazy"/>
@@ -85,7 +85,7 @@
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">332€</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button type="button" onclick="window.location.href='buchung.html'" class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
             </section>
 
@@ -115,18 +115,58 @@
                 </article>
             </section>
 
-            
             <section id="special">
                 <img src="images/special_bmw_m4_competition.png" class="special-img" alt="BMW M4 Competition" title="BMW M4 Competition Dynamic pose" loading="lazy"/>
                 <article class="card" id="special-card">
                     <h3 class="special-header">Spezielle Informationen</h3>
                     <p>Das ist ein sppaeneder Artikel über uns.</p>
-                    <button class="btn" id="special-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button class="btn" id="special-btn"><span class="detail-title">Mehr dazu &#32</span><span class="detail-value">ᐳ</span></button>
                 </article>
             </section>
 
+            <h2>
+                <div class="divider"></div>
+                <span class="header-title">Unser Kundenfeedback</span>
+                <div class="divider"></div>
+            </h2>
+
+            <h4 id="feedback-h4"></h4>
+
+            <section id="feedback">
+                <article class="card" id="feedback-card">
+                    <figure id="feedback-figure">
+                        <img src="images/ismail_zamar_avatar.png" class="feedback-icon" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
+                        <figcaption id="feedback-figcaption">
+                            <h3 id="feedback-h3">Ismail Zamar</h3>
+                            <h6>M4 Competition für 9 Tage gemietet</h6>
+                        </figcaption>
+                    </figure>
+                    <blockquote id="feedback-blockquote">Das Personal war ausgesprochen nett und empathisch. Sie haben sich hervorragend um uns gekümmert und waren sehr zuvorkommend. Wir haben uns wirklich gut aufgehoben gefühlt.</blockquote>
+                </article>
+                <article class="card" id="feedback-card">
+                    <figure id="feedback-figure">
+                        <img src="images/ismail_zamar_avatar.png" class="feedback-icon" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
+                        <figcaption id="feedback-figcaption">
+                            <h3 id="feedback-h3">Ismail Zamar</h3>
+                            <h6>M4 Competition für 9 Tage gemietet</h6>
+                        </figcaption>
+                    </figure>
+                    <blockquote id="feedback-blockquote">Das Personal war ausgesprochen nett und empathisch. Sie haben sich hervorragend um uns gekümmert und waren sehr zuvorkommend. Wir haben uns wirklich gut aufgehoben gefühlt.</blockquote>
+                </article>
+                <article class="card" id="feedback-card">
+                    <figure id="feedback-figure">
+                        <img src="images/ismail_zamar_avatar.png" class="feedback-icon" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
+                        <figcaption id="feedback-figcaption">
+                            <h3 id="feedback-h3">Ismail Zamar</h3>
+                            <h6>M4 Competition für 9 Tage gemietet</h6>
+                        </figcaption>
+                    </figure>
+                    <blockquote id="feedback-blockquote">Das Personal war ausgesprochen nett und empathisch. Sie haben sich hervorragend um uns gekümmert und waren sehr zuvorkommend. Wir haben uns wirklich gut aufgehoben gefühlt.</blockquote>
+                </article>
+            </section>
+            
             <footer>
-                <nav class="footer-nav">
+                <div class="footer-div">
                     <ul>
                         <li><h5 id="newsletter-h5">Bleiben Sie informiert und inspiriert</h5></li>
                         <li>
@@ -150,24 +190,26 @@
                             </ul>
                         </li>
                     </ul>
-                    <ul>
-                        <li><h5>Vermietung</h5></li>
-                        <li><a href="#rent-car-header">Auto Buchen</a></li>
-                        <li><a href="">Verkaufe dein Auto</a></li>
-                        <li><a href="">Feedback</a></li>
-                    </ul>
-                    <ul>
-                        <li><h5>Ressourcen</h5></li>
-                        <li><a href="guides.html">Guides</a></li>
-                        <li><a href="url_der_anderen_seite.html">Hilfezentrum</a></li>
-                        <li><a href="">FAQ</a></li>
-                    </ul>
-                    <ul>
-                        <li><h5>Über uns</h5></li>
-                        <li><a href="url_der_anderen_seite.html">Unternehmen</a></li>
-                        <li><a href="url_der_anderen_seite.html">Kontakt</a></li>
-                    </ul>
-                </nav>
+                    <nav class="footer-nav">
+                        <ul>
+                            <li><h5>Vermietung</h5></li>
+                            <li><a href="#rent-car-header">Auto Buchen</a></li>
+                            <li><a href="none.html">Verkaufe dein Auto</a></li>
+                            <li><a href="none.html">Feedback</a></li>
+                        </ul>
+                        <ul>
+                            <li><h5>Ressourcen</h5></li>
+                            <li><a href="guides.html">Guides</a></li>
+                            <li><a href="none.html">Hilfezentrum</a></li>
+                            <li><a href="">FAQ</a></li>
+                        </ul>
+                        <ul>
+                            <li><h5>Über uns</h5></li>
+                            <li><a href="none.html">Unternehmen</a></li>
+                            <li><a href="kontakt.html">Kontakt</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </footer>
             <footer>
                 <nav class="legal-nav">

@@ -3,6 +3,7 @@
 :root {
     --highlite-white: #FFFFFF;
 
+    --gray1: #F0EAEA;
     --gray2: #E0D3D3;
     --gray3: #BAAFAF;
     --gray4: #726666;
@@ -88,6 +89,11 @@ h5{
     margin-bottom: 1vw;
 }
 
+h6 {
+    margin: 0;
+    font-weight: 600;
+}
+
 a {
     text-decoration: none;
     color: var(--gray4);
@@ -95,6 +101,7 @@ a {
 
 ul {
     list-style-type: none;
+    padding-left: 1vw;
 }
 
 li {
@@ -122,6 +129,7 @@ footer{
     justify-content: center;
     align-items: center;
     padding-bottom: clamp(0px, 3vw, 1000px);
+    width: 100%;
 }
 
 .App-title {
@@ -282,7 +290,7 @@ h4 {
     flex-basis: 0;
 }
 
-.detail-value {
+.detail-value, .detail-value * {
     flex-basis: 20;
     color: var(--700);
 }
@@ -300,10 +308,10 @@ h4 {
     background-image: var(--default-white-gradient);
     cursor: pointer;
     border-radius: 50px;
-    font-size: clamp(5px, 2vw, 23px);
-    width: 90%;
-    height: clamp(10px,4vw,60px);
-    margin-left: 4vw;
+    font-size: clamp(5px, 1.7vw, 23px);
+    width: 81%;
+    height: clamp(10px,3.5vw,60px);
+    margin-left: 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -365,6 +373,9 @@ h4 {
     border-radius: 50px;
     font-size: clamp(5px, 2vw, 23px);
     width: clamp(10px, 60%, 300px);
+    min-width: -moz-fit-content;
+    min-width: -webkit-fill-available;
+    min-width: fit-content;
     height: clamp(10px,4vw,60px);
     margin-top: 7vw;
     display: flex;
@@ -382,14 +393,66 @@ h4 {
     flex-basis: 20;
 }
 
+#feedback {
+    column-gap: 2vw;
+}
+
+#feedback-h4 {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+#feedback-h3 {
+    margin: 0;
+}
+
+#feedback-card {
+    min-width: none;
+    max-width: 500px;
+}
+
+#feedback-figure {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2vw;
+    margin: 0;
+    padding-bottom: clamp(5px, 3vw, 40px);
+}
+
+#feedback-figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#feedback-blockquote {
+    margin: 0;
+}
+
+.feedback-icon{
+    width: clamp(10px, 5vw, 60px);
+    height: clamp(10px, 5vw, 60px);
+    border-radius: 50%;
+}
+
+.footer-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 5vw;
+    column-gap: 20%;
+}
+
+.footer-div > ul:first-of-type {
+    padding-right:  10vw;
+    flex-basis: 0;
+}
+
 .footer-nav {
     display: flex;
     flex-direction: row;
-
-}
-
-.footer-nav > ul:first-of-type {
-    padding-right:  10vw;
+    justify-content: space-between;
+    flex-basis: 100;
 }
 
 #newsletter-form {
@@ -402,6 +465,8 @@ h4 {
     padding-left: clamp(2px, 2vw, 40px);
     padding-block: clamp(2px, 1vw, 10px);
     column-gap: clamp(2px, 3vw, 40px);
+    min-width: -moz-fit-content;
+    min-width: -webkit-fill-available;
     width: fit-content;
 }
 
@@ -423,6 +488,8 @@ h4 {
 #newsletter-input {
     border: none;
     outline: none;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fill-available;
     width: fit-content;
     font-size: clamp(7px, 1.5vw, 20px);
 }
@@ -452,6 +519,158 @@ h4 {
 
 #guide {
     padding: 10vw;
+}
+
+#contact {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 2vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+#contact-article {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    max-width: 350px;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fill-available;
+    min-width: fit-content;
+}
+
+#contact-form {
+    width: 40vw;
+    max-width: 500px;
+    min-height: -moz-fit-content;
+    min-height: -webkit-fill-available;
+    height: fit-content;
+    margin-top: .5vw;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-ul {
+    padding: 0;
+    margin: 0;
+}
+
+#contact-label {
+    padding: 0;
+}
+
+.contact-input {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    width: inherit;
+    max-width: 90%;
+    padding-block: clamp(5px, 1vw, 10px);
+    border: none;
+    background-color: var(--gray1);
+    border-radius: 15px;
+    padding-left: clamp(10px, 2vw, 30px);
+}
+
+input::placeholder {
+    color: var(--gray3);
+    font-size: clamp(5px, 2vmin, 15px);
+}
+
+input:-ms-input-placeholder {
+    color: var(--gray3);
+}
+
+#nachricht {
+    width: inherit;
+    max-width: 95%;
+    padding-top: clamp(5px, 1vw, 20px);
+    font-size: clamp(5px, 2vmin, 15px);
+    height: 10vw;
+    border: none;
+    background-color: var(--gray1);
+    border-radius: 15px;
+}
+
+textarea::placeholder {
+    color: var(--gray3);
+    font-size: clamp(5px, 2vmin, 15px);
+    font-family: 'Poppins', sans-serif;
+    padding-top: clamp(5px, 1vw, 15px);
+    padding-left: clamp(10px, 2vw, 30px);
+}
+
+textarea:-ms-input-placeholder {
+    color: var(--gray3);
+}
+
+#contact-btn {
+    background-image: var(--default-white-gradient);
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: clamp(5px, 1.7vw, 23px);
+    min-width: -moz-fit-content;
+    min-width: -webkit-fill-available;
+    min-width: fit-content;
+    width: 50%;
+    max-width: 200px;
+    height: clamp(10px,3.5vw,50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: clamp(10px, 2vw, 30px);
+}
+
+#contact-btn .detail-value {
+    color: var(--50);
+}
+
+#rent-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+#rent-main {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2vw;
+}
+
+.rent-dates {
+    column-count: 2;
+    width: 95%;
+    padding-bottom: 1vw;
+}
+
+.rent-dates input {
+    color: var(--gray3);
+    font-size: clamp(5px, 2vmin, 15px);
+}
+
+.rent-agree {
+    display: flex;
+    flex-direction: column;
+}
+
+.rent-agree p {
+    display: flex;
+    flex-direction: row;
+}
+
+.rent_advertising{
+    width: 100%;
+    border-radius: 15px;
+}
+
+#rent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: green;
 }
 
 @media (min-width: 1200px) {
@@ -572,7 +791,7 @@ h4 {
     label {
         background-size: clamp(5px, 3vmin, 15px);
         font-size: clamp(5px, 2vmin, 12px);
-        padding-inline: 2vw;
+        padding-inline: 1vw;
     }
 
     .input {
@@ -590,5 +809,4 @@ h4 {
     #special-btn {
         margin-top: 3vw;
     }
-    
 }
