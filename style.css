@@ -70,6 +70,10 @@ section {
     justify-content: center;
 }
 
+h1 {
+    font-size: clamp(9px, 3vw, 40px);
+}
+
 h2 {
     color: var(--700);
     display: flex;
@@ -467,7 +471,7 @@ h4 {
     column-gap: clamp(2px, 3vw, 40px);
     min-width: -moz-fit-content;
     min-width: -webkit-fill-available;
-    width: fit-content;
+    min-width: fit-content;
 }
 
 #newsletter-h5{
@@ -515,6 +519,7 @@ h4 {
     flex-direction: row;
     padding: 3vw;
     column-gap: 5vw;
+    color: var(--gray4);
 }
 
 #guide {
@@ -672,6 +677,11 @@ textarea:-ms-input-placeholder {
     flex-wrap: wrap;
     background-color: green;
 }
+
+.faq-h3 {
+    margin-top: 0;
+}
+
 
 @media (min-width: 1200px) {
     .App-title {
