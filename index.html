@@ -16,7 +16,7 @@
             <header class="App-header">
                 <h1 class="App-title">Buche jetzt ein<br/>
                     <strong class="App-title-special-word">Auto</strong>
-                    <button class="btn" id="start-btn">entdecken</button>
+                    <!--<button class="gradient-btn btn" id="start-btn">entdecken</button>-->
                 </h1>
         
                 <b class="car-bg-txt">BMW</b>
@@ -40,8 +40,16 @@
                     <p>Porsche</p>
                     <option value="option3">Porsche 718 Cayman</option>
                 </select>
-                <input id="search-btn" type="submit" value="" class="input" aria-label="search-btn"/>
+                <button id="search-btn" type="button" value="" class="flat-btn btn" aria-label="search-btn"></button>
             </form>
+
+            <script>
+                // JavaScript, um beim Klick auf den Button zum Abschnitt "inventory" zu navigieren
+                document.getElementById('search-btn').addEventListener('click', function() {
+                  // Scrollt zur "inventory" Section
+                document.getElementById('inventory').scrollIntoView({ behavior: 'smooth' });
+                });
+            </script>
 
             <h2>
                 <div class="divider"></div>
@@ -61,7 +69,7 @@
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">279€</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button type="button" onclick="window.location.href='buchung.html'" class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button type="button" onclick="window.location.href='buchung.html'" class="gradient-btn btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
 
                 <img src="images/porsche_718_cayman_thumbnail.svg" class="inventory-thumbnail" alt="Porsche 718 Cayman" title="Porsche 718 Cayman Desert Road" loading="lazy"/>
@@ -73,7 +81,7 @@
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">412€</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button type="button" onclick="window.location.href='buchung.html'" class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button type="button" onclick="window.location.href='buchung.html'" class="gradient-btn btn" id="inventory-btn" disabled><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
 
                 <img src="images/mercedes_amg_gt_coupe_thumbnail.svg" class="inventory-thumbnail" alt="Mercedes-AMG GT Coupe" title="Mercedes-AMG GT Coupe on race track" loading="lazy"/>
@@ -85,7 +93,7 @@
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">332€</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button type="button" onclick="window.location.href='buchung.html'" class="btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button type="button" onclick="window.location.href='buchung.html'" class="gradient-btn btn" id="inventory-btn" disabled><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
             </section>
 
@@ -118,9 +126,9 @@
             <section id="special">
                 <img src="images/special_bmw_m4_competition.png" class="special-img" alt="BMW M4 Competition" title="BMW M4 Competition Dynamic pose" loading="lazy"/>
                 <article class="card" id="special-card">
-                    <h3 class="special-header">Spezielle Informationen</h3>
-                    <p>Das ist ein sppaeneder Artikel über uns.</p>
-                    <button class="btn" id="special-btn"><span class="detail-title">Mehr dazu &#32</span><span class="detail-value">ᐳ</span></button>
+                    <h3 class="special-header">About Us</h3>
+                    <p>Erfahren Sie mehr über uns und unser Unternehem.</p>
+                    <button onclick="window.location.href='aboutus.html'" class="gradient-btn btn" id="special-btn"><span class="detail-title">Mehr dazu</span><img src="images/open_arrow_right.svg" class="detail-value" alt="Arrow" title="Arrow" loading="lazy"/></button>
                 </article>
             </section>
 
@@ -172,7 +180,7 @@
                         <li>
                             <form id="newsletter-form" action="/meineFormularVerarbeitung" method="post">
                                 <input id="newsletter-input" type="email" name="newsletterEmail" placeholder="E-Mail-Adresse" required>
-                                <input class="btn" id="newsletter-btn" type="submit" title="Subscribe Button" value="">
+                                <button class="flat-btn btn" id="newsletter-btn" type="button" title="Subscribe Button" value=""></button>
                             </form>
                         </li>
                         <li id="socialmedia-image-li">
@@ -199,7 +207,6 @@
                         <ul>
                             <li><h5>Ressourcen</h5></li>
                             <li><a href="guides.html">Guides</a></li>
-                            <li><a href="none.html">Hilfezentrum</a></li>
                             <li><a href="FAQ.html">FAQ</a></li>
                         </ul>
                         <ul>
