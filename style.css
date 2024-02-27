@@ -269,13 +269,14 @@ footer{
 }
 
 .input {
-font-size: 18px;
-border: transparent;
-outline: none;
--webkit-appearance: none;
--moz-appearance: none;
-appearance: none;
-cursor: pointer;
+    font-size: 18px;
+    border: transparent;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: var(--highlite-white);
 }
 
 label {
