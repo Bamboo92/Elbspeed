@@ -12,17 +12,17 @@
         <h1>Buchen</h1>
         <div id="rent-div">
             <main id="rent-main">
-                <form class="card" id="contact-form" action="index.html" method="POST">
+                <form class="card" id="rent-form" action="#" method="POST">
                     <label id="contact-label-car" for="car"></label>
                     <label id="contact-label-street" for="street"></label>
                     <label id="contact-label-birthdate" for="birthdate"></label>
                     <label id="contact-label-birthplace" for="birthplace"></label>
                     <label id="contact-label-tel" for="tel"></label>
                     <label id="contact-label-email" for="email"></label>
-                    <input class="contact-input" type="text" id="car" name="car" placeholder="BMW M4 Competition" required readonly><br>
+                    <input class="contact-input" type="text" id="car" name="car" value="BMW M4 Competition" required readonly><br>
                     <label id="contact-label-name" for="name">Daten</label><br>
-                    <input class="contact-input" type="text" id="name" name="name" placeholder="Name" required><br>
-                    <input class="contact-input" type="text" id="street" name="street" placeholder="Adresse" required><br>
+                    <input class="contact-input" type="text" id="name" name="name" placeholder="Name, Vorname" required><br>
+                    <input class="contact-input" type="text" id="street" name="street" placeholder="Straße, PLZ Ort " required><br>
                     <div class="rent-dates">
                         <input class="contact-input" type="date" id="birthdate" name="birthdate" placeholder="Geburtsdatum" required><br>
                         <p></p>
@@ -44,16 +44,16 @@
                     <textarea id="nachricht" name="nachricht" rows="4" placeholder="z.B. Abholung oder Rückgabe an anderem Standort, mehrere Fahrer ... "></textarea><br>
                     <footer class="rent-agree">
                         <div>
-                            <input class="contact-input" type="checkbox" id="agree" name="agree" required>
-                            <label for="agree">Ich akzeptiere die <a href="datenschutzerklärung.html">Datenschutzerklärung</a>.</label>
+                            <input class="contact-input" type="checkbox" id="agree1" name="agree" required>
+                            <label for="agree1">Ich akzeptiere die <a href="datenschutzerklärung.html">Datenschutzerklärung</a>.</label>
                         </div>
                         <div>
-                            <input class="contact-input" type="checkbox" id="agree" name="agree" required>
-                            <label for="agree">Ich akzeptiere die <a href="guides.html">Allgemeinen Mietbedingungen</a>.</label>
+                            <input class="contact-input" type="checkbox" id="agree2" name="agree" required>
+                            <label for="agree2">Ich akzeptiere die <a href="guides.html">Allgemeinen Mietbedingungen</a>.</label>
                         </div>
                     </footer>
                     <br>
-                    <button class="gradient-btn btn" id="contact-btn" type="submit"><span class="detail-title">Senden</span><span class="detail-value">ᐳ</span></button>
+                    <button class="gradient-btn btn" id="rent-btn" type="submit"><span class="detail-title">Senden</span><span class="detail-value">ᐳ</span></button>
                     <br>
                 </form>
                 <section id="contact">
@@ -231,5 +231,8 @@
                 </script>
             </aside>
         </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="script.js"></script>
     </body>
 </html>

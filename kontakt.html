@@ -34,9 +34,9 @@
                     </ul>
                 </li>
             </ul>
-            <form class="card" id="contact-form" action="index.html" method="POST">
+            <form class="card" id="contact-form" action="#" method="POST">
                 <label id="contact-label" for="name">Daten</label><br>
-                <input class="contact-input" type="text" id="name" name="name" placeholder="Name" required><br> 
+                <input class="contact-input" type="text" id="name" name="name" placeholder="Name, Vorname" required><br> 
                 <input class="contact-input" type="email" id="email" name="email" placeholder="E-Mail-Adresse" required><br>
 
                 <label id="contact-label" for="betreff">Nachricht</label><br>
@@ -48,5 +48,9 @@
                 <label class="contact-label-empty" for="nachricht"></label><br>
             </form>
         </section>
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="script.js"></script>
     </body>
 </html>

@@ -157,6 +157,49 @@ li {
     padding-block: .5vw;
 }
 
+input, textarea {
+    color: var(--950);
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--gray1);
+    font-size: clamp(5px, 2vmin, 15px);
+}
+
+textarea {
+    font-size: clamp(5px, 2vmin, 15px);
+    font-family: 'Poppins', sans-serif;
+    padding-top: clamp(5px, 1vw, 15px);
+    padding-left: clamp(10px, 2vw, 30px);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--gray3);
+    font-size: clamp(5px, 2vmin, 15px);
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: var(--gray3);
+}
+
+/* Chrome, Safari und Edge */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--gray1) inset !important;
+    -webkit-text-fill-color: var(--950) !important;
+}
+
+/* Firefox */
+input:-moz-ui-invalid {
+    box-shadow: none !important;
+}
+
+input:-moz-ui-valid {
+    background-color: var(--gray1) !important;
+    color: var(--950) !important;
+}
+
+
 footer{
     font-size: clamp(7px, 1.5vw, 20px);
     display: flex;
@@ -530,6 +573,7 @@ h4 {
 }
 
 #newsletter-input {
+    background-color: var(--highlite-white);
     border: none;
     outline: none;
     font-size: clamp(7px, 1.5vw, 20px);
@@ -566,6 +610,7 @@ h4 {
 
 #guide {
     padding: 10vw;
+    padding-top: 3vw;
 }
 
 #contact {
@@ -588,7 +633,7 @@ h4 {
     min-width: fit-content;
 }
 
-#contact-form {
+#contact-form, #rent-form {
     width: 40vw;
     max-width: 500px;
     min-height: -moz-fit-content;
@@ -610,25 +655,15 @@ h4 {
 }
 
 .contact-input {
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
     width: inherit;
     max-width: 90%;
     padding-block: clamp(5px, 1vw, 10px);
     border: none;
-    background-color: var(--gray1);
     border-radius: 15px;
     padding-left: clamp(10px, 2vw, 30px);
 }
 
-input::placeholder {
-    color: var(--gray3);
-    font-size: clamp(5px, 2vmin, 15px);
-}
 
-input:-ms-input-placeholder {
-    color: var(--gray3);
-}
 
 #nachricht {
     width: inherit;
@@ -637,23 +672,10 @@ input:-ms-input-placeholder {
     font-size: clamp(5px, 2vmin, 15px);
     height: 10vw;
     border: none;
-    background-color: var(--gray1);
     border-radius: 15px;
 }
 
-textarea::placeholder {
-    color: var(--gray3);
-    font-size: clamp(5px, 2vmin, 15px);
-    font-family: 'Poppins', sans-serif;
-    padding-top: clamp(5px, 1vw, 15px);
-    padding-left: clamp(10px, 2vw, 30px);
-}
-
-textarea:-ms-input-placeholder {
-    color: var(--gray3);
-}
-
-#contact-btn {
+#contact-btn, #rent-btn {
     cursor: pointer;
     border-radius: 50px;
     font-size: clamp(5px, 1.7vw, 23px);
@@ -669,7 +691,7 @@ textarea:-ms-input-placeholder {
     padding-inline: clamp(10px, 2vw, 30px);
 }
 
-#contact-btn .detail-value {
+#contact-btn .detail-value , #rent-btn .detail-value {
     color: var(--50);
 }
 
@@ -690,11 +712,6 @@ textarea:-ms-input-placeholder {
     column-count: 2;
     width: 95%;
     padding-bottom: 1vw;
-}
-
-.rent-dates input {
-    color: var(--gray3);
-    font-size: clamp(5px, 2vmin, 15px);
 }
 
 .rent-agree {
