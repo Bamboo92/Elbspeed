@@ -761,6 +761,10 @@ h4 {
     border-radius: 15px;
 }
 
+#about-us-img-logo {
+    border-radius: 0;
+}
+
 @media (min-width: 1200px) {
     .App-title {
         font-size: clamp(50px, 4vmax, 90px);

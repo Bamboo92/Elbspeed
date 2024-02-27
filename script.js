@@ -10,6 +10,7 @@ const birthplace = document.getElementById("birthplace");
 const tel = document.getElementById("tel");
 const startdate = document.getElementById("abholdatum");
 const finishdate = document.getElementById("abgabedatum");
+const newsletterSubscriber = document.getElementById("newsletter-input");
 
 // Funktion zum Einfügen von Zeilenumbrüchen
 function formatMessage(msg) {
@@ -32,6 +33,11 @@ function rentMessageBody(name, email, message, car, street, birthdate, birthplac
 function contactMessageBody(name, email, message) {
     const introduction = `<b>Diese Nachricht wurde auf der Contact Us Seite geschrieben:</b><br><br>`;
     return introduction + `Name: ${name}<br>Email: ${email}<br><br>Nachricht:<br>${formatMessage(message)}`;
+}
+
+function newsletterMessageBody(email) {
+    const introduction = `<b>Neuer Abonent</b><br><br>`;
+    return introduction + `Ein Kunde hat den Newsletter aboniert.<br>Email: ${email}`;
 }
 
 function sendMail(subject, bodyMessage) {
@@ -73,16 +79,57 @@ function sendMail(subject, bodyMessage) {
     );
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
+function addNewsletterSubscriber(bodyMessage) {
+    Email.send({
+        SecureToken: "59c9b20c-ba01-4039-a5af-56612d9c4c28",
+        To : 'info@elb-speed.de',
+        From : "info@elb-speed.de",
+        Subject : "Newsletter Abonent",
+        Body : bodyMessage,
+    }).then(
+        message => {
+            if (message == "OK") {
+                Swal.fire({
+                    title: "Buchung abgeschlossen!",
+                    text: "Eine Bestätung erhalten sie nach prüfung der Daten",
+                    icon: "success",
+                    confirmButtonColor: "#E63D3D",
+                    background: "#FDF3F3",
+                    color: "#726666",
+                })
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Etwas ist schief gelaufen!",
+                    footer: '<a href="kontakt.html">Kontaktieren mit uns aufnehmen?</a>',
+                    confirmButtonColor: "#E63D3D",
+                    background: "#FDF3F3",
+                    color: "#726666",
+                });
+            }
+        }
+    );
+}
 
-    if (form.id === "contact-form") {
-        // Ruft die Funktion für das Kontaktformular auf
-        const messageBody = contactMessageBody(fullName.value, senderEmail.value, message.value);
-        sendMail(subject.value, messageBody);
-    } else if (form.id === "rent-form") {
-        // Ruft die Funktion für das Buchungsformular auf
-        const messageBody = rentMessageBody(fullName.value, senderEmail.value, message.value, car.value, street.value, birthdate.value, birthplace.value, tel.value, startdate.value, finishdate.value);
-        sendMail(`Buchung`, messageBody);
-    }
+// Fügt Event Listener zu jedem Formular auf der Seite hinzu
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Verhindert das normale Einreichen des Formulars
+
+        if (form.id === "contact-form") {
+            // Kontaktformular Logik
+            const messageBody = contactMessageBody(fullName.value, senderEmail.value, message.value);
+            sendMail(subject.value, messageBody);
+        } else if (form.id === "rent-form") {
+            // Buchungsformular Logik
+            const messageBody = rentMessageBody(fullName.value, senderEmail.value, message.value, car.value, street.value, birthdate.value, birthplace.value, tel.value, startdate.value, finishdate.value);
+            sendMail(`Buchung`, messageBody);
+        } else if (form.id === "newsletter-form") {
+            // Newsletter-Formular Logik
+            // Hier annehmen, dass `newsletterSubscriber.value` existiert und korrekt ist
+            const messageBody = newsletterMessageBody(newsletterSubscriber.value);
+            addNewsletterSubscriber(messageBody);
+        }
+    });
 });

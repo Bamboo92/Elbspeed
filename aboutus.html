@@ -20,7 +20,7 @@
             <main id="about-us-main">
                 <section class="about-us-section">
                     <figure>
-                        <img src="images/logo_and_car.svg" class="about-us-img" alt="hamburg" title="Hamburg Harbor" loading="lazy"/>
+                        <img src="images/logo_and_car.svg" class="about-us-img" id="about-us-img-logo" alt="hamburg" title="Hamburg Harbor" loading="lazy"/>
                     </figure>
                     <article class="card">
                         <h3>ElbSpeed - Ihr Tor zu unvergesslichen Sportwagenabenteuern in Hamburg</h3>
@@ -70,9 +70,9 @@
                     <ul>
                         <li><h5 id="newsletter-h5">Bleiben Sie informiert und inspiriert</h5></li>
                         <li>
-                            <form id="newsletter-form" action="/meineFormularVerarbeitung" method="post">
+                            <form id="newsletter-form" action="#" method="POST">
                                 <input id="newsletter-input" type="email" name="newsletterEmail" placeholder="E-Mail-Adresse" required>
-                                <button class="flat-btn btn" id="newsletter-btn" type="button" title="Subscribe Button" value=""></button>
+                                <button class="flat-btn btn" id="newsletter-btn" type="submit" title="Subscribe Button" value=""></button>
                             </form>
                         </li>
                         <li id="socialmedia-image-li">
@@ -118,5 +118,9 @@
                 </nav>
             </footer>
         </div>
+
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="script.js"></script>
     </body>
 </html>
