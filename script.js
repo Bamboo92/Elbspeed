@@ -133,3 +133,14 @@ document.querySelectorAll('form').forEach(form => {
         }
     });
 });
+
+// Warten bis das Dokument vollständig geladen ist
+document.addEventListener('DOMContentLoaded', function() {
+    const inventory = document.getElementById('inventory'); // Das Element mit der ID 'inventory'
+    inventory.addEventListener('wheel', function(e) {
+      // Verhindert das normale Scroll-Verhalten (vertikal)
+    e.preventDefault();
+      // Scrollt horizontal basierend auf der vertikalen Scroll-Richtung der Maus
+      inventory.scrollLeft += e.deltaY * 2; // Die 2 ist ein Faktor für die Scroll-Geschwindigkeit, anpassbar
+    }, {passive: false}); // 'passive: false' verhindert, dass die Seite scrollt, während wir unser eigenes Scroll-Verhalten definieren
+});

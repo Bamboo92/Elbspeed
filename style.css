@@ -51,6 +51,8 @@ code {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-inline: 10vw;
+    align-self: center;
 }
 
 .btn {
@@ -108,7 +110,6 @@ code {
 
 section {
     padding-block: 0;
-    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -150,7 +151,7 @@ a {
 
 ul {
     list-style-type: none;
-    padding-left: 1vw;
+    padding-left: 0;
 }
 
 li {
@@ -199,6 +200,12 @@ input:-moz-ui-valid {
     color: var(--950) !important;
 }
 
+.unselectable {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Standard: Chrome und andere */
+}  
 
 footer{
     font-size: clamp(7px, 1.5vw, 20px);
@@ -210,18 +217,24 @@ footer{
 .app-nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    column-gap: 9vw;
+    justify-content: center;
+    column-gap: 1vw;
     padding-top: 5vmin;
     padding-bottom: 0;
-    width: 90%;
-    font-size: larger;
+    width: 100%;
+    font-size: clamp(7px, 1.5vw, 20px);
+}
+
+.app-nav > * {
+    display: flex;
+    width: 20vw;
+    align-items: center;
+    justify-content: center;
 }
 
 #app-logo {
     width: 22vw;
     max-width: 350px;
-    padding-inline: clamp(2px, 10vw, 150px);
 }
 
 .logo {
@@ -284,7 +297,7 @@ footer{
 }
 
 .input {
-    font-size: 18px;
+    font-size: clamp(7px, 1.5vw, 20px);
     border: transparent;
     outline: none;
     -webkit-appearance: none;
@@ -344,11 +357,10 @@ h4 {
 }
 
 #inventory {
-    padding-inline: 90px;
+    width: calc(100% + 20vw);
     column-gap: 5vw;
     overflow-x: scroll;
     justify-content: flex-start;
-    width: fit-content;
     overflow-y: hidden;
 }
 
@@ -356,9 +368,17 @@ h4 {
     display: none;
 }
 
-.inventory {
+#inventory {
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+#inventory > :first-child {
+    margin-left: 9vw;
+}
+
+#inventory > :last-child {
+    margin-right: 9vw;
 }
 
 .inventory-thumbnail {
@@ -429,6 +449,7 @@ h4 {
 
 #services {
     column-gap: 2vw;
+    width: 100%;
 }
 
 .services-icon {
@@ -440,7 +461,7 @@ h4 {
 }
 
 #special {
-    width: 100%;
+    width: calc(100% + 20vw);
     padding-top: clamp(10px, 10vw, 190px);
     display: flex;
     justify-content: space-between;
@@ -539,16 +560,20 @@ h4 {
     border-radius: 50%;
 }
 
+.app-footer{
+    width: 100%;
+}
+
 .footer-div {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    padding-top: 5vw;
-    column-gap: 20%;
+    justify-content: space-between;
+    padding-top: 10vh;
+    column-gap: 10vw;
+    width: 100%;
 }
 
 .footer-div > ul:first-of-type {
-    padding-right:  10vw;
     flex-basis: 0;
 }
 
@@ -619,14 +644,16 @@ h4 {
 .legal-nav {
     display: flex;
     flex-direction: row;
-    padding: 3vw;
+    padding-block: 3vw;
     column-gap: 5vw;
     color: var(--gray4);
+    width: 100%;
+    justify-content: space-between;
 }
 
 #guide {
     padding: 10vw;
-    padding-top: 3vw;
+    padding-top: 5vw;
 }
 
 #contact {
@@ -760,7 +787,6 @@ h4 {
     display: flex;
     flex-direction: column;
     row-gap: 3vw;
-    width: 90%;
 }
 
 .about-us-section {
@@ -846,7 +872,7 @@ h4 {
         font-size: clamp(200px, 25vw, 250px);
         bottom: 50px;
         left: 100px;
-        padding-top: 60px;
+        margin-top: 60px;
     }
 
     .car-logo {
@@ -889,7 +915,7 @@ h4 {
         font-size: clamp(100px, 20vw, 180px);
         bottom: 3vmin;
         left: clamp(40px, 5vmin, 100px);
-        padding-top: 100px;
+        margin-top: 100px;
     }
 
     .car-logo {

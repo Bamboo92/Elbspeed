@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="App">
-            <nav class="app-nav">
+            <nav class="app-nav unselectable">
                 <a href="index.html">Startseite</a>
                 <a href="FAQ.html">FAQ</a>
                 <a href="index.html"><img src="images/logo.svg" id="app-logo" alt="elbspeed-logo" title="Elbspeed"/></a>
@@ -19,7 +19,7 @@
                 <a href="aboutus.html">Unternehmen</a>
             </nav>
 
-            <header class="App-header">
+            <header class="App-header unselectable">
                 <h1 class="App-title">Buche jetzt ein<br/>
                     <strong class="App-title-special-word">Auto</strong>
                     <!--<button class="gradient-btn btn" id="start-btn">entdecken</button>-->
@@ -29,7 +29,7 @@
                 <img src="images/bmw_m4_competition.svg" class="car-logo" alt="audi" title="Audi" loading="lazy"/>
             </header>
         
-            <form id="search-form" action="/submit-form" method="post">
+            <form class="unselectable" id="search-form" action="/submit-form" method="post">
                 <label id="calendar-label" For="calendar">Abholdatum <b>⌵</b></label>
                 <label id="dropdown-location-label" For="dropdownLocation">Ort <b>⌵</b></label>
                 <label id="dropdown-brand-label" For="dropdownBrand">Modell <b>⌵</b></label>
@@ -66,7 +66,7 @@
             <h4>Unsere Auswahl erweiter sich kontinuierlich mit deiner Hilfe!</h4>
 
             <section id="inventory">
-                <img src="images/bmw_m4_competition_thumbnail.svg" class="inventory-thumbnail" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
+                <img src="images/bmw_m4_competition_thumbnail.svg" class="inventory-thumbnail unselectable" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
                 <article class="card">
                     <h3 id="inventory-header">M4 Competition</h3>
                     <aside class="inventory-aside">
@@ -75,10 +75,10 @@
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">279€</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button type="button" onclick="window.location.href='buchung.html'" class="gradient-btn btn" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button type="button" onclick="window.location.href='buchung.html'" class="gradient-btn btn unselectable" id="inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
 
-                <img src="images/porsche_718_cayman_thumbnail.svg" class="inventory-thumbnail" alt="Porsche 718 Cayman" title="Porsche 718 Cayman Desert Road" loading="lazy"/>
+                <img src="images/porsche_718_cayman_thumbnail.svg" class="inventory-thumbnail unselectable " alt="Porsche 718 Cayman" title="Porsche 718 Cayman Desert Road" loading="lazy"/>
                 <article class="card">
                     <h3 id="inventory-header">Porsche 718 Cayman</h3>
                     <aside class="inventory-aside">
@@ -87,10 +87,10 @@
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">412€</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button type="button" onclick="window.location.href='buchung.html'" class="gradient-btn btn" id="inventory-btn" disabled><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button type="button" onclick="window.location.href='buchung.html'" class="gradient-btn btn unselectable" id="inventory-btn" disabled><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
 
-                <img src="images/mercedes_amg_gt_coupe_thumbnail.svg" class="inventory-thumbnail" alt="Mercedes-AMG GT Coupe" title="Mercedes-AMG GT Coupe on race track" loading="lazy"/>
+                <img src="images/mercedes_amg_gt_coupe_thumbnail.svg" class="inventory-thumbnail unselectable" alt="Mercedes-AMG GT Coupe" title="Mercedes-AMG GT Coupe on race track" loading="lazy"/>
                 <article class="card">
                     <h3 id="inventory-header">Mercedes-AMG GT</h3>
                     <aside class="inventory-aside">
@@ -99,7 +99,7 @@
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">332€</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button type="button" onclick="window.location.href='buchung.html'" class="gradient-btn btn" id="inventory-btn" disabled><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button type="button" onclick="window.location.href='buchung.html'" class="gradient-btn btn unselectable" id="inventory-btn" disabled><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
             </section>
 
@@ -113,28 +113,28 @@
 
             <section id="services">
                 <article class="card" id="services-card">
-                    <img src="images/car_ic.svg" class="services-icon" alt="audi" title="Car Icon" loading="lazy"/>
+                    <img src="images/car_ic.svg" class="services-icon unselectable" alt="audi" title="Car Icon" loading="lazy"/>
                     <h3>Top Autovermietung</h3>
                     <p>Entdecken Sie bei uns exklusive Autovermietungsservices und genießen Sie einzigartige Vorteile, die speziell auf Ihre Bedürfnisse abgestimmt sind!</p>
                 </article>
                 <article class="card" id="services-card">
-                    <img src="images/wallet_ic.svg" class="services-icon" alt="Wallet" title="Wallet Icon"loading="lazy"/>
+                    <img src="images/wallet_ic.svg" class="services-icon unselectable" alt="Wallet" title="Wallet Icon"loading="lazy"/>
                     <h3>Top Flexible Zahlungsoptionen</h3>
                     <p>Wir garantieren Ihnen eine bequeme Buchungserfahrung. Die sichere, Abwicklung ist darauf ausgelegt, auf Ihren Bedarf zugeschnitten zu sein.</p>
                 </article>
                 <article class="card" id="services-card">
-                    <img src="images/bus_ic.svg" class="services-icon" alt="Bus" title="Bus Icon" loading="lazy"/>
+                    <img src="images/bus_ic.svg" class="services-icon unselectable" alt="Bus" title="Bus Icon" loading="lazy"/>
                     <h3>ÖPNV-Anbindung</h3>
                     <p>Unsere Autovermietung bietet Ihnen höchsten Komfort: Die Bushaltestelle ist nur 2 Minuten (190m) entfernt, sodass Sie Ihr Mietfahrzeug mühelos abholen können.</p>
                 </article>
             </section>
 
             <section id="special">
-                <img src="images/special_bmw_m4_competition.png" class="special-img" alt="BMW M4 Competition" title="BMW M4 Competition Dynamic pose" loading="lazy"/>
+                <img src="images/special_bmw_m4_competition.png" class="special-img unselectable" alt="BMW M4 Competition" title="BMW M4 Competition Dynamic pose" loading="lazy"/>
                 <article class="card" id="special-card">
                     <h3 class="special-header">About Us</h3>
                     <p>Erfahren Sie mehr über uns und unser Unternehem.</p>
-                    <button onclick="window.location.href='aboutus.html'" class="gradient-btn btn" id="special-btn"><span class="detail-title">Mehr dazu</span><img src="images/open_arrow_right.svg" class="detail-value" alt="Arrow" title="Arrow" loading="lazy"/></button>
+                    <button onclick="window.location.href='aboutus.html'" class="gradient-btn btn unselectable" id="special-btn"><span class="detail-title">Mehr dazu</span><img src="images/open_arrow_right.svg" class="detail-value" alt="Arrow" title="Arrow" loading="lazy"/></button>
                 </article>
             </section>
 
@@ -149,7 +149,7 @@
             <section id="feedback">
                 <article class="card" id="feedback-card">
                     <figure id="feedback-figure">
-                        <img src="images/ismail_zamar_avatar.png" class="feedback-icon" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
+                        <img src="images/ismail_zamar_avatar.png" class="feedback-icon unselectable" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
                         <figcaption id="feedback-figcaption">
                             <h3 id="feedback-h3">Ismail Zamar</h3>
                             <h6>M4 Competition für 9 Tage gemietet</h6>
@@ -159,7 +159,7 @@
                 </article>
                 <article class="card" id="feedback-card">
                     <figure id="feedback-figure">
-                        <img src="images/ismail_zamar_avatar.png" class="feedback-icon" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
+                        <img src="images/ismail_zamar_avatar.png" class="feedback-icon unselectable" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
                         <figcaption id="feedback-figcaption">
                             <h3 id="feedback-h3">Ismail Zamar</h3>
                             <h6>M4 Competition für 9 Tage gemietet</h6>
@@ -169,7 +169,7 @@
                 </article>
                 <article class="card" id="feedback-card">
                     <figure id="feedback-figure">
-                        <img src="images/ismail_zamar_avatar.png" class="feedback-icon" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
+                        <img src="images/ismail_zamar_avatar.png" class="feedback-icon unselectable" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
                         <figcaption id="feedback-figcaption">
                             <h3 id="feedback-h3">Ismail Zamar</h3>
                             <h6>M4 Competition für 9 Tage gemietet</h6>
@@ -179,18 +179,18 @@
                 </article>
             </section>
             
-            <footer>
+            <footer class="app-footer">
                 <div class="footer-div">
                     <ul>
                         <li><h5 id="newsletter-h5">Bleiben Sie informiert und inspiriert</h5></li>
                         <li>
-                            <form id="newsletter-form" action="#" method="POST">
+                            <form class="unselectable" id="newsletter-form" action="#" method="POST">
                                 <input id="newsletter-input" type="email" name="newsletterEmail" placeholder="E-Mail-Adresse" required>
                                 <button class="flat-btn btn" id="newsletter-btn" type="submit" title="Subscribe Button" value=""></button>
                             </form>
                         </li>
                         <li id="socialmedia-image-li">
-                            <ul id="socialmedia">
+                            <ul id="socialmedia" class="unselectable">
                                 <li>
                                     <a href="https://www.tiktok.com/@elbspeed">
                                         <img src="images/tiktok_logo.svg" class="socialmedia-img" alt="TikTok" title="TikTok Logo" loading="lazy"/>
@@ -217,7 +217,7 @@
                         </ul>
                         <ul>
                             <li><h5>Über uns</h5></li>
-                            <li><a href="none.html">Unternehmen</a></li>
+                            <li><a href="aboutus.html">Unternehmen</a></li>
                             <li><a href="kontakt.html">Kontakt</a></li>
                         </ul>
                     </nav>
@@ -226,9 +226,9 @@
             <footer>
                 <nav class="legal-nav">
                     <span>ElbSpeed GmbH © 2024</span>
-                    <a href="impressum.html">Impressum</a>
-                    <a href="datenschutzerklärung.html">Datenschutzerklärung</a>
-                    <a href="guides.html">Allgemeine Mietbedingungen</a>
+                    <a class="legal-link" href="impressum.html">Impressum</a>
+                    <a class="legal-link" href="datenschutzerklärung.html">Datenschutzerklärung</a>
+                    <a class="legal-link" href="guides.html">Allgemeine Mietbedingungen</a>
                 </nav>
             </footer>
         </div>
