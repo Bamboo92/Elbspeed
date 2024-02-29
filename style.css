@@ -207,11 +207,26 @@ footer{
     column-gap: 1vw;
 }
 
-.App-logo {
-    width: 20vw;
-    max-width: 250px;
+.app-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    column-gap: 9vw;
     padding-top: 5vmin;
     padding-bottom: 0;
+    width: 90%;
+    font-size: larger;
+}
+
+#app-logo {
+    width: 22vw;
+    max-width: 350px;
+    padding-inline: clamp(2px, 10vw, 150px);
+}
+
+.logo {
+    width: 25vw;
+    max-width: 450px;
 }
 
 .App-header {
@@ -841,6 +856,14 @@ h4 {
 }
 
 @media (max-width: 900px) {
+    .app-nav {
+        column-gap: 3vw;
+    }
+
+    #app-logo {
+        padding-inline: clamp(2px, 5vw, 100px);
+    }
+
     .App-header {
         height: clamp(50px, 25vw, 300px);
     }
