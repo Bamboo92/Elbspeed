@@ -430,7 +430,7 @@ h4 {
     color: var(--950);
 }
 
-#inventory-btn {
+.inventory-btn {
     cursor: pointer;
     border-radius: 50px;
     font-size: clamp(5px, 1.7vw, 23px);
@@ -443,7 +443,7 @@ h4 {
     padding-inline: clamp(10px, 2vw, 30px);
 }
 
-#inventory-btn .detail-value {
+.inventory-btn .detail-value {
     color: var(--50);
 }
 
@@ -841,7 +841,7 @@ h4 {
         margin-top: 1vw;
     }
 
-    #inventory-btn {
+    .inventory-btn {
         margin-top: 2vw;
         margin-left: 4vw;
         max-width: 65%;
