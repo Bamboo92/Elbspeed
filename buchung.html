@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="style.css">
         <title>Buchung | Elbspeed Autovermietung</title>
     </head>
-    <body id="guide">
+    <body class="guide">
         <a href="index.html"><img src="images/logo.svg" class="logo" alt="elbspeed-logo" title="Elbspeed"/></a>
 
         <h1>Buchen</h1>
@@ -23,7 +23,9 @@
                     <label id="contact-label-tel" for="tel"></label>
                     <label id="contact-label-email" for="email"></label>
                     <label id="contact-label-car" for="car"></label>
-                    <input class="contact-input" type="text" id="car" name="car" value="BMW M4 Competition" required readonly><br>
+                    <input class="contact-input" type="text" id="car" name="car" placeholder="car" value="BMW M4 Competition" required readonly><br>
+                    <label id="contact-label-details" for="details">Plan Details</label>
+                    <input class="contact-input" type="text" id="details" name="details" value="" required readonly><br>
                     <label id="contact-label-name" for="name">Daten</label><br>
                     <input class="contact-input" type="text" id="name" name="name" placeholder="Name, Vorname" required><br>
                     <input class="contact-input" type="text" id="street" name="street" placeholder="Straße, PLZ Ort " required><br>
@@ -245,6 +247,16 @@
                 </nav>
             </footer>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const planType = localStorage.getItem('planType');
+                const planDetails = localStorage.getItem('planDetails');
+                if (planType && planDetails) {
+                    document.getElementById('car').value = planType;
+                    document.getElementById('details').value = planDetails;
+                }
+            });
+        </script>
         <script src="https://smtpjs.com/v3/smtp.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="script.js"></script>
