@@ -1,9 +1,10 @@
 const form = document.querySelector( 'form' );
+const car = document.getElementById("car");
+const plan = document.getElementById("plan");
 const fullName = document.getElementById("name");
 const senderEmail = document.getElementById("email");
 const subject = document.getElementById("betreff");
 const message = document.getElementById("nachricht");
-const car = document.getElementById("car");
 const street = document.getElementById("street");
 const birthdate = document.getElementById("birthdate");
 const birthplace = document.getElementById("birthplace");
@@ -11,6 +12,7 @@ const tel = document.getElementById("tel");
 const startdate = document.getElementById("abholdatum");
 const finishdate = document.getElementById("abgabedatum");
 const newsletterSubscriber = document.getElementById("newsletter-input");
+const recipientEmail = "info@elb-speed.de";
 
 // Funktion zum Einfügen von Zeilenumbrüchen
 function formatMessage(msg) {
@@ -24,9 +26,9 @@ function formatMessage(msg) {
 }
 
 // Funktion zur Erstellung der Nachricht
-function rentMessageBody(name, email, message, car, street, birthdate, birthplace, tel, startdate, finishdate) {
+function rentMessageBody(car, plan, name, email, message, street, birthdate, birthplace, tel, startdate, finishdate) {
     const introduction = `<b>Diese Nachricht wurde auf der Buchungs Seite geschrieben:</b><br><br>`;
-    return introduction + `Name: ${name}<br>Adresse: ${street}<br>Geburtsdatum: ${birthdate} Geburtsort: ${birthplace}<br>Email: ${email} Tel.: ${tel}<br>Abholdatum: ${startdate} Abgabedatum: ${finishdate}<br>Auto: <b>${car}</b><br><br>Nachricht:<br>${formatMessage(message)}`;
+    return introduction + `Name: ${name}<br>Adresse: ${street}<br>Geburtsdatum: ${birthdate} Geburtsort: ${birthplace}<br>Email: ${email} Tel.: ${tel}<br>Abholdatum: ${startdate} Abgabedatum: ${finishdate}<br>Auto: <b>${car}</b><br>Preisplan: <b>${plan}</b><br><br>Nachricht:<br>${formatMessage(message)}`;
 }
 
 // Funktion zur Erstellung der Nachricht
@@ -43,8 +45,8 @@ function newsletterMessageBody(email) {
 function sendMail(subject, bodyMessage) {
     Email.send({
         SecureToken: "59c9b20c-ba01-4039-a5af-56612d9c4c28",
-        To : 'info@elb-speed.de',
-        From : "info@elb-speed.de",
+        To : recipientEmail,
+        From : recipientEmail,
         Subject : subject,
         Body : bodyMessage,
         /*Attachments : [
@@ -82,8 +84,8 @@ function sendMail(subject, bodyMessage) {
 function addNewsletterSubscriber(bodyMessage) {
     Email.send({
         SecureToken: "59c9b20c-ba01-4039-a5af-56612d9c4c28",
-        To : 'info@elb-speed.de',
-        From : "info@elb-speed.de",
+        To : recipientEmail,
+        From : recipientEmail,
         Subject : "Newsletter Abonent",
         Body : bodyMessage,
     }).then(
@@ -123,7 +125,7 @@ document.querySelectorAll('form').forEach(form => {
             sendMail(subject.value, messageBody);
         } else if (form.id === "rent-form") {
             // Buchungsformular Logik
-            const messageBody = rentMessageBody(fullName.value, senderEmail.value, message.value, car.value, street.value, birthdate.value, birthplace.value, tel.value, startdate.value, finishdate.value);
+            const messageBody = rentMessageBody(car.value, plan.value, fullName.value, senderEmail.value, message.value, street.value, birthdate.value, birthplace.value, tel.value, startdate.value, finishdate.value);
             sendMail(`Buchung`, messageBody);
         } else if (form.id === "newsletter-form") {
             // Newsletter-Formular Logik
