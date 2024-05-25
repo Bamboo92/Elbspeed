@@ -955,16 +955,6 @@ h4 {
 
 }
 
-.price-plan-footer {
-}
-
-.price-plan-details {
-
-}
-
-.price-plan-details-summary {
-}
-
 .price-plan-details-p {
     display: flex;
     flex-direction: row;
@@ -990,10 +980,6 @@ h4 {
     font-size: .6vw;
     align-self: flex-end;
     padding-left: .2vw;
-}
-
-.day-plan {
-
 }
 
 .elite-plan {
@@ -1128,7 +1114,7 @@ h4 {
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 899px) {
     .app-nav {
         column-gap: 3vw;
     }
@@ -1196,5 +1182,36 @@ h4 {
 
     #special-btn {
         margin-top: 1vw;
+    }
+
+    .card {
+    }
+
+    #rent-main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2vw;
+        width: 100%;
+        background-color: red;
+    }
+
+    #rent-form {
+        width: 93%;
+    }
+
+    #contact {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: red;
+    }
+
+    #contact-ul {
+        width: 93%;
+    }
+
+    #contact-article {
+        width: 100%;
+        max-width: none;
     }
 }
