@@ -93,6 +93,11 @@
                         animation-name: fade;
                         animation-duration: 1.5s;
                     }
+                    @media (max-width: 899px) {
+                        .dots {
+                            padding-top: 0;
+                        }
+                    }
                     @keyframes fade {
                         from {opacity: .4} 
                         to {opacity: 1}
@@ -161,8 +166,6 @@
             <main id="rent-main">
                 <form class="card" id="rent-form" action="#" method="POST">
                     <label id="contact-label-street" for="street"></label>
-                    <label id="contact-label-birthdate" for="birthdate"></label>
-                    <label id="contact-label-birthplace" for="birthplace"></label>
                     <label id="contact-label-tel" for="tel"></label>
                     <label id="contact-label-email" for="email"></label>
                     <label id="contact-label-car" for="car"></label>
@@ -171,40 +174,38 @@
                         <input class="contact-input" type="text" id="car" name="car" placeholder="car" value="BMW M4 Competition" required readonly><br>
                         <p></p>
                         <input class="contact-input" type="text" id="details" name="details" placeholder="details" value="" required readonly><br>
-                    </div>
-                    <label id="contact-label-name" for="name">Daten</label><br>
-                    <input class="contact-input" type="text" id="name" name="name" placeholder="Name, Vorname" required><br>
-                    <input class="contact-input" type="text" id="street" name="street" placeholder="Straße, PLZ Ort " required><br>
+                    </div><br class="no-br">
+                    <label id="contact-label-name" for="name">Daten</label><br class="no-br">
+                    <input class="contact-input" type="text" id="name" name="name" placeholder="Name, Vorname" required><br class="no-br">
+                    <input class="contact-input" type="text" id="street" name="street" placeholder="Straße, PLZ Ort " required><br class="no-br">
+                    <div class="rent-dates" id="rent-dates-birthdate">
+                        <label id="contact-label-birthdate" for="birthdate">Geburtsdatum:</label>
+                        <input class="contact-input date-input" type="date" id="birthdate" name="birthdate" placeholder="Geburtsdatum" required>
+                    </div><br class="no-br">
+                    <input class="contact-input" type="tel" id="tel" name="tel" placeholder="Telefonnummer" required><br class="no-br">
+                    <input class="contact-input" type="email" id="email" name="email" placeholder="E-Mail-Adresse" required><br class="no-br">
                     <div class="rent-dates">
-                        <input class="contact-input" type="date" id="birthdate" name="birthdate" placeholder="Geburtsdatum" required><br>
+                        <label id="contact-label-abholdatum" for="abholdatum">Abholdatum</label><br class="no-br">
                         <p></p>
-                        <input class="contact-input" type="text" id="birthplace" name="birthplace" placeholder="Geburtsort" required><br>
-                    </div>
-                    <input class="contact-input" type="tel" id="tel" name="tel" placeholder="Telefonnummer" required><br>
-                    <input class="contact-input" type="email" id="email" name="email" placeholder="E-Mail-Adresse" required><br>
-
-                    <div class="rent-dates">
-                        <label id="contact-label-abholdatum" for="abholdatum">Abholdatum</label><br>
+                        <input class="contact-input date-input" type="date" id="abholdatum" name="abholdatum" required><br class="no-br">
                         <p></p>
-                        <input class="contact-input" type="date" id="abholdatum" name="abholdatum" required><br>
+                        <label id="contact-label-abgabedatum" for="abgabedatum">Abgabedatum</label><br class="no-br">
                         <p></p>
-                        <label id="contact-label-abgabedatum" for="abgabedatum">Abgabedatum</label><br>
-                        <p></p>
-                        <input class="contact-input" type="date" id="abgabedatum" name="abgabedatum" required><br>
-                    </div>
-                    <label class="contact-label-empty" for="nachricht">Anmerkungen</label><br>                
-                    <textarea id="nachricht" name="nachricht" rows="4" placeholder="z.B. Abholung oder Rückgabe an anderem Standort, mehrere Fahrer ... "></textarea><br>
+                        <input class="contact-input date-input" type="date" id="abgabedatum" name="abgabedatum" required>
+                    </div><br class="no-br">
+                    <label class="contact-label-empty" for="nachricht">Anmerkungen</label><br class="no-br">                
+                    <textarea id="nachricht" name="nachricht" rows="4" placeholder="z.B. Abholung oder Rückgabe an anderem Standort, mehrere Fahrer ... "></textarea><br class="no-br">
                     <footer class="rent-agree">
                         <div>
-                            <input class="contact-input" type="checkbox" id="agree1" name="agree" required>
+                            <input class="" type="checkbox" id="agree1" name="agree" required>
                             <label for="agree1">Ich akzeptiere die <a href="datenschutzerklärung.html">Datenschutzerklärung</a>.</label>
                         </div>
                         <div>
-                            <input class="contact-input" type="checkbox" id="agree2" name="agree" required>
+                            <input class="" type="checkbox" id="agree2" name="agree" required>
                             <label for="agree2">Ich akzeptiere die <a href="guides.html">Allgemeinen Mietbedingungen</a>.</label>
                         </div>
                     </footer>
-                    <br>
+                    <br class="no-br">
                     <button class="gradient-btn btn" id="rent-btn" type="submit"><span class="detail-title">Buchen</span><span class="detail-value">ᐳ</span></button>
                     <br>
                 </form>
@@ -240,7 +241,6 @@
                     </ul>
                 </section>
             </main>
-
             
             <footer>
                 <nav class="legal-nav">

@@ -235,6 +235,10 @@ input:-moz-ui-valid {
     user-select: none; /* Standard: Chrome und andere */
 }  
 
+.hidden {
+    display: none;
+}
+
 footer{
     font-size: clamp(7px, 1.5vw, 20px);
     display: flex;
@@ -726,15 +730,28 @@ h4 {
 }
 
 .contact-input {
-    width: inherit;
-    max-width: 90%;
+    width: 100%;
     padding-block: clamp(5px, 1vw, 10px);
     border: none;
     border-radius: 15px;
-    padding-left: clamp(10px, 2vw, 30px);
+    padding-inline: clamp(10px, 2vw, 30px);
+    box-sizing: border-box;
 }
 
+.date-input {
+    cursor: pointer;
+}
 
+#calendar::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding-left: 40%;
+    padding-right: 10%;
+}
+
+.contact-input::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding-left: 40%;
+}
 
 #nachricht {
     width: inherit;
@@ -781,8 +798,16 @@ h4 {
 
 .rent-dates {
     column-count: 2;
-    width: 95%;
-    padding-bottom: 1vw;
+}
+
+#rent-dates-birthdate {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2vw;
+    align-items: center;
+}
+
+#birthdate {
 }
 
 .rent-agree {
@@ -1185,33 +1210,85 @@ h4 {
     }
 
     .card {
+        font-size: 4vw;
+    }
+
+    input, label, input::placeholder, textarea::placeholder {
+        font-size: 3vw;
+    }
+
+    .contact-input, #nachricht {
+        width: 100%;
+    }
+
+    #rent-btn {
+        font-size: 3vw;
+        height: 7vw;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+
+    .logo{
+        width: 50vw;
+        max-width: 450px;
+    }
+
+    h1 {
+        font-size: clamp(9px, 5vw, 40px);
+    }
+
+    #rent-div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
     }
 
     #rent-main {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         row-gap: 2vw;
-        width: 100%;
-        background-color: red;
     }
 
     #rent-form {
-        width: 93%;
+        min-width: 75vw;
+        row-gap: 2vw;
+    }
+
+    #contact-label-street, #contact-label-tel,
+    #contact-label-email, #contact-label-car {
+        display: none;
     }
 
     #contact {
         width: 100%;
         display: flex;
         flex-direction: column;
-        background-color: red;
     }
 
     #contact-ul {
-        width: 93%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     #contact-article {
-        width: 100%;
+        min-width: 75vw;
         max-width: none;
+    }
+
+    #calendar::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        padding-left: 30%;
+        padding-right: 0;
+    }
+
+    .no-p {
+        margin: 0;
+        display: hidden;
     }
 }

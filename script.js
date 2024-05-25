@@ -144,3 +144,18 @@ document.addEventListener('DOMContentLoaded', function() {
       inventory.scrollLeft += e.deltaY * 2; // Die 2 ist ein Faktor für die Scroll-Geschwindigkeit, anpassbar
     }, {passive: false}); // 'passive: false' verhindert, dass die Seite scrollt, während wir unser eigenes Scroll-Verhalten definieren
 });
+
+function handleResize() {
+    const noBrElements = document.querySelectorAll('br.no-br');
+    if (window.innerWidth <= 899) {
+        noBrElements.forEach(br => br.classList.add('hidden'));
+    } else {
+        noBrElements.forEach(br => br.classList.remove('hidden'));
+    }
+}
+
+// Initial check
+handleResize();
+
+// Add event listener for window resize
+window.addEventListener('resize', handleResize);
