@@ -13,6 +13,7 @@ const finishdate = document.getElementById("abgabedatum");
 const newsletterSubscriber = document.getElementById("newsletter-input");
 
 const recipientEmail = "info@elb-speed.de";
+const emailToken = "59c9b20c-ba01-4039-a5af-56612d9c4c28";
 
 // Funktion zum Einfügen von Zeilenumbrüchen
 function formatMessage(msg) {
@@ -44,7 +45,7 @@ function newsletterMessageBody(email) {
 
 function sendMail(subject, bodyMessage) {
     Email.send({
-        SecureToken: "59c9b20c-ba01-4039-a5af-56612d9c4c28",
+        SecureToken: emailToken,
         To : recipientEmail,
         From : recipientEmail,
         Subject : subject,
@@ -65,6 +66,10 @@ function sendMail(subject, bodyMessage) {
                     confirmButtonColor: "#E63D3D",
                     background: "#FDF3F3",
                     color: "#726666",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'index.html'; // Weiterleitung zur Homepage
+                    }
                 })
             } else {
                 Swal.fire({
@@ -83,7 +88,7 @@ function sendMail(subject, bodyMessage) {
 
 function addNewsletterSubscriber(bodyMessage) {
     Email.send({
-        SecureToken: "59c9b20c-ba01-4039-a5af-56612d9c4c28",
+        SecureToken: emailToken,
         To : recipientEmail,
         From : recipientEmail,
         Subject : "Newsletter Abonent",
@@ -149,15 +154,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function handleResize() {
     const noBrElements = document.querySelectorAll('br.no-br');
+    const noFormElements = document.querySelectorAll('form.no-form');
+    
     if (window.innerWidth <= 899) {
         noBrElements.forEach(br => br.classList.add('hidden'));
+        noFormElements.forEach(form => form.classList.add('hidden'));
     } else {
         noBrElements.forEach(br => br.classList.remove('hidden'));
+        noFormElements.forEach(form => form.classList.remove('hidden'));
     }
 }
+
 
 // Initial check
 handleResize();
 
 // Add event listener for window resize
+window.addEventListener('load', handleResize);
 window.addEventListener('resize', handleResize);
+window.addEventListener('DOMContentLoaded', handleResize);
