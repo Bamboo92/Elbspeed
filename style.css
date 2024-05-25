@@ -214,6 +214,15 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--gray1) inset !important;
+    -webkit-text-fill-color: var(--950) !important;
+}
+
+/* Chrome, Safari und Edge */
+#newsletter-input:-webkit-autofill,
+#newsletter-input:-webkit-autofill:hover, 
+#newsletter-input:-webkit-autofill:focus, 
+#newsletter-input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px var(--highlite-white) inset !important;
     -webkit-text-fill-color: var(--950) !important;
 }
