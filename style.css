@@ -1222,6 +1222,12 @@ h4 {
         width: 30vw;
     }
 
+    .inventory-btn {
+        margin-top: 2vw;
+        height: clamp(10px,4.5vw,60px);
+        width: 50%;
+    }
+
     #services {
         display: flex;
         flex-direction: column;
