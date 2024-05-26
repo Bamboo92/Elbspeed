@@ -1072,6 +1072,36 @@ h4 {
     color: var(--950);
 }
 
+#whatsapp-instructions {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    font-size: clamp(7px, 3vw, 20px);
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--highlite-white);
+    border: 1px solid greenyellow;
+    padding: 20px;
+    box-shadow: 0px 0px 10px var(--gray3);
+    z-index: 1000;
+    border-radius: 15px;
+}
+
+#whatsapp-allert-button {
+    border-radius: 15px;
+    text-align: center;
+    font-size: clamp(7px, 2vw, 20px);
+    padding-block: clamp(5px, 2vw, 10px);
+    padding-inline: clamp(10px, 5vw, 40px);
+}
+
+#whatsapp-allert-img {
+    width: clamp(3px, 8vw, 60px);
+}
+
 @media (min-width: 1200px) {
     .App-title {
         font-size: clamp(50px, 4vmax, 90px);
@@ -1215,18 +1245,29 @@ h4 {
     }
 
     #inventory-header {
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     .inventory-aside {
-        font-size: 2.5vw;
-        width: 30vw;
+        font-size: 3.5vw;
+        width: 40vw;
     }
 
+    #detail-cost .detail-title {
+        color: var(--700);
+        font-size: clamp(8px, 5vw, 50px);
+    }
+    
     .inventory-btn {
         margin-top: 2vw;
-        height: clamp(10px,4.5vw,60px);
+        height: clamp(10px,5vw,60px);
+        font-size: clamp(3px, 3.3vw, 20px);
+        padding-inline: clamp(5px, 2vw, 30px);
         width: 50%;
+    }
+
+    .inventory-thumbnail {
+        width: 40%;
     }
 
     #services {
@@ -1351,6 +1392,10 @@ h4 {
 
     .contact-input, #nachricht {
         width: 100%;
+    }
+
+    #nachricht {
+        font-size: clamp(2px, 3vw, 30px);
     }
 
     #contact-btn, #rent-btn {

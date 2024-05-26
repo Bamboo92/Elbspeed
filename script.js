@@ -13,6 +13,7 @@ const finishdate = document.getElementById("abgabedatum");
 const newsletterSubscriber = document.getElementById("newsletter-input");
 
 const recipientEmail = "info@elb-speed.de";
+const recipientWhatsappNumber = "4074069548";
 const emailToken = "59c9b20c-ba01-4039-a5af-56612d9c4c28";
 
 // Funktion zum Einfügen von Zeilenumbrüchen
@@ -119,22 +120,24 @@ function addNewsletterSubscriber(bodyMessage) {
     );
 }
 
-// Fügt Event Listener zu jedem Formular auf der Seite hinzu
 document.querySelectorAll('form').forEach(form => {
     form.addEventListener('submit', (e) => {
         e.preventDefault(); // Verhindert das normale Einreichen des Formulars
+        
+        const actionType = e.submitter.getAttribute('data-action'); // Bestimmt die Art der Aktion basierend auf dem geklickten Button
 
         if (form.id === "contact-form") {
-            // Kontaktformular Logik
             const messageBody = contactMessageBody(fullName.value, senderEmail.value, message.value);
             sendMail(subject.value, messageBody);
         } else if (form.id === "rent-form") {
-            // Buchungsformular Logik
             const messageBody = rentMessageBody(car.value, plan.value, fullName.value, senderEmail.value, message.value, street.value, birthdate.value, tel.value, startdate.value, finishdate.value);
-            sendMail(`Buchung`, messageBody);
+
+            if (actionType === "email") {
+                sendMail(`Buchung`, messageBody);
+            } else if (actionType === "whatsapp") {
+                sendViaWhatsApp(car.value, plan.value, fullName.value, senderEmail.value, message.value, street.value, birthdate.value, tel.value, startdate.value, finishdate.value);
+            }
         } else if (form.id === "newsletter-form") {
-            // Newsletter-Formular Logik
-            // Hier annehmen, dass `newsletterSubscriber.value` existiert und korrekt ist
             const messageBody = newsletterMessageBody(newsletterSubscriber.value);
             addNewsletterSubscriber(messageBody);
         }
@@ -173,3 +176,39 @@ handleResize();
 window.addEventListener('load', handleResize);
 window.addEventListener('resize', handleResize);
 window.addEventListener('DOMContentLoaded', handleResize);
+
+function sendViaWhatsApp() {
+    // Direkt die globalen DOM-Element-Variablen verwenden
+    const fullNameValue = fullName.value;
+    const senderEmailValue = senderEmail.value;
+    const messageText = message.value;
+    const streetValue = street.value;
+    const birthdateValue = birthdate.value;
+    const telValue = tel.value;
+    const carModel = car.value;
+    const planType = plan.value;
+    const startDateValue = startdate.value;
+    const finishDateValue = finishdate.value;
+
+    // Formatierung der Nachricht für WhatsApp
+    let whatsappMessage = `Buchung`;
+    whatsappMessage += `Name: ${fullNameValue}`;
+    whatsappMessage += `Adresse: ${streetValue}`;
+    whatsappMessage += `Geburtsdatum: ${birthdateValue}`;
+    whatsappMessage += `Tel.: ${telValue}`;
+    whatsappMessage += `Email: ${senderEmailValue}`;
+    whatsappMessage += `Abholdatum: ${startDateValue}`;
+    whatsappMessage += `Abgabedatum: ${finishDateValue}`;
+    whatsappMessage += `Anmerkung: ${messageText}`;
+    whatsappMessage += `${carModel}`;
+    whatsappMessage += `${planType}`;
+
+    whatsappMessage = encodeURI(whatsappMessage);
+
+    // WhatsApp URL generieren
+    const whatsappUrl = `https://wa.me/${recipientWhatsappNumber}?text=${whatsappMessage}`;
+
+    // Öffnet WhatsApp-Seite in neuem Tab
+    window.open(whatsappUrl, '_blank');
+    document.getElementById('whatsapp-instructions').style.display = 'block';
+}

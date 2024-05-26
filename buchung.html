@@ -206,7 +206,8 @@
                         </div>
                     </footer>
                     <br class="no-br">
-                    <button class="gradient-btn btn" id="rent-btn" type="submit"><span class="detail-title">Buchen</span><span class="detail-value">ᐳ</span></button>
+                    <button class="gradient-btn btn" id="rent-btn" type="submit" data-action="email"><span class="detail-title">Buchen</span><span class="detail-value">ᐳ</span></button><br>
+                    <button class="gradient-btn btn" id="rent-btn" type="submit" data-action="whatsapp" onclick="sendViaWhatsApp()">Über WhatsApp buchen</button>
                     <br>
                 </form>
                 <ul id="contact-ul">
@@ -239,6 +240,13 @@
                 </ul>
             </main>
             
+            <div id="whatsapp-instructions">
+                <img src="images/whatsApp_logo.webp" id="whatsapp-allert-img" class="socialmedia-img" alt="WhatsApp Logo" title="WhatsApp Logo" loading="lazy"/>
+                <p>WhatsApp hat geöffnet. Bitte prüfe die Nachricht und <b>drücke 'Senden'</b>, um deine Buchung abzuschließen.</p>
+                <button id="whatsapp-allert-button" class="btn gradient-btn">Fertig</button>
+            </div>
+            
+
             <footer>
                 <nav class="legal-nav">
                     <span>ElbSpeed GmbH © 2024</span>
@@ -255,6 +263,10 @@
                 if (planType && planDetails) {
                     document.getElementById('plan').value = planType + planDetails;
                 }
+            });
+
+            document.getElementById('whatsapp-allert-button').addEventListener('click', function() {
+                window.location.href = 'index.html';
             });
         </script>
         <script src="https://smtpjs.com/v3/smtp.js"></script>
