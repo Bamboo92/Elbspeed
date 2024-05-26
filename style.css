@@ -622,6 +622,7 @@ h4 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     column-gap: 2vw;
     flex-basis: 100;
 }
@@ -685,6 +686,7 @@ h4 {
 .legal-nav {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     padding-block: 3vw;
     column-gap: 5vw;
     color: var(--gray4);
@@ -1146,9 +1148,6 @@ h4 {
 }
 
 @media (max-width: 899px) {
-    .app-nav {
-    }
-
     .app-nav-hidden {
         display: none;
     }
@@ -1167,12 +1166,13 @@ h4 {
     }
 
     .App-title {
-        font-size: clamp(20px, 5vw, 40px);
-        left: clamp(125px, 25vmin, 230px);
+        font-size: clamp(2px, 5vw, 40px);
+        left: clamp(12px, 25vmin, 230px);
+        top: clamp(5px, 10vw, 100px);
     }
 
     .App-title-special-word {
-        font-size: clamp(20px, 6vw, 50px);
+        font-size: clamp(2px, 6vw, 50px);
     }
 
     #start-btn {
@@ -1184,15 +1184,16 @@ h4 {
     }
 
     .car-bg-txt {
-        font-size: clamp(100px, 20vw, 180px);
+        font-size: clamp(10px, 20vw, 180px);
         bottom: 3vmin;
-        left: clamp(40px, 5vmin, 100px);
-        margin-top: 100px;
+        left: clamp(4px, 5vmin, 100px);
+        margin-top: clamp(5px, 20vw, 200px);
     }
 
     .car-logo {
         width: 40vw;
-        right: 110px;
+        right: clamp(18vw, 20vmin, 100px);
+        top: clamp(5px, 10vw, 100px);
     }
 
     #search-form {
@@ -1200,15 +1201,15 @@ h4 {
     }
 
     #sortiment-h2 {
-        padding-top: 15vw;
+        padding-top: clamp(35px, 15vw, 100px);
     }
 
     .header-title {
-        font-size: 4vw;
+        font-size: clamp(8px, 4vw, 30px);
     }
 
     h4 {
-        font-size: clamp(8px, 2.5vmin, 18px);
+        font-size: clamp(3px, 2.5vmin, 18px);
         padding-top: 0rem;
         padding-bottom: 0rem;
     }
@@ -1234,23 +1235,38 @@ h4 {
         row-gap: 2vw;
     }
 
+    #services-card {
+        width: inherit;
+    }
+
+    #services-card p{
+        font-size: clamp(6px, 3vw, 60px);
+    }
+
+    .services-icon{
+        width: clamp(1px, 5vw, 40px);
+    }
+
     #special-card {
-        padding-block: clamp(20px, 2vw, 60px);
-        padding-inline: clamp(60px, 6vw, 80px);
+        padding-block: clamp(15px, 5vw, 60px);
+        padding-left: clamp(50px, 15vw, 80px);
+        padding-right: 2vw;
+    }
+
+    
+    #special-card p {
+        font-size: 2vw;
     }
 
     .special-header {
         margin: 0;
-        font-size: clamp(10px, 2.1vw, 30px);
+        font-size: clamp(6px, 2.1vw, 30px);
     }
 
     #special-btn {
-        cursor: pointer;
-        border-radius: 50px;
-        font-size: clamp(5px, 1.5vw, 20px);
-        height: clamp(10px,4.5vw,60px);
-        margin-top: 0;
-        padding-inline: clamp(10px, 2vw, 30px);
+        font-size: clamp(3px, 2vw, 20px);
+        height: clamp(8px,4.5vw,60px);
+        padding-inline: clamp(6px, 2vw, 30px);
     }
 
     #special-arrow {
@@ -1262,6 +1278,36 @@ h4 {
         display: flex;
         flex-direction: column;
         row-gap: 2vw;
+        width: 100%;
+    }
+
+    #feedback-card {
+        width: inherit;
+    }
+
+    h3 {
+        font-size: clamp(7px, 3vw, 60px);
+    }
+
+    h5 {
+        font-size: clamp(7px, 2vw, 60px);
+        margin-bottom: 1vw;
+    }
+
+    h6 {
+        font-size: 2vw;
+    }
+
+    .footer-div  a {
+        font-size: clamp(7px, 2vw, 60px);
+    }
+
+    .legal-nav a, .legal-nav  span {
+        font-size: clamp(7px, 2vw, 60px);
+    }
+
+    #feedback-blockquote {
+        font-size: clamp(6px, 3vw, 60px);
     }
 
     label {
@@ -1282,6 +1328,23 @@ h4 {
         margin-left: clamp(20px, 2vmin, 40px);;
     }
 
+    #newsletter-input {
+        width: 15vw;
+        min-width: 70px;
+    }
+
+    #newsletter-btn {
+        background-size: clamp(4px, 1.4vw, 20px);
+        min-width: 15px;
+        min-height: 15px;
+    }
+
+    .footer-div {
+        padding-top: 15vw;
+        column-gap: 0;
+        flex-wrap: wrap;
+    }
+    
     input, label, input::placeholder, textarea::placeholder {
         font-size: 3vw;
     }
@@ -1339,7 +1402,8 @@ h4 {
     }
 
     #newsletter-input::placeholder {
-        font-size: 2.1vw; /* Adjust the font size as needed */
+        text-align: left;
+        font-size: clamp(7px, 2.1vw, 16px); /* Adjust the font size as needed */
     }
     
     /* For compatibility with Internet Explorer */
