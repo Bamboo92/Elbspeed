@@ -1499,4 +1499,8 @@ h4 {
         width: 100%;
         max-width: none;
     }
+
+    #elite-plan-btn {
+        border-radius: 10px;
+    }
 }
