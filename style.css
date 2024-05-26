@@ -953,10 +953,6 @@ h4 {
     margin-bottom: .8vw;
 }
 
-.price-plan-p-amount {
-    margin-block: 2vw;
-}
-
 .price-plan-p-km {
     color: var(--gray3);
     font-size: .7vw;
@@ -1351,5 +1347,105 @@ h4 {
     /* For compatibility with Mozilla Firefox older versions */
     #newsletter-input::-moz-placeholder {
         font-size: 2.1vw;
+    }
+
+    #price-plan-main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .elite-plan {
+        display: flex;
+        flex-direction: column;
+        border: solid .2vw var(--200);
+        padding-inline: 9vw;
+        row-gap: .5vw;
+    }
+
+    .elite-plan-h1 {
+        font-size: clamp(7px, 3.3vw, 40px);
+        padding-bottom: 3vw;
+        padding-top: 2.4vw;
+    }
+
+    #elite-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #elite-section > * {
+        width: 100%;
+    }
+    
+    #elite-section > .card:first-child {
+        border-radius:  15px;
+    }
+
+    #elite-section > .card:nth-child(2) {
+        border-radius:  15px;
+    }
+    
+    #elite-section >  .card:nth-child(3) {
+        border-radius:  15px;
+    }
+
+    .basic-plan-article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 15vw;
+        color: var(--gray4);
+    }
+
+    .price-plan-h2 {
+        font-size: 3vw;
+    }
+    
+    .price-plan-h3 {
+        font-size: 6.4vw;
+        margin-block: 4vw;
+    }
+
+    .price-plan-h3-currency {
+        font-size: 3vw;
+        padding-top: .4vw;
+        padding-right: .7vw;
+    }
+
+    .price-plan-h3-job {
+        font-size: 3vw;
+        padding-bottom: .6vw;
+        padding-left: .2vw;
+    }
+
+    .price-plan-btn {
+        font-size: clamp(5px, 2.4vw, 23px);
+        height: clamp(10px, 5.5vw,60px);
+        display: flex;
+        align-items: center;
+        padding-inline: clamp(10px, 4vw, 30px);
+    }
+
+    .price-plan-free-km {
+        font-size: 3.4vw;
+        margin-top: 3.5vw;
+        margin-bottom: 1.8vw;
+    }
+
+    .price-plan-p-km {
+        font-size: 1.7vw;
+    }
+
+    .price-plan-p {
+        font-size: 2.9vw;
+        padding-inline: 2vw;
+    }
+
+    .price-plan-details-currency {
+        font-size: 1.8vw;
+    }
+
+    .price-plan-details-job {
+        font-size: 1.8vw;
     }
 }
