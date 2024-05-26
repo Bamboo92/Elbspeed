@@ -890,13 +890,14 @@ h4 {
     display: flex;
     flex-direction: row;
     column-gap: 1vw;
-    row-gap: 2vw;
+    row-gap: 3vw;
 }
 
 .basic-plan-article {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 15vw;
     color: var(--gray4);
     min-width: -moz-fit-content;
@@ -1146,11 +1147,19 @@ h4 {
 
 @media (max-width: 899px) {
     .app-nav {
-        column-gap: 3vw;
+    }
+
+    .app-nav-hidden {
+        display: none;
+    }
+
+    .app-nav-img {
+        width: 100%;
     }
 
     #app-logo {
-        padding-inline: clamp(2px, 5vw, 100px);
+        width: 40vw;
+        max-width: 250px;
     }
 
     .App-header {
@@ -1267,7 +1276,7 @@ h4 {
         width: 100%;
     }
 
-    #rent-btn {
+    #contact-btn, #rent-btn {
         font-size: 3vw;
         height: 7vw;
     }
@@ -1294,14 +1303,7 @@ h4 {
     #rent-main {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        row-gap: 2vw;
-    }
-
-    #rent-form {
-        min-width: 75vw;
-        row-gap: 2vw;
+        row-gap: 4vw;
     }
 
     #contact-label-street, #contact-label-tel,
@@ -1313,19 +1315,6 @@ h4 {
         width: 100%;
         display: flex;
         flex-direction: column;
-    }
-
-    #contact-ul {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #contact-article {
-        min-width: 75vw;
-        max-width: none;
-        font-size: 4vw;
     }
 
     .contact-input::-webkit-calendar-picker-indicator,
@@ -1390,50 +1379,52 @@ h4 {
     }
 
     .basic-plan-article {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 15vw;
+        min-width: 38vw;
         color: var(--gray4);
     }
 
+    .basic-plan-article > * {
+        justify-content: center;
+    }
+
     .price-plan-h2 {
-        font-size: 3vw;
+        font-size: 4vw;
+        width: 64vw;
     }
     
     .price-plan-h3 {
-        font-size: 6.4vw;
+        font-size: 8.4vw;
         margin-block: 4vw;
     }
 
     .price-plan-h3-currency {
-        font-size: 3vw;
-        padding-top: .4vw;
+        font-size: 4vw;
+        padding-top: .8vw;
         padding-right: .7vw;
     }
 
     .price-plan-h3-job {
-        font-size: 3vw;
-        padding-bottom: .6vw;
+        font-size: 4vw;
+        padding-bottom: 1.8vw;
         padding-left: .2vw;
     }
 
     .price-plan-btn {
-        font-size: clamp(5px, 2.4vw, 23px);
-        height: clamp(10px, 5.5vw,60px);
+        font-size: clamp(5px, 4vw, 23px);
+        height: clamp(10px, 7.5vw,60px);
         display: flex;
         align-items: center;
         padding-inline: clamp(10px, 4vw, 30px);
     }
 
     .price-plan-free-km {
-        font-size: 3.4vw;
+        font-size: 5vw;
         margin-top: 3.5vw;
-        margin-bottom: 1.8vw;
+        margin-bottom: 2vw;
     }
 
     .price-plan-p-km {
-        font-size: 1.7vw;
+        font-size: 3vw;
     }
 
     .price-plan-p {
@@ -1447,5 +1438,65 @@ h4 {
 
     .price-plan-details-job {
         font-size: 1.8vw;
+    }
+
+    .about-us-section {
+        column-gap: 0;
+    }
+
+    .about-us-figure {
+        margin-inline: 4vw;
+    }
+
+    .about-us-img {
+        width: 30vw;
+    }
+
+    .about-us-h3 {
+        font-size: 3vw;
+    }
+
+    .about-us-p {
+        font-size: 2.5vw;
+    }
+
+    .faq-h3 {
+        font-size: 3.2vw;
+    }
+
+    .faq-footer {
+        font-size: 3vw;
+    }
+
+    #contact-ul {
+        width: 100%;
+    }
+
+    #contact-article {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: none;
+        font-size: 4vw;
+    }
+
+    .socialmedia-img {
+        width: clamp(3px, 6vw, 40px);
+    }
+
+    #socialmedia-image-li{
+        padding-top: 2vw;
+        padding-bottom: 5vw;
+        padding-left: 1vw;
+    }
+
+    #rent-form {
+        min-width: 100%;
+        row-gap: 2vw;
+    }
+
+    #contact-form, #rent-form {
+        width: 100%;
+        max-width: none;
     }
 }
