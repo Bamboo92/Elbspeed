@@ -774,7 +774,7 @@ h4 {
     border-radius: 15px;
 }
 
-#contact-btn, #rent-btn {
+#contact-btn, #rent-btn, #rent-btn-whatsapp {
     cursor: pointer;
     border-radius: 50px;
     font-size: clamp(5px, 1.7vw, 23px);
@@ -1178,6 +1178,7 @@ h4 {
 }
 
 @media (max-width: 899px) {
+    
     .app-nav-hidden {
         display: none;
     }
@@ -1400,7 +1401,7 @@ h4 {
         font-size: clamp(2px, 3vw, 30px);
     }
 
-    #contact-btn, #rent-btn {
+    #contact-btn, #rent-btn, #rent-btn-whatsapp {
         font-size: 3vw;
         height: 7vw;
     }
@@ -1600,7 +1601,7 @@ h4 {
     #contact-article {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: inherit;
         max-width: none;
         font-size: 4vw;
     }
@@ -1616,13 +1617,13 @@ h4 {
     }
 
     #rent-form {
-        min-width: 100%;
         row-gap: 2vw;
     }
 
     #contact-form, #rent-form {
-        width: 100%;
+        width: inherit;
         max-width: none;
+        box-sizing: border-box; 
     }
 
     #elite-plan-btn {
