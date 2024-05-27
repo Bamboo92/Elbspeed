@@ -11,11 +11,11 @@
         <title>Buchung | Elbspeed Autovermietung</title>
     </head>
     <body class="guide">
-        <a href="index.html"><img src="images/logo.svg" class="logo" alt="elbspeed-logo" title="Elbspeed"/></a>
+        <a href="/"><img src="images/logo.svg" class="logo unselectable" alt="elbspeed-logo" title="Elbspeed"/></a>
 
         <h1>Buchen</h1>
         <div id="rent-div">
-            <aside class="slideshow-container">
+            <aside class="slideshow-container unselectable">
                 <style>
                     .mySlides {
                         display: none;
@@ -164,7 +164,7 @@
                 </script>
             </aside>
             <main id="rent-main">
-                <form class="card" id="rent-form" action="#" method="POST">
+                <form class="card unselectable" id="rent-form" action="#" method="POST">
                     <label id="contact-label-street" for="street"></label>
                     <label id="contact-label-tel" for="tel"></label>
                     <label id="contact-label-email" for="email"></label>
@@ -243,7 +243,7 @@
             <div id="whatsapp-instructions">
                 <img src="images/whatsApp_logo.webp" id="whatsapp-allert-img" class="socialmedia-img" alt="WhatsApp Logo" title="WhatsApp Logo" loading="lazy"/>
                 <p>WhatsApp hat geöffnet. Bitte prüfe die Nachricht und <b>drücke 'Senden'</b>, um deine Buchung abzuschließen.</p>
-                <button id="whatsapp-allert-button" class="btn gradient-btn">Fertig</button>
+                <button onclick="window.location.href='/'" id="whatsapp-allert-button" class="btn gradient-btn">Fertig</button>
             </div>
             
 
@@ -263,10 +263,6 @@
                 if (planType && planDetails) {
                     document.getElementById('plan').value = planType + planDetails;
                 }
-            });
-
-            document.getElementById('whatsapp-allert-button').addEventListener('click', function() {
-                window.location.href = 'index.html';
             });
         </script>
         <script src="https://smtpjs.com/v3/smtp.js"></script>

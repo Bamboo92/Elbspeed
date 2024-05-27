@@ -11,18 +11,18 @@
         <title>Kontakt | Elbspeed Autovermietung</title>
     </head>
     <body class="guide">
-        <a href="index.html"><img src="images/logo.svg" class="logo" alt="elbspeed-logo" title="Elbspeed"/></a>
+        <a href="/"><img src="images/logo.svg" class="logo unselectable" alt="elbspeed-logo" title="Elbspeed"/></a>
         <h1>Kontakt</h1>
         <section id="contact">
             <ul id="contact-ul">
                 <li>
                     <article class="card" id="contact-article">
                         <p class="detail"><span class="detail-title">Ansprechpartner:</span><span class="detail-value">Sabur Omari</span></p>
-                        <p class="detail"><span class="detail-title">Telefonnummer:</span><span class="detail-value"><a href="tel:+4917621124419">+49 176 21124419</a></span></p>
+                        <p class="detail"><span class="detail-title">Telefonnummer:</span><span class="detail-value"><a href="tel:+494074069548">+49 40 74069548</a></span></p>
                         <p class="detail"><span class="detail-title">Email:</span><span class="detail-value"><a href="mailto:info@elb-speed.de">info@elb-speed.de</a></span></p>
                     </article>
                 </li>
-                <li id="socialmedia-image-li">
+                <li id="socialmedia-image-li" class="unselectable">
                     <ul id="socialmedia">
                         <li>
                             <a href="https://www.tiktok.com/@elbspeed">
@@ -34,10 +34,15 @@
                                 <img src="images/instagram_logo.svg" class="socialmedia-img" alt="Instagram" title="Instagram Logo" loading="lazy"/>
                             </a>
                         </li>
+                        <li>
+                            <a href="https://wa.me/4074069548">
+                                <img src="images/whatsApp_logo.svg" class="socialmedia-img" alt="WhatsApp" title="WhatsApp Logo" loading="lazy"/>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
-            <form class="card" id="contact-form" action="#" method="POST">
+            <form class="card unselectable" id="contact-form" action="#" method="POST">
                 <label id="contact-label" for="name">Daten</label><br>
                 <input class="contact-input" type="text" id="name" name="name" placeholder="Name, Vorname" required><br> 
                 <input class="contact-input" type="email" id="email" name="email" placeholder="E-Mail-Adresse" required><br>
@@ -57,13 +62,13 @@
                 <ul>
                     <li><h5 id="newsletter-h5">Bleiben Sie informiert und inspiriert</h5></li>
                     <li>
-                        <form id="newsletter-form" action="#" method="POST">
+                        <form class="unselectable" id="newsletter-form" action="#" method="POST">
                             <input id="newsletter-input" type="email" name="newsletterEmail" placeholder="E-Mail-Adresse" required>
                             <button class="flat-btn btn" id="newsletter-btn" type="submit" title="Subscribe Button" value=""></button>
                         </form>
                     </li>
                     <li id="socialmedia-image-li">
-                        <ul id="socialmedia">
+                        <ul id="socialmedia" class="unselectable">
                             <li>
                                 <a href="https://www.tiktok.com/@elbspeed">
                                     <img src="images/tiktok_logo.svg" class="socialmedia-img" alt="TikTok" title="TikTok Logo" loading="lazy"/>
@@ -80,7 +85,7 @@
                 <nav class="footer-nav">
                     <ul>
                         <li><h5>Vermietung</h5></li>
-                        <li><a href="#rent-car-header">Auto Buchen</a></li>
+                        <li><a href="index.html#rent-car-header">Auto Buchen</a></li>
                         <li><a href="none.html">Feedback</a></li>
                     </ul>
                     <ul>

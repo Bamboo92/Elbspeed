@@ -1292,22 +1292,24 @@ h4 {
         padding-block: clamp(15px, 5vw, 60px);
         padding-left: clamp(50px, 15vw, 80px);
         padding-right: 2vw;
+        height: fit-content;
     }
 
-    
     #special-card p {
-        font-size: 2vw;
+        font-size: clamp(6px, 3vw, 60px);
     }
 
     .special-header {
-        margin: 0;
-        font-size: clamp(6px, 2.1vw, 30px);
+        font-size: clamp(7px, 3vw, 60px);
+    
     }
 
     #special-btn {
-        font-size: clamp(3px, 2vw, 20px);
-        height: clamp(8px,4.5vw,60px);
-        padding-inline: clamp(6px, 2vw, 30px);
+        margin-top: 2vw;
+        height: clamp(10px,5vw,60px);
+        font-size: clamp(3px, 3.3vw, 20px);
+        padding-inline: clamp(5px, 2vw, 30px);
+        width: 50%;
     }
 
     #special-arrow {
@@ -1343,7 +1345,7 @@ h4 {
         font-size: clamp(7px, 2vw, 60px);
     }
 
-    .legal-nav a, .legal-nav  span {
+    .legal-nav a, .legal-nav  span, .app-nav a {
         font-size: clamp(7px, 2vw, 60px);
     }
 
@@ -1625,5 +1627,15 @@ h4 {
 
     #elite-plan-btn {
         border-radius: 10px;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 899px) {
+    .App-title {
+        left: clamp(140px, 25vmin, 230px);
+    }
+
+    h4 {
+        font-size: clamp(15px, 3.5vmin, 18px);
     }
 }

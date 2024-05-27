@@ -191,17 +191,16 @@ function sendViaWhatsApp() {
     const finishDateValue = finishdate.value;
 
     // Formatierung der Nachricht für WhatsApp
-    let whatsappMessage = `Buchung`;
-    whatsappMessage += `Name: ${fullNameValue}`;
-    whatsappMessage += `Adresse: ${streetValue}`;
-    whatsappMessage += `Geburtsdatum: ${birthdateValue}`;
-    whatsappMessage += `Tel.: ${telValue}`;
-    whatsappMessage += `Email: ${senderEmailValue}`;
-    whatsappMessage += `Abholdatum: ${startDateValue}`;
-    whatsappMessage += `Abgabedatum: ${finishDateValue}`;
-    whatsappMessage += `Anmerkung: ${messageText}`;
-    whatsappMessage += `${carModel}`;
-    whatsappMessage += `${planType}`;
+    let whatsappMessage = `Name: ${fullNameValue}  `;
+    whatsappMessage += `Adresse: ${streetValue}  `;
+    whatsappMessage += `Geburtsdatum: ${birthdateValue}  `;
+    whatsappMessage += `Tel.: ${telValue}  `;
+    whatsappMessage += `Email: ${senderEmailValue}  `;
+    whatsappMessage += `Abholdatum: ${startDateValue}  `;
+    whatsappMessage += `Abgabedatum: ${finishDateValue}  `;
+    whatsappMessage += `Anmerkung: ${messageText}  `;
+    whatsappMessage += `${carModel}  `;
+    whatsappMessage += `${planType}  `;
 
     whatsappMessage = encodeURI(whatsappMessage);
 
