@@ -405,13 +405,13 @@ h4 {
     overflow-y: hidden;
 }
 
-#inventory::-webkit-scrollbar {
-    display: none;
-}
-
 #inventory {
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+#inventory::-webkit-scrollbar {
+    display: none;
 }
 
 #inventory > :first-child {
@@ -722,8 +722,8 @@ h4 {
 #contact-form, #rent-form {
     width: 40vw;
     max-width: 500px;
-    min-height: -moz-fit-content;
-    min-height: -webkit-fill-available;
+    height: -moz-fit-content;
+    height: -webkit-fill-available;
     height: fit-content;
     margin-top: .5vw;
     padding-bottom: 0;
@@ -816,9 +816,6 @@ h4 {
     flex-direction: row;
     column-gap: 2vw;
     align-items: center;
-}
-
-#birthdate {
 }
 
 .rent-agree {
