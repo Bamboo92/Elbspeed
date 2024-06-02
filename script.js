@@ -158,13 +158,19 @@ document.addEventListener('DOMContentLoaded', function() {
 function handleResize() {
     const noBrElements = document.querySelectorAll('br.no-br');
     const noFormElements = document.querySelectorAll('form.no-form');
+    const noDiscountElements = document.querySelectorAll('[id^="discount-article-p"]');
+    const yesDiscountElements = document.querySelectorAll('[id^="discount-article-p-details"]');
     
     if (window.innerWidth <= 899) {
         noBrElements.forEach(br => br.classList.add('hidden'));
         noFormElements.forEach(form => form.classList.add('hidden'));
+        noDiscountElements.forEach(element => element.classList.add('hidden'));
+        yesDiscountElements.forEach(element => element.classList.remove('hidden'));
     } else {
         noBrElements.forEach(br => br.classList.remove('hidden'));
         noFormElements.forEach(form => form.classList.remove('hidden'));
+        noDiscountElements.forEach(element => element.classList.remove('hidden'));
+        yesDiscountElements.forEach(element => element.classList.add('hidden'));
     }
 }
 

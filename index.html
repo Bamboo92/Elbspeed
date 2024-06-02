@@ -32,7 +32,7 @@
                 <b class="car-bg-txt">BMW</b>
                 <img src="images/bmw_m4_competition.svg" class="car-logo" alt="audi" title="Audi" loading="lazy"/>
             </header>
-        
+            <!--
             <form class="unselectable" id="search-form" action="/submit-form" method="post">
                 <label id="calendar-label" For="calendar">Abholdatum <b>⌵</b></label>
                 <label id="dropdown-location-label" For="dropdownLocation">Ort <b>⌵</b></label>
@@ -52,7 +52,7 @@
                 </select>
                 <button id="search-btn" type="button" value="" class="flat-btn btn" aria-label="search-btn"></button>
             </form>
-
+            -->
             <script>
                 // JavaScript, um beim Klick auf den Button zum Abschnitt "inventory" zu navigieren
                 document.getElementById('search-btn').addEventListener('click', function() {
@@ -61,9 +61,58 @@
                 });
             </script>
 
+            <aside id="discount-aside">
+                <article id="discount-article">
+                    <h3 id="discount-h3" class="unselectable"><img src="images/discount_ic.svg" class="unselectable" id="discount-ic" alt="discount" title="Discount Icon" loading="lazy"/><span>SONDERAKTION FÜR M4 COMPETITION</span></h3>
+                    <p id="discount-article-p"><span>200€ für 24h <b>Mo-Do</b> inkl. 120 Frei-KM</span><span>250€ für 24h <b>Fr-So</b> inkl. 120 Frei-KM</span></p>
+                    <details class="unselectable">
+                        <summary>Mehr dazu:</summary>
+                        <p id="discount-article-p-details">200€ für 24h <b>Mo-Do</b> inkl. 120 Frei-KM</p>
+                        <p id="discount-article-p-details">250€ für 24h <b>Fr-So</b> inkl. 120 Frei-KM</p>
+                        <p>Auf Socialmedia folgen | Weitere Informationen und das Einlösen erfolgt nach der Buchung</p>
+                    </details>
+                    <p id="discount-countdown-p">Aktion endet in <span id="countdown"></span></p>
+                </article>
+            </aside>
+
+            <script>
+                function updateCountdown() {
+                    const endDate = new Date("June 30, 2024 23:59:59").getTime();
+                    const now = new Date().getTime();
+                    const timeLeft = endDate - now;
+        
+                    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+                    let countdownText = "";
+                    
+                    if (days > 1) {
+                        countdownText = `${days} Tag(e)`;
+                    } else if (hours > 0) {
+                        countdownText = `${hours}:${minutes}`;
+                    } else if (minutes > 0) {
+                        countdownText = `${minutes}:${seconds}`;
+                    } else {
+                        countdownText = `${seconds}`;
+                    }
+        
+                    document.getElementById("countdown").innerHTML = countdownText;
+        
+                    if (timeLeft < 0) {
+                        clearInterval(countdownInterval);
+                        document.getElementById("discount-aside").style.display = "none";
+                    }
+                }
+        
+                const countdownInterval = setInterval(updateCountdown, 1000);
+            </script>
+
             <h2 id="sortiment-h2">
                 <div class="divider"></div>
                 <span id="rent-car-header" class="header-title">Sortiment</span>
+
                 <div class="divider"></div>
             </h2>
 

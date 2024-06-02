@@ -245,7 +245,7 @@ input:-moz-ui-valid {
 }  
 
 .hidden {
-    display: none;
+    display: none !important; 
 }
 
 footer{
@@ -395,6 +395,48 @@ h4 {
     font-size: clamp(8px, 1.5vmin, 18px);
     padding-top: 1rem;
     padding-bottom: 2rem;
+}
+
+#discount-aside {
+    margin-top: 3vw;
+    border-radius: 15px;
+    border: .1em solid var(--400);
+    background-color: var(--100);
+    padding-block: 1vw;
+    padding-inline: 2vw;
+    width: 100%;
+}
+
+#discount-ic {
+    width: clamp(7px, 3vw, 20px);
+}
+
+#discount-h3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1em;
+    font-size: clamp(7px, 1vw, 20px);
+}
+
+#discount-article-p {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 2vw;
+}
+
+#discount-article-p, #discount-article details {
+    padding-left: clamp(10px, calc(3vw), 40px);
+    font-size: clamp(7px, 1vw, 20px);
+}
+
+#discount-countdown-p {
+    color: var(--400);
+    font-size: clamp(10px, .7vw, 60px);
+    font-weight: bold;
+    text-align: right;
 }
 
 #inventory {
@@ -1175,7 +1217,19 @@ h4 {
 }
 
 @media (max-width: 899px) {
-    
+    h3 {
+        font-size: clamp(7px, 3vw, 60px);
+    }
+
+    h5 {
+        font-size: clamp(7px, 2vw, 60px);
+        margin-bottom: 1vw;
+    }
+
+    h6 {
+        font-size: 2vw;
+    }
+
     .app-nav-hidden {
         display: none;
     }
@@ -1191,6 +1245,7 @@ h4 {
 
     .App-header {
         height: clamp(50px, 25vw, 300px);
+        padding-bottom: clamp(35px, 15vw, 100px);
     }
 
     .App-title {
@@ -1228,10 +1283,6 @@ h4 {
         display: none;
     }
 
-    #sortiment-h2 {
-        padding-top: clamp(35px, 15vw, 100px);
-    }
-
     .header-title {
         font-size: clamp(8px, 4vw, 30px);
     }
@@ -1240,6 +1291,21 @@ h4 {
         font-size: clamp(3px, 2.5vmin, 18px);
         padding-top: 0rem;
         padding-bottom: 0rem;
+    }
+
+    #discount-aside {
+
+        padding-block: 1vw;
+        padding-inline: 4vw;
+    }
+
+    #discount-h3, #discount-article-p, #discount-article details {
+        font-size: clamp(4px, 2vw, 60px);
+    }
+
+    #discount-countdown-p {
+        font-size: clamp(3px, 1.5vw, 60px);
+        text-align: right;
     }
 
     #inventory-header {
@@ -1324,19 +1390,6 @@ h4 {
 
     #feedback-card {
         width: inherit;
-    }
-
-    h3 {
-        font-size: clamp(7px, 3vw, 60px);
-    }
-
-    h5 {
-        font-size: clamp(7px, 2vw, 60px);
-        margin-bottom: 1vw;
-    }
-
-    h6 {
-        font-size: 2vw;
     }
 
     .footer-div  a {
