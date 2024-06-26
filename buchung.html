@@ -15,158 +15,10 @@
 
         <h1>Buchen</h1>
         <div id="rent-div">
-            <!--
-            <aside class="slideshow-container unselectable">
-                <style>
-                    .mySlides {
-                        display: none;
-                        margin: 0;
-                        width: 100%;
-                    }
-                    img {vertical-align: middle;}
-                    .slideshow-container {
-                        height: auto;
-                        width: 100%;
-                        max-width: 1000px;
-                        position: relative;
-                    }
-                    .prevnext-div {
-                        height: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 95%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                    }
-                    .prev, .next {
-                        cursor: pointer;
-                        text-align: center;
-                        color: var(--400);
-                        background-color: var(--100);
-                        font-weight: bold;
-                        width: auto;
-                        font-size: clamp(3px, 4vw, 40px);
-                        transition: 0.6s ease;
-                        border-radius: 0 5px 5px 0;
-                        -webkit-user-select: none;
-                        user-select: none;
-                        text-align: center;
-                        padding-block: .3vw;
-                        padding-inline: .2vw;
-                    }
-                    .prev {
-                        border-radius: 5px 0 0 5px;
-                    }
-                    .prev:hover, .next:hover {
-                        color: var(--600);
-                    }
-                    .numbertext {
-                        color: var(--50);
-                        font-size: clamp(3px, 2vw, 20px);
-                        padding-top: clamp(5px, 2vw, 20px);
-                        padding-left: clamp(6px, 2vw, 20px);
-                        position: absolute;
-                    }
-                    .dots {
-                        text-align: center;
-                        padding-top: clamp(3px, 2vw, 20px);
-                    }
-                    .dot {
-                        cursor: pointer;
-                        align-self: center;
-                        height: clamp(3px, 1.5vw, 20px);
-                        width: clamp(3px, 1.5vw, 20px);
-                        margin-inline: .1vw;
-                        background-color: var(--200);
-                        border-radius: 50%;
-                        display: inline-block;
-                    }
-                    .active, .dot:hover {
-                        background-color: var(--400);
-                    }
-                    .fade {
-                        animation-name: fade;
-                        animation-duration: 1.5s;
-                    }
-                    @media (max-width: 899px) {
-                        .dots {
-                            padding-top: 0;
-                        }
-                    }
-                    @keyframes fade {
-                        from {opacity: .4} 
-                        to {opacity: 1}
-                    }
-                </style>
 
-                <div class="slideshow-container">
-                    <figure class="mySlides fade">
-                        <figcaption class="numbertext">1 / 4</figcaption>
-                        <img src="images/bmw_m4_competition_top_view.svg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Top View"/>
-                    </figure>
-                    
-                    <figure class="mySlides fade">
-                        <figcaption class="numbertext">2 / 4</figcaption>
-                        <img src="images/bmw_m4_competition_interior.svg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Top View"/>
-                    </figure>
-                    
-                    <figure class="mySlides fade">
-                        <figcaption class="numbertext">3 / 4</figcaption>
-                        <img src="images/bmw_m4_competition_detail_shot.svg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Top View"/>
-                    </figure>
 
-                    <figure class="mySlides fade">
-                        <figcaption class="numbertext">4 / 4</figcaption>
-                        <img src="images/bmw_m4_competition_seats.svg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Top View"/>
-                    </figure>
-                    <div class="prevnext-div">
-                        <a class="prev" onclick="plusSlides(-1)">❮</a>
-                        <a class="next" onclick="plusSlides(1)">❯</a>
-                    </div>
-                </div>
-
-                <nav class="dots">
-                    <span class="dot" onclick="currentSlide(1)"></span> 
-                    <span class="dot" onclick="currentSlide(2)"></span> 
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                    <span class="dot" onclick="currentSlide(4)"></span>
-                </nav>
-
-                <script>
-                    let slideIndex = 1;
-                    showSlides(slideIndex);
-                    function plusSlides(n) {
-                        showSlides(slideIndex += n);
-                    }
-                    function currentSlide(n) {
-                        showSlides(slideIndex = n);
-                    }
-                    function showSlides(n) {
-                        let i;
-                        let slides = document.getElementsByClassName("mySlides");
-                        let dots = document.getElementsByClassName("dot");
-                        if (n > slides.length) {slideIndex = 1}    
-                        if (n < 1) {slideIndex = slides.length}
-                        for (i = 0; i < slides.length; i++) {
-                        slides[i].style.display = "none";  
-                        }
-                        for (i = 0; i < dots.length; i++) {
-                        dots[i].className = dots[i].className.replace(" active", "");
-                        }
-                        slides[slideIndex-1].style.display = "block";  
-                        dots[slideIndex-1].className += " active";
-                    }
-                </script>
-            </aside>
-            -->
             <main id="rent-main">
-                <form class="card unselectable" id="rent-form" action="#" method="POST">
+                <form class="card unselectable" id="rent-form" action="sendmail.php" method="POST">
                     <label id="contact-label-street" for="street"></label>
                     <label id="contact-label-tel" for="tel"></label>
                     <label id="contact-label-email" for="email"></label>
@@ -238,6 +90,233 @@
                                 </details>
                                 <p class="detail"><span class="detail-title"></span><span class="detail-value">Alles inkl. mwst.</span></p>
                         </article>
+                    </li>
+                    <li>
+                        <aside class="slideshow-container unselectable">
+                            <style>
+                                .mySlides {
+                                    display: none;
+                                    margin: 0;
+                                    width: 100%;
+                                }
+                                img {vertical-align: middle;}
+                                .slideshow-container {
+                                    max-width: 1000px;
+                                    position: relative;
+                                }
+                                .prevnext-div {
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    position: absolute;
+                                    top: 90%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 95%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                }
+                                .prev, .next {
+                                    cursor: pointer;
+                                    text-align: center;
+                                    color: var(--400);
+                                    background-color: var(--100);
+                                    font-weight: bold;
+                                    width: auto;
+                                    font-size: clamp(3px, 2vw, 30px);
+                                    transition: 0.6s ease;
+                                    border-radius: 0 5px 5px 0;
+                                    -webkit-user-select: none;
+                                    user-select: none;
+                                    text-align: center;
+                                    padding-block: .1vw;
+                                    padding-inline: .1vw;
+                                }
+                                .prev {
+                                    border-radius: 5px 0 0 5px;
+                                }
+                                .prev:hover, .next:hover {
+                                    color: var(--600);
+                                }
+                                .numbertext {
+                                    color: var(--50);
+                                    font-size: clamp(3px, 2vw, 20px);
+                                    padding-top: clamp(5px, 2vw, 20px);
+                                    padding-left: clamp(6px, 2vw, 20px);
+                                    position: absolute;
+                                }
+                                .dots {
+                                    text-align: center;
+                                    padding-top: clamp(3px, 1vw, 10px);
+                                }
+                                .dot {
+                                    cursor: pointer;
+                                    align-self: center;
+                                    height: clamp(3px, 1vw, 10px);
+                                    width: clamp(3px, 1vw, 10px);
+                                    margin-inline: .1vw;
+                                    background-color: var(--200);
+                                    border-radius: 50%;
+                                    display: inline-block;
+                                }
+                                .active, .dot:hover {
+                                    background-color: var(--400);
+                                }
+                                .fade {
+                                    animation-name: fade;
+                                    animation-duration: 1.5s;
+                                }
+                                .rent_advertising {
+                                    height: inherit;
+                                    width: inherit;
+                                }
+                                @media (max-width: 899px) {
+                                    .dots {
+                                        padding-top: 0;
+                                    }
+                                }
+                                @keyframes slideInFromRight {
+                                    from {
+                                    transform: translateX(100%);
+                                    opacity: 1;
+                                    }
+                                    to {
+                                    transform: translateX(0);
+                                    opacity: 1;
+                                    }
+                                }
+
+                                .mySlides {
+                                    animation: slideOutFromLeft 1s forwards;
+                                }
+                            </style>
+            
+                            <div class="slideshow-container">
+                                <figure class="mySlides fade">
+                                    <figcaption class="numbertext">1 / 6</figcaption>
+                                    <img src="images/bmw_m4_competition_front.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Front View"/>
+                                </figure>
+                                
+                                <figure class="mySlides fade">
+                                    <figcaption class="numbertext">2 / 6</figcaption>
+                                    <img src="images/bmw_m4_competition_front_left_corner.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Front Left View"/>
+                                </figure>
+                                
+                                <figure class="mySlides fade">
+                                    <figcaption class="numbertext">3 / 6</figcaption>
+                                    <img src="images/bmw_m4_competition_left_side.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Left Side View"/>
+                                </figure>
+            
+                                <figure class="mySlides fade">
+                                    <figcaption class="numbertext">4 / 6</figcaption>
+                                    <img src="images/bmw_m4_competition_rear.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear View"/>
+                                </figure>
+            
+                                <figure class="mySlides fade">
+                                    <figcaption class="numbertext">4 / 6</figcaption>
+                                    <img src="images/bmw_m4_competition_rear_right_corner.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear Right Corner View"/>
+                                </figure>
+                                
+                                <figure class="mySlides fade">
+                                    <figcaption class="numbertext">5 / 6</figcaption>
+                                    <img src="images/bmw_m4_competition_m4_logo_rear.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear M4 Logo View"/>
+                                </figure>
+            
+                                <figure class="mySlides fade">
+                                    <figcaption class="numbertext">6 / 6</figcaption>
+                                    <img src="images/bmw_m4_competition_m4_logo_side.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Side M4 Logo View"/>
+                                </figure>
+                            </div>
+            
+                            <nav class="dots">
+                                <span class="dot" onclick="currentSlide(1)"></span> 
+                                <span class="dot" onclick="currentSlide(2)"></span> 
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                                <span class="dot" onclick="currentSlide(4)"></span>
+                                <span class="dot" onclick="currentSlide(5)"></span>
+                                <span class="dot" onclick="currentSlide(6)"></span>
+                            </nav>
+            
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    let slideIndex = 1;
+                                    showSlides(slideIndex);
+                                
+                                    let autoSlideInterval;
+                                    const slideShowContainer = document.querySelector('.slideshow-container');
+                                
+                                    if (!slideShowContainer) {
+                                        console.error('Slideshow container not found');
+                                        return;
+                                    }
+                                
+                                    function plusSlides(n) {
+                                        showSlides(slideIndex += n);
+                                    }
+                                
+                                    function currentSlide(n) {
+                                        showSlides(slideIndex = n);
+                                    }
+                                
+                                    function showSlides(n) {
+                                        let slides = document.getElementsByClassName("mySlides");
+                                        let dots = document.getElementsByClassName("dot");
+                                        if (n > slides.length) { slideIndex = 1 }
+                                        if (n < 1) { slideIndex = slides.length }
+                                        for (let i = 0; i < slides.length; i++) {
+                                            slides[i].style.display = "none";
+                                        }
+                                        for (let i = 0; i < dots.length; i++) {
+                                            dots[i].className = dots[i].className.replace(" active", "");
+                                        }
+                                        slides[slideIndex - 1].style.display = "block";
+                                        dots[slideIndex - 1].className += " active";
+                                    }
+                                
+                                    slideShowContainer.addEventListener('mouseenter', () => {
+                                        slideShowContainer.addEventListener('wheel', handleScroll, { passive: false });
+                                    });
+                                
+                                    slideShowContainer.addEventListener('mouseleave', () => {
+                                        slideShowContainer.removeEventListener('wheel', handleScroll, { passive: false });
+                                    });
+                                
+                                    function handleScroll(event) {
+                                        let delta = event.wheelDelta || -event.detail;
+                                        if (delta > 0) {
+                                            plusSlides(-1);
+                                        } else {
+                                            plusSlides(1);
+                                        }
+                                        event.preventDefault();
+                                    }
+                                
+                                    // Hinzugefügte Touch-Event-Handler
+                                    let touchStartX = 0;
+                                    let touchEndX = 0;
+                                
+                                    slideShowContainer.addEventListener('touchstart', function (event) {
+                                        touchStartX = event.touches[0].clientX;
+                                    }, false);
+                                
+                                    slideShowContainer.addEventListener('touchend', function (event) {
+                                        touchEndX = event.changedTouches[0].clientX;
+                                        handleGesture();
+                                    }, false);
+                                
+                                    function handleGesture() {
+                                        if (touchEndX < touchStartX) {
+                                            plusSlides(1);
+                                        }
+                                        if (touchEndX > touchStartX) {
+                                            plusSlides(-1);
+                                        }
+                                    }
+                                });                                                              
+                            </script>
+                        </aside>
                     </li>
                 </ul>
             </main>

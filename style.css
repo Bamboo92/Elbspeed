@@ -776,6 +776,7 @@ h4 {
 #contact-ul {
     padding: 0;
     margin: 0;
+    max-width: calc(350px + clamp(10px, 5vw, 80px));
 }
 
 #contact-label {
