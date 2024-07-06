@@ -18,7 +18,8 @@
 
 
             <main id="rent-main">
-                <form class="card unselectable" id="rent-form" action="sendmail.php" method="POST">
+                <form class="card unselectable" id="rent-form" action="#" method="POST">
+                    <input type="hidden" name="access_key" value="3a601ac1-b39b-4e5a-ae17-ff1e1410fad0">
                     <label id="contact-label-street" for="street"></label>
                     <label id="contact-label-tel" for="tel"></label>
                     <label id="contact-label-email" for="email"></label>
@@ -195,38 +196,38 @@
             
                             <div class="slideshow-container">
                                 <figure class="mySlides fade">
-                                    <figcaption class="numbertext">1 / 6</figcaption>
-                                    <img src="images/bmw_m4_competition_front.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Front View"/>
+                                    <figcaption class="numbertext">1 / 7</figcaption>
+                                    <img src="images/bmw_m4_competition_front.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Front View" loading="lazy"/>
                                 </figure>
                                 
                                 <figure class="mySlides fade">
-                                    <figcaption class="numbertext">2 / 6</figcaption>
-                                    <img src="images/bmw_m4_competition_front_left_corner.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Front Left View"/>
+                                    <figcaption class="numbertext">2 / 7</figcaption>
+                                    <img src="images/bmw_m4_competition_front_left_corner.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Front Left View" loading="lazy"/>
                                 </figure>
                                 
                                 <figure class="mySlides fade">
-                                    <figcaption class="numbertext">3 / 6</figcaption>
-                                    <img src="images/bmw_m4_competition_left_side.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Left Side View"/>
+                                    <figcaption class="numbertext">3 / 7</figcaption>
+                                    <img src="images/bmw_m4_competition_left_side.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Left Side View" loading="lazy"/>
                                 </figure>
             
                                 <figure class="mySlides fade">
-                                    <figcaption class="numbertext">4 / 6</figcaption>
-                                    <img src="images/bmw_m4_competition_rear.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear View"/>
+                                    <figcaption class="numbertext">4 / 7</figcaption>
+                                    <img src="images/bmw_m4_competition_rear.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear View" loading="lazy"/>
                                 </figure>
             
                                 <figure class="mySlides fade">
-                                    <figcaption class="numbertext">4 / 6</figcaption>
-                                    <img src="images/bmw_m4_competition_rear_right_corner.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear Right Corner View"/>
+                                    <figcaption class="numbertext">5 / 7</figcaption>
+                                    <img src="images/bmw_m4_competition_rear_right_corner.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear Right Corner View" loading="lazy"/>
                                 </figure>
                                 
                                 <figure class="mySlides fade">
-                                    <figcaption class="numbertext">5 / 6</figcaption>
-                                    <img src="images/bmw_m4_competition_m4_logo_rear.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear M4 Logo View"/>
+                                    <figcaption class="numbertext">6 / 7</figcaption>
+                                    <img src="images/bmw_m4_competition_m4_logo_rear.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear M4 Logo View" loading="lazy"/>
                                 </figure>
             
                                 <figure class="mySlides fade">
-                                    <figcaption class="numbertext">6 / 6</figcaption>
-                                    <img src="images/bmw_m4_competition_m4_logo_side.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Side M4 Logo View"/>
+                                    <figcaption class="numbertext">7 / 7</figcaption>
+                                    <img src="images/bmw_m4_competition_m4_logo_side.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Side M4 Logo View" loading="lazy"/>
                                 </figure>
                             </div>
             
@@ -237,52 +238,52 @@
                                 <span class="dot" onclick="currentSlide(4)"></span>
                                 <span class="dot" onclick="currentSlide(5)"></span>
                                 <span class="dot" onclick="currentSlide(6)"></span>
+                                <span class="dot" onclick="currentSlide(7)"></span>
                             </nav>
             
                             <script>
+                                let slideIndex = 1;
+                                let slides = document.getElementsByClassName("mySlides");
+                                let dots = document.getElementsByClassName("dot");
+                            
+                                function plusSlides(n) {
+                                    showSlides(slideIndex += n);
+                                }
+                            
+                                function currentSlide(n) {
+                                    showSlides(slideIndex = n);
+                                }
+                            
+                                function showSlides(n) {
+                                    if (n > slides.length) { slideIndex = 1 }
+                                    if (n < 1) { slideIndex = slides.length }
+                                    for (let i = 0; i < slides.length; i++) {
+                                        slides[i].style.display = "none";
+                                    }
+                                    for (let i = 0; i < dots.length; i++) {
+                                        dots[i].className = dots[i].className.replace(" active", "");
+                                    }
+                                    slides[slideIndex - 1].style.display = "block";
+                                    dots[slideIndex - 1].className += " active";
+                                }
+                            
                                 document.addEventListener('DOMContentLoaded', function () {
-                                    let slideIndex = 1;
                                     showSlides(slideIndex);
-                                
-                                    let autoSlideInterval;
+                            
                                     const slideShowContainer = document.querySelector('.slideshow-container');
-                                
                                     if (!slideShowContainer) {
                                         console.error('Slideshow container not found');
                                         return;
                                     }
-                                
-                                    function plusSlides(n) {
-                                        showSlides(slideIndex += n);
-                                    }
-                                
-                                    function currentSlide(n) {
-                                        showSlides(slideIndex = n);
-                                    }
-                                
-                                    function showSlides(n) {
-                                        let slides = document.getElementsByClassName("mySlides");
-                                        let dots = document.getElementsByClassName("dot");
-                                        if (n > slides.length) { slideIndex = 1 }
-                                        if (n < 1) { slideIndex = slides.length }
-                                        for (let i = 0; i < slides.length; i++) {
-                                            slides[i].style.display = "none";
-                                        }
-                                        for (let i = 0; i < dots.length; i++) {
-                                            dots[i].className = dots[i].className.replace(" active", "");
-                                        }
-                                        slides[slideIndex - 1].style.display = "block";
-                                        dots[slideIndex - 1].className += " active";
-                                    }
-                                
+                            
                                     slideShowContainer.addEventListener('mouseenter', () => {
                                         slideShowContainer.addEventListener('wheel', handleScroll, { passive: false });
                                     });
-                                
+                            
                                     slideShowContainer.addEventListener('mouseleave', () => {
                                         slideShowContainer.removeEventListener('wheel', handleScroll, { passive: false });
                                     });
-                                
+                            
                                     function handleScroll(event) {
                                         let delta = event.wheelDelta || -event.detail;
                                         if (delta > 0) {
@@ -292,20 +293,19 @@
                                         }
                                         event.preventDefault();
                                     }
-                                
-                                    // Hinzugefügte Touch-Event-Handler
+                            
                                     let touchStartX = 0;
                                     let touchEndX = 0;
-                                
+                            
                                     slideShowContainer.addEventListener('touchstart', function (event) {
                                         touchStartX = event.touches[0].clientX;
                                     }, false);
-                                
+                            
                                     slideShowContainer.addEventListener('touchend', function (event) {
                                         touchEndX = event.changedTouches[0].clientX;
                                         handleGesture();
                                     }, false);
-                                
+                            
                                     function handleGesture() {
                                         if (touchEndX < touchStartX) {
                                             plusSlides(1);
@@ -314,8 +314,9 @@
                                             plusSlides(-1);
                                         }
                                     }
-                                });                                                              
+                                });
                             </script>
+                            
                         </aside>
                     </li>
                 </ul>

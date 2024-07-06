@@ -12,9 +12,10 @@ const startdate = document.getElementById("abholdatum");
 const finishdate = document.getElementById("abgabedatum");
 const newsletterSubscriber = document.getElementById("newsletter-input");
 
+const recieverEmail = "info@elb-speed.de";
 const recipientEmail = "info@elb-speed.de";
 const recipientWhatsappNumber = "4074069548";
-const emailToken = "59c9b20c-ba01-4039-a5af-56612d9c4c28";
+const emailToken = "5bf45a2d-21ee-4cfe-84bc-76f7133e9f7c";
 
 // Funktion zum Einfügen von Zeilenumbrüchen
 function formatMessage(msg) {
@@ -34,9 +35,9 @@ function rentMessageBody(car, plan, name, email, message, street, birthdate, tel
 }
 
 // Funktion zur Erstellung der Nachricht
-function contactMessageBody(name, email, message) {
-    const introduction = `<b>Diese Nachricht wurde auf der Contact Us Seite geschrieben:</b><br><br>`;
-    return introduction + `Name: ${name}<br>Email: ${email}<br><br>Nachricht:<br>${formatMessage(message)}`;
+function contactMessageBody(subject, name, email, message) {
+    const introduction = `Diese Nachricht wurde auf der Contact Us Seite geschrieben:<br><br>`;
+    return introduction + `Betreff: <b>${subject}</b><br><br>Name: ${name}<br>Email: ${email}<br><br>Nachricht:<br>${formatMessage(message)}`;
 }
 
 function newsletterMessageBody(email) {
@@ -47,7 +48,7 @@ function newsletterMessageBody(email) {
 function sendMail(subject, bodyMessage) {
     Email.send({
         SecureToken: emailToken,
-        To : recipientEmail,
+        To : recieverEmail,
         From : recipientEmail,
         Subject : subject,
         Body : bodyMessage,
@@ -57,6 +58,7 @@ function sendMail(subject, bodyMessage) {
                 path : "https://imgur.com/a/DifEYBP"
             }
         ]*/
+
     }).then(
         message => {
             if (message == "OK") {
@@ -90,7 +92,7 @@ function sendMail(subject, bodyMessage) {
 function addNewsletterSubscriber(bodyMessage) {
     Email.send({
         SecureToken: emailToken,
-        To : recipientEmail,
+        To : recieverEmail,
         From : recipientEmail,
         Subject : "Newsletter Abonent",
         Body : bodyMessage,
@@ -127,8 +129,8 @@ document.querySelectorAll('form').forEach(form => {
         const actionType = e.submitter.getAttribute('data-action'); // Bestimmt die Art der Aktion basierend auf dem geklickten Button
 
         if (form.id === "contact-form") {
-            const messageBody = contactMessageBody(fullName.value, senderEmail.value, message.value);
-            sendMail(subject.value, messageBody);
+            const messageBody = contactMessageBody(subject.value, fullName.value, senderEmail.value, message.value);
+            sendMail('Kontakt Anfrage', messageBody);
         } else if (form.id === "rent-form") {
             const messageBody = rentMessageBody(car.value, plan.value, fullName.value, senderEmail.value, message.value, street.value, birthdate.value, tel.value, startdate.value, finishdate.value);
 
@@ -142,17 +144,6 @@ document.querySelectorAll('form').forEach(form => {
             addNewsletterSubscriber(messageBody);
         }
     });
-});
-
-// Warten bis das Dokument vollständig geladen ist
-document.addEventListener('DOMContentLoaded', function() {
-    const inventory = document.getElementById('inventory'); // Das Element mit der ID 'inventory'
-    inventory.addEventListener('wheel', function(e) {
-      // Verhindert das normale Scroll-Verhalten (vertikal)
-    e.preventDefault();
-      // Scrollt horizontal basierend auf der vertikalen Scroll-Richtung der Maus
-      inventory.scrollLeft += e.deltaY * 2; // Die 2 ist ein Faktor für die Scroll-Geschwindigkeit, anpassbar
-    }, {passive: false}); // 'passive: false' verhindert, dass die Seite scrollt, während wir unser eigenes Scroll-Verhalten definieren
 });
 
 function handleResize() {
@@ -173,7 +164,6 @@ function handleResize() {
         yesDiscountElements.forEach(element => element.classList.add('hidden'));
     }
 }
-
 
 // Initial check
 handleResize();
