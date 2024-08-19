@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
 
         <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
@@ -142,6 +143,19 @@
         </aside>
 
         <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const accessFromIndex = localStorage.getItem('accessFromIndex');
+
+                if (!accessFromIndex) {
+                    // If the user didn't come from index.html, redirect them
+                    window.location.href = '/';
+                } else {
+                    // Clear the flag and set a new one for navigation to buchung.html
+                    localStorage.removeItem('accessFromIndex');
+                    localStorage.setItem('accessFromPreisplan', 'true');
+                }
+            });
+
             function selectPlan(planType, planDetails) {
                 localStorage.setItem('planType', planType);
                 localStorage.setItem('planDetails', planDetails);

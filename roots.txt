@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /preisplan.html
+Disallow: /buchung.html
+Disallow: /none.html

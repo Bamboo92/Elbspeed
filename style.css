@@ -28,6 +28,7 @@
     --hover-white-gradient: linear-gradient(to left top, #e63d3d, #d93736, #cc3030, #bf2a29, #b22323);
     --active-white-gradient: linear-gradient(to left top, #d42e2e, #c42a2b, #b42727, #a42324, #942020);
     --disabled-white-gradient: linear-gradient(to left top, #fde3e3, #fdd5d4, #fcc6c6, #fab8b7, #f8a9a9);
+    --whatsapp-gradient: linear-gradient(to right top, #1ebea5, #00c9a0, #00d396, #00dd88, #00e676);
 }
 
 html {
@@ -471,6 +472,8 @@ h4 {
     z-index: 1;
     margin-right: -9.5vw;
     margin-top: 5vw;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
 }
 
 #inventory-header {
@@ -751,7 +754,7 @@ h4 {
     justify-content: flex-start;
 }
 
-#contact-article {
+.contact-article {
     display: flex;
     flex-direction: column;
     width: 30vw;
@@ -831,6 +834,10 @@ h4 {
     justify-content: space-between;
     align-items: center;
     padding-inline: clamp(10px, 2vw, 30px);
+}
+
+#rent-btn-whatsapp {
+    background-image: var(--whatsapp-gradient);
 }
 
 #contact-btn .detail-value , #rent-btn .detail-value {
@@ -1649,7 +1656,7 @@ h4 {
         width: 100%;
     }
 
-    #contact-article {
+    .contact-article {
         display: flex;
         flex-direction: column;
         width: inherit;

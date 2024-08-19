@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
 
         <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
         <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
@@ -67,20 +68,12 @@
                 </form>
                 <ul id="contact-ul">
                     <li class="rent-li">
-                        <article class="card" id="contact-article">
-                                <p class="detail"><span class="detail-title">Hersteller:</span><span class="detail-value">BMW</span></p>
-                                <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">M4</span></p>
-                                <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2021</span></p>
-                                <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">510PS</span></p>
-                                <p class="detail"><span class="detail-title">Motor:</span><span class="detail-value">R6</span></p>
-                                <p class="detail"><span class="detail-title">Kraftstoff:</span><span class="detail-value">Benzin</span></p>
+                        <article class="card contact-article" id="details-article">
                         </article>
                     </li>
                     <li class="rent-li">
-                        <article class="card" id="contact-article">
-                                <p class="detail"><span class="detail-title">Kaution:</span><span class="detail-value">1 000€</span></p>
-                                <p class="detail"><span class="detail-title">SB:</span><span class="detail-value">2 500€</span></p>
-                                <details>
+                        <article class="card contact-article" id="price-article">
+                                <details id="price-article-dropdown">
                                     <summary>Extra km:</summary>
                                     <p>
                                         <ul>
@@ -194,129 +187,13 @@
                                 }
                             </style>
             
-                            <div class="slideshow-container">
-                                <figure class="mySlides fade">
-                                    <figcaption class="numbertext">1 / 7</figcaption>
-                                    <img src="images/bmw_m4_competition_front.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Front View" loading="lazy"/>
-                                </figure>
-                                
-                                <figure class="mySlides fade">
-                                    <figcaption class="numbertext">2 / 7</figcaption>
-                                    <img src="images/bmw_m4_competition_front_left_corner.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Front Left View" loading="lazy"/>
-                                </figure>
-                                
-                                <figure class="mySlides fade">
-                                    <figcaption class="numbertext">3 / 7</figcaption>
-                                    <img src="images/bmw_m4_competition_left_side.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Left Side View" loading="lazy"/>
-                                </figure>
-            
-                                <figure class="mySlides fade">
-                                    <figcaption class="numbertext">4 / 7</figcaption>
-                                    <img src="images/bmw_m4_competition_rear.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear View" loading="lazy"/>
-                                </figure>
-            
-                                <figure class="mySlides fade">
-                                    <figcaption class="numbertext">5 / 7</figcaption>
-                                    <img src="images/bmw_m4_competition_rear_right_corner.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear Right Corner View" loading="lazy"/>
-                                </figure>
-                                
-                                <figure class="mySlides fade">
-                                    <figcaption class="numbertext">6 / 7</figcaption>
-                                    <img src="images/bmw_m4_competition_m4_logo_rear.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Rear M4 Logo View" loading="lazy"/>
-                                </figure>
-            
-                                <figure class="mySlides fade">
-                                    <figcaption class="numbertext">7 / 7</figcaption>
-                                    <img src="images/bmw_m4_competition_m4_logo_side.jpg" class="rent_advertising" alt="m4 competition" title="BMW Elbspeed Competition Side M4 Logo View" loading="lazy"/>
-                                </figure>
+                            <div class="slideshow-container figure-div">
+
                             </div>
             
                             <nav class="dots">
-                                <span class="dot" onclick="currentSlide(1)"></span> 
-                                <span class="dot" onclick="currentSlide(2)"></span> 
-                                <span class="dot" onclick="currentSlide(3)"></span>
-                                <span class="dot" onclick="currentSlide(4)"></span>
-                                <span class="dot" onclick="currentSlide(5)"></span>
-                                <span class="dot" onclick="currentSlide(6)"></span>
-                                <span class="dot" onclick="currentSlide(7)"></span>
+                                
                             </nav>
-            
-                            <script>
-                                let slideIndex = 1;
-                                let slides = document.getElementsByClassName("mySlides");
-                                let dots = document.getElementsByClassName("dot");
-                            
-                                function plusSlides(n) {
-                                    showSlides(slideIndex += n);
-                                }
-                            
-                                function currentSlide(n) {
-                                    showSlides(slideIndex = n);
-                                }
-                            
-                                function showSlides(n) {
-                                    if (n > slides.length) { slideIndex = 1 }
-                                    if (n < 1) { slideIndex = slides.length }
-                                    for (let i = 0; i < slides.length; i++) {
-                                        slides[i].style.display = "none";
-                                    }
-                                    for (let i = 0; i < dots.length; i++) {
-                                        dots[i].className = dots[i].className.replace(" active", "");
-                                    }
-                                    slides[slideIndex - 1].style.display = "block";
-                                    dots[slideIndex - 1].className += " active";
-                                }
-                            
-                                document.addEventListener('DOMContentLoaded', function () {
-                                    showSlides(slideIndex);
-                            
-                                    const slideShowContainer = document.querySelector('.slideshow-container');
-                                    if (!slideShowContainer) {
-                                        console.error('Slideshow container not found');
-                                        return;
-                                    }
-                            
-                                    slideShowContainer.addEventListener('mouseenter', () => {
-                                        slideShowContainer.addEventListener('wheel', handleScroll, { passive: false });
-                                    });
-                            
-                                    slideShowContainer.addEventListener('mouseleave', () => {
-                                        slideShowContainer.removeEventListener('wheel', handleScroll, { passive: false });
-                                    });
-                            
-                                    function handleScroll(event) {
-                                        let delta = event.wheelDelta || -event.detail;
-                                        if (delta > 0) {
-                                            plusSlides(-1);
-                                        } else {
-                                            plusSlides(1);
-                                        }
-                                        event.preventDefault();
-                                    }
-                            
-                                    let touchStartX = 0;
-                                    let touchEndX = 0;
-                            
-                                    slideShowContainer.addEventListener('touchstart', function (event) {
-                                        touchStartX = event.touches[0].clientX;
-                                    }, false);
-                            
-                                    slideShowContainer.addEventListener('touchend', function (event) {
-                                        touchEndX = event.changedTouches[0].clientX;
-                                        handleGesture();
-                                    }, false);
-                            
-                                    function handleGesture() {
-                                        if (touchEndX < touchStartX) {
-                                            plusSlides(1);
-                                        }
-                                        if (touchEndX > touchStartX) {
-                                            plusSlides(-1);
-                                        }
-                                    }
-                                });
-                            </script>
-                            
                         </aside>
                     </li>
                 </ul>
@@ -324,7 +201,7 @@
             
             <div id="whatsapp-instructions">
                 <img src="images/whatsApp_logo.webp" id="whatsapp-allert-img" class="socialmedia-img" alt="WhatsApp Logo" title="WhatsApp Logo" loading="lazy"/>
-                <p>WhatsApp hat geöffnet. Bitte prüfe die Nachricht und <b>drücke 'Senden'</b>, um deine Buchung abzuschließen.</p>
+                <p>WhatsApp ist geöffnet. Bitte überprüfe die Nachricht und <b>drücke auf 'Senden'</b>, um deine Buchung abzuschließen.</p>
                 <button onclick="window.location.href='/'" id="whatsapp-allert-button" class="btn gradient-btn">Fertig</button>
             </div>
             
@@ -339,11 +216,249 @@
             </footer>
         </div>
         <script>
-            document.addEventListener('DOMContentLoaded', (event) => {
+            document.addEventListener('DOMContentLoaded', function() {
+                // Überprüfung, ob der Benutzer von der Preisplan-Seite kommt
+                const accessFromPreisplan = localStorage.getItem('accessFromPreisplan');
+                if (!accessFromPreisplan) {
+                    // Wenn der Benutzer nicht von der Preisplan-Seite kommt, wird er zur Index-Seite weitergeleitet
+                    window.location.href = '/';
+                } else {
+                    // Optional: Flag entfernen, nachdem die Buchungsseite erreicht wurde
+                    localStorage.removeItem('accessFromPreisplan');
+                }
+
+                // Fahrzeug- und Plan-Daten aus dem localStorage laden
+                const car = localStorage.getItem('car');
                 const planType = localStorage.getItem('planType');
                 const planDetails = localStorage.getItem('planDetails');
-                if (planType && planDetails) {
+
+                // Formularfelder mit den gespeicherten Werten füllen
+                if (car && planType && planDetails) {
+                    document.getElementById('car').value = car;
                     document.getElementById('plan').value = planType + planDetails;
+                }
+
+                // Beispielhafte Fahrzeugdaten
+                const carData = {
+                    'BMW M4 Competition': {
+                        'Hersteller': 'BMW',
+                        'Modell': 'M4',
+                        'Erstzulassung': '2021',
+                        'Leistung': '510PS',
+                        'Motor': 'R6',
+                        'Kraftstoff': 'Benzin',
+                    },
+                    'Mercedes AMG E53': {
+                        'Hersteller': 'Mercedes',
+                        'Modell': 'AMG E53',
+                        'Erstzulassung': '2023',
+                        'Leistung': '585PS',
+                        'Motor': 'V8',
+                        'Kraftstoff': 'Benzin',
+                    },
+                };
+
+                // Fahrzeugdetails aktualisieren
+                if (carData[car]) {
+                    const details = carData[car];
+                    const contactArticle = document.getElementById('details-article');
+
+                    // Clear previous content if any
+                    contactArticle.innerHTML = '';
+
+                    // Dynamisch <p> Elemente mit den Fahrzeugdetails erstellen
+                    for (const [key, value] of Object.entries(details)) {
+                        const pElement = document.createElement('p');
+                        pElement.classList.add('detail');
+
+                        const spanTitle = document.createElement('span');
+                        spanTitle.classList.add('detail-title');
+                        spanTitle.innerText = `${key}:`;
+
+                        const spanValue = document.createElement('span');
+                        spanValue.classList.add('detail-value');
+                        spanValue.innerText = value;
+
+                        pElement.appendChild(spanTitle);
+                        pElement.appendChild(spanValue);
+                        contactArticle.appendChild(pElement);
+                    }
+                }
+
+                // Beispielhafte Fahrzeugdaten
+                const priceData = {
+                    'BMW M4 Competition': {
+                        'Kaution': '1 000€',
+                        'SB': '2 500€'
+                    },
+                    'Mercedes AMG E53': {
+                        'Kaution': '1 000€',
+                        'SB': '2 500€'
+                    },
+                };
+
+                // Fahrzeugdetails aktualisieren
+                if (priceData[car]) {
+                    const details = priceData[car];
+                    const contactArticle = document.getElementById('price-article');
+
+                    // Wähle das <details> Element mit der spezifischen ID
+                    const detailsElement = document.getElementById('price-article-dropdown');
+
+                    // Überprüfen, ob das <details>-Element existiert
+                    if (detailsElement) {
+                        // Dynamisch <p> Elemente mit den Fahrzeugdetails erstellen
+                        for (const [key, value] of Object.entries(details)) {
+                            const pElement = document.createElement('p');
+                            pElement.classList.add('detail');
+
+                            const spanTitle = document.createElement('span');
+                            spanTitle.classList.add('detail-title');
+                            spanTitle.innerText = `${key}:`;
+
+                            const spanValue = document.createElement('span');
+                            spanValue.classList.add('detail-value');
+                            spanValue.innerText = value;
+
+                            pElement.appendChild(spanTitle);
+                            pElement.appendChild(spanValue);
+
+                            // Füge das <p> Element vor dem <details> Element ein
+                            contactArticle.insertBefore(pElement, detailsElement);
+                        }
+                    } else {
+                        console.error('Das <details>-Element mit der ID "price-article-dropdown" wurde nicht gefunden.');
+                    }
+                }
+
+                // Beispielhafte Fahrzeugbilder
+                const carImages = {
+                    'BMW M4 Competition': [
+                        'images/bmw_m4_competition_front.jpg',
+                        'images/bmw_m4_competition_front_left_corner.jpg',
+                        'images/bmw_m4_competition_left_side.jpg',
+                        'images/bmw_m4_competition_m4_logo_rear.jpg',
+                        'images/bmw_m4_competition_m4_logo_side.jpg',
+                        'images/bmw_m4_competition_rear.jpg',
+                        'images/bmw_m4_competition_rear_right_corner.jpg',
+                    ],
+                    'Mercedes AMG E53': [
+                        'images/mercedes_amg_e53_front.jpg',
+                        'images/mercedes_amg_e53_front_left_corner.jpg',
+                        'images/mercedes_amg_e53_left_side_front.jpg',
+                        'images/mercedes_amg_e53_left_side_middle.jpg',
+                        'images/mercedes_amg_e53_left_side_rear.jpg',
+                        'images/mercedes_amg_e53_dirver_stearing_wheel.jpg',
+                        'images/mercedes_amg_e53_rear_left_corner.jpg',
+                        'images/mercedes_amg_e53_amg_logo_rear.jpg',
+                        'images/mercedes_amg_e53_rear.jpg',
+                        'images/mercedes_amg_e53_rear_right_corner.jpg',
+                        'images/mercedes_amg_e53_turbo_logo_side.jpg',
+                        'images/mercedes_amg_e53_passenger_seat.jpg',
+                        'images/mercedes_amg_e53_driver_steering_wheel_inside.jpg',
+                    ],
+                };
+
+                // Slideshow dynamisch laden
+                if (carImages[car]) {
+                    const slideshowContainer = document.querySelector('.figure-div');
+                    const dotsContainer = document.querySelector('.dots');
+                    slideshowContainer.innerHTML = '';
+                    dotsContainer.innerHTML = '';
+
+                    carImages[car].forEach((imageSrc, index) => {
+                        const slideFigure = document.createElement('figure');
+                        slideFigure.classList.add('mySlides', 'fade');
+                        slideFigure.innerHTML = `
+                            <figcaption class="numbertext">${index + 1} / ${carImages[car].length}</figcaption>
+                            <img src="${imageSrc}" class="rent_advertising" alt="${car}" title="${car}" loading="lazy"/>
+                        `;
+                        slideshowContainer.appendChild(slideFigure);
+
+                        // Dots erstellen
+                        const dot = document.createElement('span');
+                        dot.classList.add('dot');
+                        dot.setAttribute('onclick', `currentSlide(${index + 1})`);
+                        dotsContainer.appendChild(dot);
+                    });
+
+                    // Slideshow initialisieren
+                    showSlides(1);
+                }
+            });
+
+            // Slideshow-Funktionen
+            let slideIndex = 1;
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+            }
+
+            // Handling von Scroll- und Touch-Ereignissen für die Slideshow
+            document.addEventListener('DOMContentLoaded', function() {
+                const slideShowContainer = document.querySelector('.slideshow-container');
+                if (!slideShowContainer) {
+                    console.error('Slideshow container not found');
+                    return;
+                }
+
+                slideShowContainer.addEventListener('mouseenter', () => {
+                    slideShowContainer.addEventListener('wheel', handleScroll, { passive: false });
+                });
+
+                slideShowContainer.addEventListener('mouseleave', () => {
+                    slideShowContainer.removeEventListener('wheel', handleScroll, { passive: false });
+                });
+
+                function handleScroll(event) {
+                    let delta = event.wheelDelta || -event.detail;
+                    if (delta > 0) {
+                        plusSlides(-1);
+                    } else {
+                        plusSlides(1);
+                    }
+                    event.preventDefault();
+                }
+
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                slideShowContainer.addEventListener('touchstart', function(event) {
+                    touchStartX = event.touches[0].clientX;
+                }, false);
+
+                slideShowContainer.addEventListener('touchend', function(event) {
+                    touchEndX = event.changedTouches[0].clientX;
+                    handleGesture();
+                }, false);
+
+                function handleGesture() {
+                    if (touchEndX < touchStartX) {
+                        plusSlides(1);
+                    }
+                    if (touchEndX > touchStartX) {
+                        plusSlides(-1);
+                    }
                 }
             });
         </script>

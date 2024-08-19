@@ -120,7 +120,7 @@
             <h4>Unsere Auswahl erweiter sich kontinuierlich mit deiner Hilfe!</h4>
 
             <section id="inventory">
-                <img src="images/bmw_m4_competition_thumbnail.svg" class="inventory-thumbnail unselectable" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
+                <img src="images/bmw_m4_competition_front_left_corner.jpg" class="inventory-thumbnail unselectable" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
                 <article class="card">
                     <h3 id="inventory-header">M4 Competition</h3>
                     <aside class="inventory-aside">
@@ -129,7 +129,19 @@
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">199€</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button type="button" onclick="window.location.href='preisplan.html'" class="gradient-btn btn unselectable inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                    <button type="button" onclick="selectCar('BMW M4 Competition')" class="gradient-btn btn unselectable inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                </article>
+
+                <img src="images/mercedes_amg_e53_rear_left_corner.jpg" class="inventory-thumbnail unselectable" alt="Mercedes-AMG E53" title="Mercedes-AMG GT Coupe on race track" loading="lazy"/>
+                <article class="card">
+                    <h3 id="inventory-header">Mercedes-AMG GT</h3>
+                    <aside class="inventory-aside">
+                        <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2023</span></p>
+                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">GT 55</span></p>
+                        <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
+                        <p id="detail-cost" class="detail"><span class="detail-title">332€</span><span class="detail-value">am Tag</span></p>
+                    </aside>
+                    <button type="button" onclick="selectCar('Mercedes AMG E53')" class="gradient-btn btn unselectable inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
 
                 <img src="images/porsche_718_cayman_thumbnail.svg" class="inventory-thumbnail unselectable " alt="Porsche 718 Cayman" title="Porsche 718 Cayman Desert Road" loading="lazy"/>
@@ -140,18 +152,6 @@
                         <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">GTS 4.0</span></p>
                         <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">280€</span><span class="detail-value">am Tag</span></p>
-                    </aside>
-                    <button type="button" onclick="window.location.href='preisplan.html'" class="gradient-btn btn unselectable inventory-btn" disabled><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
-                </article>
-
-                <img src="images/mercedes_amg_gt_coupe_thumbnail.svg" class="inventory-thumbnail unselectable" alt="Mercedes-AMG GT Coupe" title="Mercedes-AMG GT Coupe on race track" loading="lazy"/>
-                <article class="card">
-                    <h3 id="inventory-header">Mercedes-AMG GT</h3>
-                    <aside class="inventory-aside">
-                        <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2023</span></p>
-                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">GT 55</span></p>
-                        <p class="detail"><span class="detail-title">Treibstoff:</span><span class="detail-value">Benzin</span></p>
-                        <p id="detail-cost" class="detail"><span class="detail-title">332€</span><span class="detail-value">am Tag</span></p>
                     </aside>
                     <button type="button" onclick="window.location.href='preisplan.html'" class="gradient-btn btn unselectable inventory-btn" disabled><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
@@ -167,6 +167,15 @@
                         inventory.scrollLeft += e.deltaY * 2; // Die 2 ist ein Faktor für die Scroll-Geschwindigkeit, anpassbar
                         }, {passive: false}); // 'passive: false' verhindert, dass die Seite scrollt, während wir unser eigenes Scroll-Verhalten definieren
                     });
+
+                    function selectCar(car) {
+                        // Speichern der ausgewählten Werte im localStorage
+                        localStorage.setItem('car', car);
+                        localStorage.setItem('accessFromIndex', 'true');
+
+                        // Weiterleitung zur Buchungsseite
+                        window.location.href = 'preisplan.html';
+                    }
                 </script>
             </section>
 
