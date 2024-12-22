@@ -933,6 +933,7 @@ h4 {
 .rent_advertising{
     width: 100%;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 #rent {
@@ -1296,7 +1297,6 @@ h4 {
     max-width: 90%;
     max-height: 90%;
     object-fit: contain; /* Beibehaltung der Aspect Ratio */
-    cursor: pointer;
 }
 
 .fullscreen-nav {
@@ -1306,7 +1306,8 @@ h4 {
     font-size: 2rem;
     color: white;
     cursor: pointer;
-    user-select: none;
+    -webkit-user-select: none; /* Safari, iOS */
+    user-select: none; /* Standard */
 }
 
 #fullscreen-prev {
@@ -1330,7 +1331,8 @@ h4 {
     font-size: 2rem;
     color: var(--50);
     cursor: pointer;
-    user-select: none;
+    -webkit-user-select: none; /* Safari, iOS */
+    user-select: none; /* Standard */
     background: var(--500);
     border-radius: 50%;
     width: 40px;

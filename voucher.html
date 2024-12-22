@@ -297,18 +297,19 @@
                                 <p class="detail" id="shipping-p"><span class="detail-title" id="shipping-title">Versand</span><span id="shipping-cost" class="detail-value">2,99 €</span></p>
                                 <p class="detail"><span class="detail-title">Gesamtbetrag</span><span id="total-price" class="detail-value">0.00 €</span></p>
                             </div>
-                            <br>
-                            <div id="paypal-button-container"></div>
+                            <br class="unselectable">
+                            <div id="paypal-button-container" class="unselectable"></div>
                         </div>
                     </li>
                     <li class="rent-li">
-                        <img src="images/voucher_card.webp" class="rent_advertising" id="voucher-card" alt="Voucher Card" title="Voucher Card" loading="lazy" onclick="openFullscreen(this)"/>
+                        <img src="images/voucher_card.webp" class="rent_advertising unselectable" id="voucher-card" alt="Voucher Card" title="Voucher Card" loading="lazy" onclick="openFullscreen(this)"/>
                     </li>
                     <script>
                         function openFullscreen(image) {
                             // Vollbildcontainer erstellen
                             const fullscreenContainer = document.createElement('div');
                             fullscreenContainer.id = 'fullscreen-container';
+                            fullscreenContainer.className = 'unselectable';
                         
                             // Das Bild ins Vollbild kopieren
                             const fullscreenImage = document.createElement('img');
@@ -319,15 +320,37 @@
                             // Schließen-Button hinzufügen
                             const closeButton = document.createElement('div');
                             closeButton.id = 'fullscreen-close';
-                            closeButton.innerHTML = '&times;';
-                            closeButton.onclick = () => {
-                                document.body.removeChild(fullscreenContainer);
-                            };
+                            closeButton.innerHTML = '&times;'; // Schließen-Symbol (×)
+                            closeButton.onclick = closeFullscreen;
                             fullscreenContainer.appendChild(closeButton);
-                        
+
+                            // Close fullscreen on click outside the image
+                            fullscreenContainer.onclick = (e) => {
+                                if (e.target.id === 'fullscreen-container') {
+                                    closeFullscreen();
+                                }
+                            };
+
                             // Vollbildcontainer zur Seite hinzufügen
                             document.body.appendChild(fullscreenContainer);
-                        }                        
+
+                            // Add keyboard navigation
+                            document.addEventListener('keydown', handleKeyNavigation);
+                        }
+
+                        function closeFullscreen() {
+                            const fullscreenContainer = document.getElementById('fullscreen-container');
+                            if (fullscreenContainer) {
+                                document.body.removeChild(fullscreenContainer);
+                                document.removeEventListener('keydown', handleKeyNavigation);
+                            }
+                        }
+
+                        function handleKeyNavigation(event) {
+                            if (event.key === 'Escape') {
+                                closeFullscreen();
+                            }
+                        }
                     </script>
                 </ul>                
             </main>
