@@ -1258,8 +1258,8 @@ h4 {
     background: rgba(238, 11, 11, 0.19);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(29.7px);
     -webkit-backdrop-filter: blur(6.7px);
+    backdrop-filter: blur(29.7px);
     transition: transform 0.5s ease;
     z-index: 1;
 }
@@ -1276,6 +1276,74 @@ h4 {
 
 #voucher-card-img {
     width: clamp(100px, 40%, 900px);
+}
+
+#fullscreen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+#fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain; /* Beibehaltung der Aspect Ratio */
+    cursor: pointer;
+}
+
+.fullscreen-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+#fullscreen-prev {
+    color: var(--500);
+    left: 25px;
+}
+
+#fullscreen-next {
+    color: var(--500);
+    right: 40px;
+}
+
+#fullscreen-prev:hover, #fullscreen-next:hover {
+    color: var(--800);
+}
+
+#fullscreen-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: var(--50);
+    cursor: pointer;
+    user-select: none;
+    background: var(--500);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001; /* Über den Pfeilen */
+}
+
+#fullscreen-close:hover {
+    background: var(--700);
+    color: var(--void-black)
 }
 
 @media (min-width: 1200px) {

@@ -405,7 +405,7 @@
                         slideFigure.classList.add('mySlides', 'fade');
                         slideFigure.innerHTML = `
                             <figcaption class="numbertext">${index + 1} / ${carImages[car].length}</figcaption>
-                            <img src="${imageSrc}" class="rent_advertising" alt="${car}" title="${car}" loading="lazy"/>
+                            <img src="${imageSrc}" class="rent_advertising" alt="${car}" title="${car}" loading="lazy" onclick="openFullscreen(${index})"/>
                         `;
                         slideshowContainer.appendChild(slideFigure);
 
@@ -420,6 +420,99 @@
                     showSlides(1);
                 }
             });
+
+            let currentFullscreenIndex = 0;
+            let fullscreenImages = [];
+
+            function openFullscreen(index) {
+                currentFullscreenIndex = index;
+                fullscreenImages = Array.from(document.querySelectorAll('.rent_advertising')).map(img => img.src);
+
+                const fullscreenContainer = document.createElement('div');
+                fullscreenContainer.id = 'fullscreen-container';
+
+                const fullscreenImage = document.createElement('img');
+                fullscreenImage.id = 'fullscreen-image';
+                fullscreenImage.src = fullscreenImages[currentFullscreenIndex];
+                fullscreenContainer.appendChild(fullscreenImage);
+
+                const prevButton = document.createElement('div');
+                prevButton.id = 'fullscreen-prev';
+                prevButton.className = 'fullscreen-nav';
+                prevButton.innerHTML = '&#10094;'; // Left arrow
+                prevButton.onclick = () => navigateFullscreen(-1);
+                fullscreenContainer.appendChild(prevButton);
+
+                const nextButton = document.createElement('div');
+                nextButton.id = 'fullscreen-next';
+                nextButton.className = 'fullscreen-nav';
+                nextButton.innerHTML = '&#10095;'; // Right arrow
+                nextButton.onclick = () => navigateFullscreen(1);
+                fullscreenContainer.appendChild(nextButton);
+
+                const closeButton = document.createElement('div');
+                closeButton.id = 'fullscreen-close';
+                closeButton.innerHTML = '&times;'; // Schließen-Symbol (×)
+                closeButton.onclick = closeFullscreen;
+                fullscreenContainer.appendChild(closeButton);
+
+
+                // Close fullscreen on click outside the image
+                fullscreenContainer.onclick = (e) => {
+                    if (e.target.id === 'fullscreen-container') {
+                        closeFullscreen();
+                    }
+                };
+
+                document.body.appendChild(fullscreenContainer);
+
+                // Add keyboard navigation
+                document.addEventListener('keydown', handleKeyNavigation);
+
+                // Add touch gestures
+                addTouchNavigation(fullscreenContainer);
+            }
+
+            function navigateFullscreen(direction) {
+                currentFullscreenIndex = (currentFullscreenIndex + direction + fullscreenImages.length) % fullscreenImages.length;
+                document.getElementById('fullscreen-image').src = fullscreenImages[currentFullscreenIndex];
+            }
+
+            function closeFullscreen() {
+                const fullscreenContainer = document.getElementById('fullscreen-container');
+                if (fullscreenContainer) {
+                    document.body.removeChild(fullscreenContainer);
+                    document.removeEventListener('keydown', handleKeyNavigation);
+                }
+            }
+
+            function handleKeyNavigation(event) {
+                if (event.key === 'ArrowLeft') {
+                    navigateFullscreen(-1);
+                } else if (event.key === 'ArrowRight') {
+                    navigateFullscreen(1);
+                } else if (event.key === 'Escape') {
+                    closeFullscreen();
+                }
+            }
+
+            function addTouchNavigation(container) {
+                let startX = 0;
+                let endX = 0;
+
+                container.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+
+                container.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    if (startX > endX + 50) {
+                        navigateFullscreen(1); // Swipe left
+                    } else if (startX < endX - 50) {
+                        navigateFullscreen(-1); // Swipe right
+                    }
+                });
+            }
 
             // Slideshow-Funktionen
             let slideIndex = 1;

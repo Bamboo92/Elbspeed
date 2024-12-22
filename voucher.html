@@ -302,9 +302,33 @@
                         </div>
                     </li>
                     <li class="rent-li">
-                        <img src="images/voucher_card.webp" class="rent_advertising" id="voucher-card" alt="Voucher Card" title="Voucher Card" loading="lazy"/>
+                        <img src="images/voucher_card.webp" class="rent_advertising" id="voucher-card" alt="Voucher Card" title="Voucher Card" loading="lazy" onclick="openFullscreen(this)"/>
                     </li>
-
+                    <script>
+                        function openFullscreen(image) {
+                            // Vollbildcontainer erstellen
+                            const fullscreenContainer = document.createElement('div');
+                            fullscreenContainer.id = 'fullscreen-container';
+                        
+                            // Das Bild ins Vollbild kopieren
+                            const fullscreenImage = document.createElement('img');
+                            fullscreenImage.id = 'fullscreen-image';
+                            fullscreenImage.src = image.src;
+                            fullscreenContainer.appendChild(fullscreenImage);
+                        
+                            // Schließen-Button hinzufügen
+                            const closeButton = document.createElement('div');
+                            closeButton.id = 'fullscreen-close';
+                            closeButton.innerHTML = '&times;';
+                            closeButton.onclick = () => {
+                                document.body.removeChild(fullscreenContainer);
+                            };
+                            fullscreenContainer.appendChild(closeButton);
+                        
+                            // Vollbildcontainer zur Seite hinzufügen
+                            document.body.appendChild(fullscreenContainer);
+                        }                        
+                    </script>
                 </ul>                
             </main>
 
