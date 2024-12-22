@@ -4,7 +4,7 @@ const plan = document.getElementById("plan");
 const fullName = document.getElementById("name");
 const senderEmail = document.getElementById("email");
 const subject = document.getElementById("betreff");
-const message = document.getElementById("nachricht");
+const message = document.getElementById("message");
 const street = document.getElementById("street");
 const birthdate = document.getElementById("birthdate");
 const tel = document.getElementById("tel");
@@ -15,7 +15,6 @@ const newsletterSubscriber = document.getElementById("newsletter-input");
 const recieverEmail = "info@elb-speed.de";
 const recipientEmail = "info@elb-speed.de";
 const recipientWhatsappNumber = "4074069548";
-const emailToken = "5bf45a2d-21ee-4cfe-84bc-76f7133e9f7c";
 
 // Funktion zum Einfügen von Zeilenumbrüchen
 function formatMessage(msg) {
@@ -39,7 +38,7 @@ function contactMessageBody(subject, name, email, message) {
     const introduction = `Diese Nachricht wurde auf der Contact Us Seite geschrieben:<br><br>`;
     return introduction + `Betreff: <b>${subject}</b><br><br>Name: ${name}<br>Email: ${email}<br><br>Nachricht:<br>${formatMessage(message)}`;
 }
-
+const eml = "5bf45a2d-21ee-4cfe-84bc-76f7133e9f7c";
 function newsletterMessageBody(email) {
     const introduction = `<b>Neuer Abonent</b><br><br>`;
     return introduction + `Ein Kunde hat den Newsletter aboniert.<br>Email: ${email}`;
@@ -47,7 +46,7 @@ function newsletterMessageBody(email) {
 
 function sendMail(subject, bodyMessage) {
     Email.send({
-        SecureToken: emailToken,
+        SecureToken: eml,
         To : recieverEmail,
         From : recipientEmail,
         Subject : subject,
@@ -71,7 +70,7 @@ function sendMail(subject, bodyMessage) {
                     color: "#726666",
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = 'index.html'; // Weiterleitung zur Homepage
+                        window.location.href = '/'; // Weiterleitung zur Homepage
                     }
                 })
             } else {
@@ -79,7 +78,7 @@ function sendMail(subject, bodyMessage) {
                     icon: "error",
                     title: "Oops...",
                     text: "Etwas ist schief gelaufen!",
-                    footer: '<a href="kontakt.html">Kontaktieren mit uns aufnehmen?</a>',
+                    footer: '<a href="kontakt.html">Kontakt mit uns aufnehmen?</a>',
                     confirmButtonColor: "#E63D3D",
                     background: "#FDF3F3",
                     color: "#726666",
@@ -89,9 +88,65 @@ function sendMail(subject, bodyMessage) {
     );
 }
 
+function sendMailContact(subject, bodyMessage) {
+    Email.send({
+        SecureToken: eml,
+        To : recieverEmail,
+        From : recipientEmail,
+        Subject : subject,
+        Body : bodyMessage,
+        /*Attachments : [
+            {
+                name : "elbspeed_logo.png",
+                path : "https://imgur.com/a/DifEYBP"
+            }
+        ]*/
+
+    }).then(
+        message => {
+            if (message == "OK") {
+                Swal.fire({
+                    title: "Nachricht gesendet!",
+                    text: "Wir werden uns in Kürze bei Ihnen melden",
+                    icon: "success",
+                    confirmButtonColor: "#E63D3D",
+                    background: "#FDF3F3",
+                    color: "#726666",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '/'; // Weiterleitung zur Homepage
+                    }
+                })
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Etwas ist schief gelaufen!",
+                    footer: '<a href="kontakt.html">Kontakt mit uns aufnehmen?</a>',
+                    confirmButtonColor: "#E63D3D",
+                    background: "#FDF3F3",
+                    color: "#726666",
+                });
+            }
+        }
+    );
+}
+
+function sendMailVoucher(subject, bodyMessage) {
+    Email.send({
+        SecureToken: eml,
+        To : recieverEmail,
+        From : recipientEmail,
+        Subject : subject,
+        Body : bodyMessage
+    })
+}
+
+const clid = "AWvpoBD5pqDwiwth9oal_wTOWgiMq53ELqPLg4FuOrntPVdHSih9jT3gPoDS6_Yuu3LpYgzmGFciVgum";
+
 function addNewsletterSubscriber(bodyMessage) {
     Email.send({
-        SecureToken: emailToken,
+        SecureToken: eml,
         To : recieverEmail,
         From : recipientEmail,
         Subject : "Newsletter Abonent",
@@ -100,8 +155,8 @@ function addNewsletterSubscriber(bodyMessage) {
         message => {
             if (message == "OK") {
                 Swal.fire({
-                    title: "Buchung abgeschlossen!",
-                    text: "Eine Bestätung erhalten sie nach prüfung der Daten",
+                    title: "Erfolgreich abonniert!",
+                    text: "Sie erhalten ab sofort spannende Neuigkeiten und exklusive Angebote direkt in Ihr Postfach.",
                     icon: "success",
                     confirmButtonColor: "#E63D3D",
                     background: "#FDF3F3",
@@ -130,7 +185,7 @@ document.querySelectorAll('form').forEach(form => {
 
         if (form.id === "contact-form") {
             const messageBody = contactMessageBody(subject.value, fullName.value, senderEmail.value, message.value);
-            sendMail('Kontakt Anfrage', messageBody);
+            sendMailContact('Kontakt Anfrage', messageBody);
         } else if (form.id === "rent-form") {
             const messageBody = rentMessageBody(car.value, plan.value, fullName.value, senderEmail.value, message.value, street.value, birthdate.value, tel.value, startdate.value, finishdate.value);
 
@@ -174,6 +229,24 @@ window.addEventListener('resize', handleResize);
 window.addEventListener('DOMContentLoaded', handleResize);
 
 function sendViaWhatsApp() {
+
+    highlightInvalidFields(); // Felder hervorheben, wenn ungültig
+
+    // Prüfen, ob alle required Felder gültig sind
+    const rentForm = document.getElementById("rent-form");
+    if (!rentForm.checkValidity()) {
+        /*
+        Swal.fire({
+            icon: "error",
+            title: "Fehler",
+            text: "Bitte füllen Sie alle erforderlichen Felder aus.",
+            confirmButtonColor: "#E63D3D",
+            background: "#FDF3F3",
+            color: "#726666",
+        });*/
+        return false; // Weiterleitung verhindern
+    }
+
     // Direkt die globalen DOM-Element-Variablen verwenden
     const fullNameValue = fullName.value;
     const senderEmailValue = senderEmail.value;

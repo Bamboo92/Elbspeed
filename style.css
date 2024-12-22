@@ -29,6 +29,9 @@
     --active-white-gradient: linear-gradient(to left top, #d42e2e, #c42a2b, #b42727, #a42324, #942020);
     --disabled-white-gradient: linear-gradient(to left top, #fde3e3, #fdd5d4, #fcc6c6, #fab8b7, #f8a9a9);
     --whatsapp-gradient: linear-gradient(to right top, #1ebea5, #00c9a0, #00d396, #00dd88, #00e676);
+
+    --orange-gradient: linear-gradient(to left top, #b22323, #d0511b, #e83e0a, #f29277, #f8b6a9);
+    --red-gradient: linear-gradient(to right, #b22323, #c33a38, #d34f4c, #e36362, #f27777);
 }
 
 html {
@@ -134,6 +137,15 @@ code {
 }
 
 .card:hover {
+    transform: scale(1.02);
+}
+
+#voucher-card {
+    filter: drop-shadow(5px 5px 10px rgba(123, 86, 86, 0.2));
+    transition: transform 0.5s ease;
+}
+
+#voucher-card:hover {
     transform: scale(1.02);
 }
 
@@ -311,7 +323,41 @@ footer{
     display: inline-block;
     border-radius: 15px;
     position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--50);
+    background: linear-gradient(45deg, var(--500), var(--700));
+    border: none;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    z-index: 1;
 }
+
+#start-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    box-shadow: 0 0 30px 10px rgba(255, 0, 0, 0.2); /* Weicherer Schatten */
+    z-index: -1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.7;
+}
+
+#start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(255, 0, 123, 0.2);
+}
+
+#start-btn:hover::before {
+    opacity: 1;
+    box-shadow: 0 0 40px 20px rgba(255, 128, 128, 0.4); /* Weicher und stärker bei Hover */
+}
+
 
 .car-bg-txt {
     color: var(--100);
@@ -764,7 +810,7 @@ h4 {
     min-width: fit-content;
 }
 
-#contact-form, #rent-form {
+#contact-form, #rent-form, #voucher-form {
     width: 40vw;
     max-width: 500px;
     height: -moz-fit-content;
@@ -810,12 +856,13 @@ h4 {
     padding-left: 30%;
 }
 
-#nachricht {
+.nachricht {
     width: inherit;
     max-width: 95%;
     padding-top: clamp(5px, 1vw, 20px);
     font-size: clamp(5px, 2vmin, 15px);
     height: 10vw;
+    max-height: 80px;
     border: none;
     border-radius: 15px;
 }
@@ -859,6 +906,11 @@ h4 {
 
 .rent-dates {
     column-count: 2;
+}
+
+.test {
+    column-count: 1;
+    padding-bottom: 0.8vw;
 }
 
 #rent-dates-birthdate {
@@ -1137,6 +1189,10 @@ h4 {
     border-radius: 15px;
 }
 
+#whatsapp-instructions {
+    border: 1px solid var(--600);
+}
+
 #whatsapp-allert-button {
     border-radius: 15px;
     text-align: center;
@@ -1147,6 +1203,79 @@ h4 {
 
 #whatsapp-allert-img {
     width: clamp(3px, 8vw, 60px);
+}
+
+#shipping-p {
+    font-size: clamp(5px, 1.4vw, 18px);
+}
+
+.invalid {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+    border-radius: 15px;
+}
+
+#voucher-glassmorphism {
+    position: relative;
+}
+
+#voucher-glassmorphism::before,
+#voucher-glassmorphism::after {
+    content: '';
+    position: absolute;
+    background-image: var(--orange-gradient);
+    border-radius: 50%;
+    z-index: -2;
+    filter: blur(7px); /* Weicher Rand */
+    opacity: 0.8; /* Für einen sanften Effekt */
+}
+
+#voucher-glassmorphism::after {
+    background-image: var(--red-gradient);
+
+}
+
+#voucher-glassmorphism::before {
+    width: 200px;
+    height: 200px;
+    top: -50px;
+    left: -50px;
+}
+
+#voucher-glassmorphism::after {
+    width: 450px;
+    height: 450px;
+    bottom: -100px;
+    right: -85px;
+}
+
+#voucher {
+    cursor: pointer;
+    max-width: 1700px;
+    position: relative;
+    padding-inline: 5%;
+    padding-block: 2%;
+    background: rgba(238, 11, 11, 0.19);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(29.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+#voucher:hover {
+    transform: scale(1.02);
+}
+
+#voucher-article {
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+#voucher-card-img {
+    width: clamp(100px, 40%, 900px);
 }
 
 @media (min-width: 1200px) {
@@ -1163,7 +1292,7 @@ h4 {
         padding-inline: clamp(20px, 1vw, 60px);
         padding-block: clamp(20px, 2vh, 30px);
         font-size: 2vmin;
-        margin-left:30px;
+        /*margin-left:30px;*/
         bottom: clamp(0px, 2vmax, 30px);
     }
 
@@ -1207,7 +1336,7 @@ h4 {
     #start-btn {
         padding: 15px 32px;
         font-size: 1.5vmin;
-        margin-left:20px;
+        /*margin-left:20px;*/
         bottom: 19px;
     }
 
@@ -1270,7 +1399,7 @@ h4 {
         padding-inline: clamp(10px, 2vw, 20px);
         padding-block: clamp(5px, 1vw, 10px);
         font-size: clamp(11px, 2vw, 17px);
-        margin-left: 10px;
+        /*margin-left: 10px;*/
         bottom: clamp(0px, 1vw, 7px);
     }
 
@@ -1674,11 +1803,11 @@ h4 {
         padding-left: 1vw;
     }
 
-    #rent-form {
+    #rent-form, #voucher-form {
         row-gap: 2vw;
     }
 
-    #contact-form, #rent-form {
+    #contact-form, #rent-form, #voucher-form {
         width: inherit;
         max-width: none;
         box-sizing: border-box; 
@@ -1686,6 +1815,25 @@ h4 {
 
     #elite-plan-btn {
         border-radius: 10px;
+    }
+
+    #voucher {
+        padding-top: 5vw;
+        flex-wrap: wrap;
+    }
+
+    #voucher-glassmorphism::before {
+        width: 140px;
+        height: 140px;
+        top: -50px;
+        left: -50px;
+    }
+
+    #voucher-glassmorphism::after {
+        width: 30vw;
+        height: 30vw;
+        bottom: -20px;
+        right: -65px;
     }
 }
 

@@ -49,22 +49,56 @@
                         <p></p>
                         <input class="contact-input date-input" type="date" id="abgabedatum" name="abgabedatum" required>
                     </div><br class="no-br">
-                    <label class="contact-label-empty" for="nachricht">Anmerkungen</label><br class="no-br">                
-                    <textarea id="nachricht" name="nachricht" rows="4" placeholder="z.B. Abholung oder Rückgabe an anderem Standort, mehrere Fahrer ... "></textarea><br class="no-br">
+                    <label class="contact-label-empty" for="message">Anmerkungen</label><br class="no-br">                
+                    <textarea id="message" class="nachricht" name="message" rows="4" placeholder="z.B. Abholung oder Rückgabe an anderem Standort, mehrere Fahrer ... "></textarea><br class="no-br">
                     <footer class="rent-agree">
-                        <div>
+                        <div class="required">
                             <input class="" type="checkbox" id="agree1" name="agree" required>
                             <label for="agree1">Ich akzeptiere die <a href="datenschutzerklärung.html">Datenschutzerklärung</a>.</label>
                         </div>
-                        <div>
+                        <div class="required">
                             <input class="" type="checkbox" id="agree2" name="agree" required>
                             <label for="agree2">Ich akzeptiere die <a href="guides.html">Allgemeinen Mietbedingungen</a>.</label>
                         </div>
                     </footer>
                     <br class="no-br">
-                    <button class="gradient-btn btn" id="rent-btn" type="submit" data-action="email"><span class="detail-title">Buchen</span><span class="detail-value">ᐳ</span></button><br>
+                    <button class="gradient-btn btn" id="rent-btn" type="submit" data-action="email" onclick="highlightInvalidFields()"><span class="detail-title">Buchen</span><span class="detail-value">ᐳ</span></button><br>
                     <button class="gradient-btn btn" id="rent-btn-whatsapp" type="submit" data-action="whatsapp" onclick="sendViaWhatsApp()">Über WhatsApp buchen</button>
                     <br>
+                    <script>
+                        const requiredFields = document.querySelectorAll("[required]");
+                        const agbCheckbox = document.getElementsByClassName("required");
+
+                        function highlightInvalidFields() {
+                            // Prüft alle Felder mit Attribut [required]
+                            requiredFields.forEach(field => {
+                                if (!field.checkValidity()) {
+                                    field.classList.add("invalid");
+                                    field.addEventListener("input", () => field.classList.remove("invalid"));
+                                } else {
+                                    field.classList.remove("invalid");
+                                }
+                            });
+                        
+                            // Prüft alle Divs mit der Klasse "required"
+                            const requiredDivs = document.querySelectorAll("div.required");
+                            requiredDivs.forEach(div => {
+                                const checkbox = div.querySelector("input[type='checkbox']");
+                                if (checkbox && !checkbox.checked) {
+                                    div.classList.add("invalid");
+                                    checkbox.addEventListener("change", () => {
+                                        if (checkbox.checked) {
+                                            div.classList.remove("invalid");
+                                        } else {
+                                            div.classList.add("invalid");
+                                        }
+                                    });
+                                } else {
+                                    div.classList.remove("invalid");
+                                }
+                            });
+                        }  
+                    </script>
                 </form>
                 <ul id="contact-ul">
                     <li class="rent-li">

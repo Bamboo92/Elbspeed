@@ -49,11 +49,26 @@
 
                 <label id="contact-label" for="betreff">Nachricht</label><br>
                 <input class="contact-input" type="text" id="betreff" name="betreff" placeholder="Betreff" required><br>
-                <textarea id="nachricht" name="nachricht" rows="4" placeholder="Anliegen" required></textarea><br>
+                <textarea class="nachricht" id="message" rows="4" placeholder="Anliegen" required></textarea><br>
 
                 <label class="contact-label-empty" for="email"></label><br>
-                <button class="gradient-btn btn" id="contact-btn" type="submit"><span class="detail-title">Senden</span><span class="detail-value">ᐳ</span></button>
+                <button class="gradient-btn btn" id="contact-btn" type="submit" onclick="highlightInvalidFields()"><span class="detail-title">Senden</span><span class="detail-value">ᐳ</span></button>
                 <label class="contact-label-empty" for="nachricht"></label><br>
+                <script>
+                    const requiredFields = document.querySelectorAll("[required]");
+
+                    function highlightInvalidFields() {
+                        // Prüft alle Felder mit Attribut [required]
+                        requiredFields.forEach(field => {
+                            if (!field.checkValidity()) {
+                                field.classList.add("invalid");
+                                field.addEventListener("input", () => field.classList.remove("invalid"));
+                            } else {
+                                field.classList.remove("invalid");
+                            }
+                        });
+                    }  
+                </script>
             </form>
         </section>
 
@@ -85,7 +100,7 @@
                 <nav class="footer-nav">
                     <ul>
                         <li><h5>Vermietung</h5></li>
-                        <li><a href="index.html#rent-car-header">Auto Buchen</a></li>
+                        <li><a href="/#rent-car-header">Auto Buchen</a></li>
                         <li><a href="none.html">Feedback</a></li>
                     </ul>
                     <ul>

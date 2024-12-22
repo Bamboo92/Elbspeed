@@ -14,7 +14,7 @@
     <body>
         <div class="App">
             <nav class="app-nav unselectable">
-                <a class="app-nav-hidden" href="index.html#rent-car-header">Buchen</a>
+                <a class="app-nav-hidden" href="/#rent-car-header">Buchen</a>
                 <a class="" href="FAQ.html">FAQ</a>
                 <span></span>
                 <a class="app-nav-img" href="/"><img src="images/logo.svg" id="app-logo" alt="elbspeed-logo" title="Elbspeed"/></a>
@@ -24,9 +24,9 @@
             </nav>
 
             <header class="App-header unselectable">
-                <h1 class="App-title">Buche jetzt ein<br/>
-                    <strong class="App-title-special-word">Auto</strong>
-                    <!--<button class="gradient-btn btn" id="start-btn">entdecken</button>-->
+                <h1 class="App-title">Buche jetzt ein<br>
+                    <strong class="App-title-special-word">Auto</strong><br>
+                    <button onclick="window.location.href='voucher.html'" class="gradient-btn btn" id="start-btn">Jetzt ein Freund beschenken</button>
                 </h1>
         
                 <b class="car-bg-txt">BMW</b>
@@ -181,6 +181,25 @@
 
             <h2>
                 <div class="divider"></div>
+                <span class="header-title">Gutscheinkarte</span>
+                <div class="divider"></div>
+            </h2>
+
+            <h4></h4>
+
+            <div id="voucher-glassmorphism">
+                <section id="voucher" onclick="window.location.href='voucher.html'">
+                        <img src="images/voucher_card.webp" id="voucher-card-img" class="unselectable" alt="voucher-card" title="Voucher Card" loading="lazy"/>
+                        <article class="glassmorphism" id="voucher-article">
+                            <h3>Schenken Sie Mobilität</h3>
+                            <p>Überraschen Sie Freunde oder Kollegen mit einer Geschenkkarte für flexible Autovermietung – ideal für jede Gelegenheit!</p>
+                        </article>
+                    
+                </section>
+            </div>
+
+            <h2>
+                <div class="divider"></div>
                 <span class="header-title">Unsere Dienstleistungen</span>
                 <div class="divider"></div>
             </h2>
@@ -285,7 +304,7 @@
                     <nav class="footer-nav">
                         <ul>
                             <li><h5>Vermietung</h5></li>
-                            <li><a href="index.html#rent-car-header">Auto Buchen</a></li>
+                            <li><a href="/#rent-car-header">Auto Buchen</a></li>
                             <li><a href="none.html">Feedback</a></li>
                         </ul>
                         <ul>

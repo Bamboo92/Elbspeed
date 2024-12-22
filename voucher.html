@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
+
+        <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+        <link rel="stylesheet" href="style.css">
+        <title>Gutscheinkarte | Elbspeed Autovermietung</title>
+    </head>
+    <body class="guide">
+        <a href="/"><img src="images/logo.svg" class="logo unselectable" alt="elbspeed-logo" title="Elbspeed"/></a>
+
+        <h1>Gutscheinkarte</h1>
+        <div id="rent-div">
+
+
+            <main id="rent-main">
+                <form class="card unselectable" id="voucher-form" action="#" method="POST">
+                    <input type="hidden" name="access_key" value="3a601ac1-b39b-4e5a-ae17-ff1e1410fad0">
+                
+                    <!-- Auswahl zwischen physischer oder digitaler Geschenkkarte -->
+                    <label for="delivery-type">Geschenkkarte auswählen</label><br class="no-br">
+                    <div class="rent-dates">
+                        <div>
+                            <input type="radio" id="physical" name="delivery-type" value="physical" checked>
+                            <label for="physical">Physisch</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="digital" name="delivery-type" value="digital">
+                            <label for="digital">Digital</label><br>
+                        </div>                        
+                    </div><br>
+                
+                    <!-- Auswahl der Höhe der Geschenkkarte -->
+                    <label for="giftcard-amount">Wert der Geschenkkarte (€)</label><br class="no-br">
+                    <input class="contact-input" type="number" id="giftcard-amount" name="giftcard-amount" placeholder="Betrag (min. 50 €)" min="50" step="1" required><br>
+
+                    <label id="contact-label-name" for="name">Lieferadresse</label><br class="no-br">
+                    <div class="rent-dates">
+                        <input class="contact-input" type="text" id="firstname" name="firstname" placeholder="Vorname" required><br>
+                        <p></p>
+                        <input class="contact-input" type="text" id="lastname" name="lastname" placeholder="Nachname" required><br>
+                    </div>
+                    <div class="test" id="test">
+                        <input class="contact-input" type="text" id="street" name="street" placeholder="Straße" required><br>
+                    </div>
+                    <div class="rent-dates" id="test2">
+                        <input class="contact-input" type="text" id="zip-code" name="zip-code" placeholder="Postleitzahl" required><br>
+                        <p></p>
+                        <input class="contact-input" type="text" id="city" name="city" placeholder="Ort" required><br>
+                    </div>
+                    <input class="contact-input" type="email" id="email" name="email" placeholder="E-Mail-Adresse" required>
+                    <br>
+                    <label class="contact-label-empty" id="wishMessageLabel" for="nachricht">Wunschnachricht</label><br class="no-br">                
+                    <textarea class="nachricht" id="wishMessage" name="message" rows="4" placeholder="z.B. Ich wollte dir eine Freude machen – viel Spaß mit deinem Geschenk!"></textarea><br class="no-br">
+                    
+
+                    <footer class="rent-agree">
+                        <div class="required">
+                            <input class="" type="checkbox" id="agree1" name="agree" required>
+                            <label for="agree1">Ich akzeptiere die <a href="datenschutzerklärung">Datenschutzerklärung</a>.</label>
+                        </div>
+                        <div class="required">
+                            <input class="" type="checkbox" id="agree2" name="agree" required>
+                            <label for="agree2">Ich akzeptiere die <a href="guides">Allgemeinen Mietbedingungen</a>.</label>
+                        </div>
+                    </footer>
+                    <br>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            const physicalRadio = document.getElementById("physical");
+                            const digitalRadio = document.getElementById("digital");
+                            const deliveryLabel = document.getElementById("contact-label-name");
+                            const giftcardAmount = document.getElementById("giftcard-amount");
+                            const totalPrice = document.getElementById("total-price");
+                            const shipping = document.getElementById("shipping-p");
+                            const rentFields = [document.getElementById("test"), document.getElementById("test2")];
+                            const requiredFields = document.querySelectorAll("[required]");
+                            const agbCheckbox = document.getElementsByClassName("required");
+
+                        
+                            const SHIPPING_COST = 2.99;
+                        
+                            function updateTotalPrice() {
+                                let amount = parseInt(giftcardAmount.value) || 0;
+                                if (amount < 50) {
+                                    giftcardAmount.value = 50;
+                                    amount = 50;
+                                }
+                        
+                                let finalPrice = amount;
+                        
+                                if (physicalRadio.checked) {
+                                    finalPrice += SHIPPING_COST;
+                                }
+                        
+                                totalPrice.textContent = `${finalPrice.toFixed(2)} €`;
+                            }
+                        
+                            function updateAddressLabel() {
+                                if (digitalRadio.checked) {
+                                    deliveryLabel.textContent = "Empfänger";
+                                    rentFields.forEach(field => {
+                                        field.style.display = "none";
+                                        field.querySelectorAll("input[required]").forEach(input => input.required = false);
+                                    });
+                                    shipping.style.display = "none";
+                                } else {
+                                    deliveryLabel.textContent = "Lieferadresse";
+                                    rentFields.forEach(field => {
+                                        field.style.display = "block";
+                                        field.querySelectorAll("input").forEach(input => input.required = true);
+                                    });
+                                    shipping.style.display = "flex";
+                                }
+                                removeHighlighting();
+                            }
+                        
+                            function highlightInvalidFields() {
+                                // Prüft alle Felder mit Attribut [required]
+                                requiredFields.forEach(field => {
+                                    if (!field.checkValidity()) {
+                                        field.classList.add("invalid");
+                                        field.addEventListener("input", () => field.classList.remove("invalid"));
+                                    } else {
+                                        field.classList.remove("invalid");
+                                    }
+                                });
+                            
+                                // Prüft alle Divs mit der Klasse "required"
+                                const requiredDivs = document.querySelectorAll("div.required");
+                                requiredDivs.forEach(div => {
+                                    const checkbox = div.querySelector("input[type='checkbox']");
+                                    if (checkbox && !checkbox.checked) {
+                                        div.classList.add("invalid");
+                                        checkbox.addEventListener("change", () => {
+                                            if (checkbox.checked) {
+                                                div.classList.remove("invalid");
+                                            } else {
+                                                div.classList.add("invalid");
+                                            }
+                                        });
+                                    } else {
+                                        div.classList.remove("invalid");
+                                    }
+                                });
+                            }                            
+
+                            function removeHighlighting() {
+                                requiredFields.forEach(field => {
+                                    field.classList.remove("invalid");
+                                });
+                            }
+                        
+                            physicalRadio.addEventListener("change", () => {
+                                updateTotalPrice();
+                                updateAddressLabel();
+                            });
+                        
+                            digitalRadio.addEventListener("change", () => {
+                                updateTotalPrice();
+                                updateAddressLabel();
+                            });
+                        
+                            giftcardAmount.addEventListener("blur", updateTotalPrice);
+                        
+                            const rentForm = document.getElementById("voucher-form");
+                        
+                            const paypalButtonContainer = document.getElementById("paypal-button-container");
+
+                            if (!clid) {
+                                console.error("Keine gültige Client-ID erhalten");
+                                return;
+                            }
+                
+                            const script = document.createElement('script');
+                            script.src = `https://www.paypal.com/sdk/js?client-id=${clid}&currency=EUR`;
+                            document.head.appendChild(script);
+                
+                            script.onload = () => {
+                                paypal.Buttons({
+                                    createOrder: (data, actions) => {
+                                        highlightInvalidFields();
+
+                                        if (!rentForm.checkValidity()) {
+                                            return;
+                                        }
+
+                                        const giftcardAmountValue = parseFloat(document.getElementById("giftcard-amount").value);
+                                        const isPhysical = physicalRadio.checked;
+                
+                                        let totalValue = giftcardAmountValue;
+                                        let breakdown = {
+                                            item_total: { currency_code: "EUR", value: giftcardAmountValue.toFixed(2) }
+                                        };
+                
+                                        if (isPhysical) {
+                                            totalValue += SHIPPING_COST;
+                                            breakdown.shipping = { currency_code: "EUR", value: SHIPPING_COST.toFixed(2) };
+                                        }
+                
+                                        return actions.order.create({
+                                            purchase_units: [
+                                                {
+                                                    amount: {
+                                                        currency_code: "EUR",
+                                                        value: totalValue.toFixed(2),
+                                                        breakdown: breakdown
+                                                    }
+                                                }
+                                            ]
+                                        });
+                                    },
+                                    onApprove: (data, actions) => {
+                                        return actions.order.capture().then((details) => {
+                                            const firstname = document.getElementById("firstname").value;
+                                            const lastname = document.getElementById("lastname").value;
+                                            const email = document.getElementById("email").value;
+                                            const giftcardAmountValue = document.getElementById("giftcard-amount").value;
+                                            const deliveryType = document.querySelector('input[name="delivery-type"]:checked').value;
+                                            const wishMessage = document.getElementById("wishMessage").value || "Keine Nachricht";
+                
+                                            let emailBody = `
+                                                <b>${deliveryType === "physical" ? "Physische Karte" : "Digitale Karte"}</b><br>
+                                                <b>Name:</b><br>${firstname} ${lastname}<br>
+                                                <b>E-Mail:</b><br>${email}<br>
+                                                <b>Betrag:</b><br>${giftcardAmountValue} €<br>
+                                                <b>Nachricht:</b><br>${wishMessage}<br>
+                                            `;
+                
+                                            if (deliveryType === "physical") {
+                                                const street = document.getElementById("street").value || "Nicht angegeben";
+                                                const zipCode = document.getElementById("zip-code").value || "Nicht angegeben";
+                                                const city = document.getElementById("city").value || "Nicht angegeben";
+                                                emailBody += `
+                                                    <b>Adresse:</b><br>${street}<br>${zipCode}, ${city}<br>
+                                                `;
+                                            }                                                                            
+
+                                            sendMailVoucher("Gutschienkarte", emailBody);
+
+                                            Swal.fire({
+                                                title: "Zahlung erfolgreich!",
+                                                text: "Ihre Gutschienkarte wird bald verschickt!",
+                                                icon: "success",
+                                                confirmButtonColor: "#E63D3D",
+                                                background: "#FDF3F3",
+                                                color: "#726666",
+                                            }).then((result) => {
+                                                if (result.isConfirmed) {
+                                                    window.location.href = '/';
+                                                }
+                                            });
+                                        });
+                                    },
+                                    onError: (err) => {
+                                        if (!rentForm.checkValidity()) {
+                                            Swal.fire({
+                                                icon: "error",
+                                                title: "Fehler",
+                                                text: "Bitte füllen Sie alle erforderlichen Felder aus.",
+                                                confirmButtonColor: "#E63D3D",
+                                                background: "#FDF3F3",
+                                                color: "#726666",
+                                            });
+                                        } else {
+                                            console.error("PayPal Fehler:", err);
+                                            Swal.fire({
+                                                icon: "error",
+                                                title: "Zahlung fehlgeschlagen",
+                                                text: "Bitte versuchen Sie es erneut oder kontaktieren Sie uns.",
+                                                confirmButtonColor: "#E63D3D",
+                                                background: "#FDF3F3",
+                                                color: "#726666",
+                                            });
+                                        }
+                                    }
+                                }).render(paypalButtonContainer);
+                            };
+                
+                            script.onerror = () => {
+                                console.error("PayPal-SDK konnte nicht geladen werden");
+                            };
+                        })
+                    </script>                                                                    
+
+                </form>
+                <ul id="contact-ul">
+                    <li class="rent-li">
+                        <div class="card contact-article" id="payment-options">
+                            <!-- Berechnetes Ergebnis anzeigen -->
+                            <div id="total-price-container">
+                                <p class="detail" id="shipping-p"><span class="detail-title" id="shipping-title">Versand</span><span id="shipping-cost" class="detail-value">2,99 €</span></p>
+                                <p class="detail"><span class="detail-title">Gesamtbetrag</span><span id="total-price" class="detail-value">0.00 €</span></p>
+                            </div>
+                            <br>
+                            <div id="paypal-button-container"></div>
+                        </div>
+                    </li>
+                    <li class="rent-li">
+                        <img src="images/voucher_card.webp" class="rent_advertising" id="voucher-card" alt="Voucher Card" title="Voucher Card" loading="lazy"/>
+                    </li>
+
+                </ul>                
+            </main>
+
+            <footer>
+                <nav class="legal-nav">
+                    <span>ElbSpeed GmbH © 2024</span>
+                    <a class="legal-link" href="impressum">Impressum</a>
+                    <a class="legal-link" href="datenschutzerklärung">Datenschutzerklärung</a>
+                    <a class="legal-link" href="guides">Allgemeine Mietbedingungen</a>
+                </nav>
+            </footer>
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
