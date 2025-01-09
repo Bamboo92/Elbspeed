@@ -141,9 +141,7 @@ function sendMailVoucher(subject, bodyMessage) {
         Body : bodyMessage
     })
 }
-
 const clid = "AWvpoBD5pqDwiwth9oal_wTOWgiMq53ELqPLg4FuOrntPVdHSih9jT3gPoDS6_Yuu3LpYgzmGFciVgum";
-
 function addNewsletterSubscriber(bodyMessage) {
     Email.send({
         SecureToken: eml,

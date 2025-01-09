@@ -190,6 +190,16 @@ a {
     color: var(--gray4);
 }
 
+a:hover {
+    text-decoration: none;
+    color: var(--900);
+}
+
+a:active {
+    text-decoration: none;
+    color: var(--700);
+}
+
 ul {
     list-style-type: none;
     padding-left: 0;
@@ -269,21 +279,39 @@ footer{
 }
 
 .app-nav {
+    /**position: sticky;
+    top: 0;**/
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    column-gap: 1vw;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 5vmin;
-    padding-bottom: 0;
-    width: 100%;
+    padding-bottom: 2vw;
+    padding-inline: 2vw;
+    border-radius: 0 0 15px 15px;
+    width: 90vw;
     font-size: clamp(7px, 1.5vw, 20px);
+    /**padding-top: 2vw;
+    background-color: var(--highlite-white);
+    filter: drop-shadow(5px 5px 10px rgba(123, 86, 86, 0.2));
+    z-index: 1001;**/
 }
 
 .app-nav > * {
     display: flex;
     width: 20vw;
     align-items: center;
-    justify-content: center;
+}
+
+.app-nav-img {
+    width: 20vw;
+}
+
+.app-nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 2vw;
+    width: fit-content;
 }
 
 #app-logo {
@@ -297,25 +325,22 @@ footer{
 }
 
 .App-header {
-    color: var(--700);
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    padding-bottom: clamp(0px, 3vw, 1000px);
-    width: 100%;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    padding-top: 10%;
 }
 
 .App-title {
-    color: var(--950);
+    color: var(--highlite-white);
     font-weight: bold;
     z-index: 1;
     min-width: -moz-fit-content;
     min-width: -webkit-fill-available;
     min-width: fit-content;
-    position: relative;
-    top: 55px;
-    left: 300px;
+    margin-left: 5vw;
 }
 
 #start-btn {
@@ -323,6 +348,7 @@ footer{
     display: inline-block;
     border-radius: 15px;
     position: relative;
+    margin-top: 2vw;
     padding: 10px 20px;
     font-size: 16px;
     color: var(--50);
@@ -358,19 +384,37 @@ footer{
     box-shadow: 0 0 40px 20px rgba(255, 128, 128, 0.4); /* Weicher und stärker bei Hover */
 }
 
-
-.car-bg-txt {
-    color: var(--100);
-    position: relative;
-}
-
-.car-logo {
-    position: relative;
-    top: 80px;
-}
-
 .App-title-special-word {
+    position: relative;
+    top: -2vw;
     color: var(--600);
+}
+.slider-container {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background: var(--default-white-gradient);
+}
+
+.slider-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 100%; /* Start außerhalb des Sichtbereichs */
+    object-fit: cover;
+    opacity: 0;
+    transition: left 1.5s ease-in-out, opacity 1.5s ease-in-out; /* Sanfter Übergang */
+
+}
+
+.slider-container img.active {
+    left: 0; /* Bild wird sichtbar */
+    opacity: 1;
+}
+
+.slider-container img.exiting {
+    left: -100%; /* Bild verlässt den Sichtbereich */
+    opacity: 0;
 }
 
 #search-form {
@@ -487,6 +531,7 @@ h4 {
 }
 
 #inventory {
+    padding-top: 2vw;
     width: calc(100% + 20vw);
     column-gap: 5vw;
     overflow-x: scroll;
@@ -1369,13 +1414,12 @@ h4 {
     .car-bg-txt {
         font-size: clamp(300px, 20vw, 400px);
         bottom: 10px;
-        left: clamp(100px, 10vw, 290px);
         padding-top: 0;
     }
 
     .car-logo {
         width: clamp(530px, 40vw, 800px);
-        right: clamp(350px , 10vw, 500px);
+        right: clamp(400px , 400vw, 650px);
         top: clamp(100px, 8vw, 140px);
     }
     
@@ -1413,13 +1457,12 @@ h4 {
     .car-bg-txt {
         font-size: clamp(200px, 25vw, 250px);
         bottom: 50px;
-        left: 100px;
         margin-top: 60px;
     }
 
     .car-logo {
         width: 45vw;
-        right: clamp(280px , 4vw, 300px);
+        right: clamp(500px , 55vw, 600px);
     }
 }
 
@@ -1441,10 +1484,6 @@ h4 {
         display: none;
     }
 
-    .app-nav-img {
-        width: 100%;
-    }
-
     #app-logo {
         width: 40vw;
         max-width: 250px;
@@ -1452,12 +1491,10 @@ h4 {
 
     .App-header {
         height: clamp(50px, 25vw, 300px);
-        padding-bottom: clamp(35px, 15vw, 100px);
     }
 
     .App-title {
         font-size: clamp(2px, 5vw, 40px);
-        left: clamp(12px, 25vmin, 230px);
         top: clamp(5px, 10vw, 100px);
     }
 
@@ -1476,13 +1513,12 @@ h4 {
     .car-bg-txt {
         font-size: clamp(10px, 20vw, 180px);
         bottom: 3vmin;
-        left: clamp(4px, 5vmin, 100px);
         margin-top: clamp(5px, 20vw, 200px);
     }
 
     .car-logo {
         width: 40vw;
-        right: clamp(18vw, 20vmin, 100px);
+        right: clamp(120px, 30vmin, 230px);
         top: clamp(5px, 10vw, 100px);
     }
 

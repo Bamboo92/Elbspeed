@@ -14,24 +14,62 @@
     <body>
         <div class="App">
             <nav class="app-nav unselectable">
-                <a class="app-nav-hidden" href="/#rent-car-header">Buchen</a>
-                <a class="" href="FAQ.html">FAQ</a>
-                <span></span>
                 <a class="app-nav-img" href="/"><img src="images/logo.svg" id="app-logo" alt="elbspeed-logo" title="Elbspeed"/></a>
-                <span></span>
-                <a class="" href="kontakt.html">Kontakt</a>
-                <a class="app-nav-hidden" href="aboutus.html">Unternehmen</a>
+                <div class="app-nav-links">
+                    <a class="app-nav-hidden" href="/#sortiment-h2">Buchen</a>
+                    <a class="" href="FAQ.html">FAQ</a>
+                    <a class="" href="kontakt.html">Kontakt</a>
+                    <a class="app-nav-hidden" href="aboutus.html">Unternehmen</a>
+                </div>
             </nav>
 
             <header class="App-header unselectable">
+                <div class="slider-container" id="sliderContainer"></div> 
                 <h1 class="App-title">Buche jetzt ein<br>
                     <strong class="App-title-special-word">Auto</strong><br>
                     <button onclick="window.location.href='voucher.html'" class="gradient-btn btn" id="start-btn">Jetzt ein Freund beschenken</button>
                 </h1>
-        
-                <b class="car-bg-txt">BMW</b>
-                <img src="images/bmw_m4_competition.svg" class="car-logo" alt="audi" title="Audi" loading="lazy"/>
             </header>
+            <script>
+                const images = [
+                    'images/BMW-M4-Competition.jpg',
+                    'images/Mercedes-AMG-E53.jpg',
+                    'images/Volkswagen-Golf-R.jpg'
+                ];
+
+                const container = document.getElementById('sliderContainer');
+                let currentIndex = 0;
+
+                // Bilder vorladen
+                images.forEach((src) => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    container.appendChild(img);
+                });
+
+                function slideImages() {
+                    const allImages = container.querySelectorAll('img');
+                    const currentImage = allImages[currentIndex];
+
+                    // Setze das aktuelle Bild als "active"
+                    currentImage.classList.add('active');
+
+                    // Entferne "active" und setze "exiting" für das vorherige Bild
+                    const exitingImage = container.querySelector('img.active:not(:nth-child(' + (currentIndex + 1) + '))');
+                    if (exitingImage) {
+                        exitingImage.classList.remove('active');
+                        exitingImage.classList.add('exiting');
+                        exitingImage.addEventListener('transitionend', () => exitingImage.classList.remove('exiting'));
+                    }
+
+                    // Update den Index für das nächste Bild
+                    currentIndex = (currentIndex + 1) % allImages.length;
+                }
+
+                // Starte die Animation
+                setInterval(slideImages, 5000); // Alle 5 Sekunden wechseln
+                slideImages(); // Zeige das erste Bild
+            </script>
             <!--
             <form class="unselectable" id="search-form" action="/submit-form" method="post">
                 <label id="calendar-label" For="calendar">Abholdatum <b>⌵</b></label>
@@ -116,8 +154,6 @@
 
                 <div class="divider"></div>
             </h2>
-
-            <h4>Unsere Auswahl erweitert sich kontinuierlich!</h4>
 
             <section id="inventory">
                 <img src="images/bmw_m4_competition_front_left_corner.jpg" class="inventory-thumbnail unselectable" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
@@ -304,7 +340,7 @@
                     <nav class="footer-nav">
                         <ul>
                             <li><h5>Vermietung</h5></li>
-                            <li><a href="/#rent-car-header">Auto Buchen</a></li>
+                            <li><a href="/#sortiment-h2">Auto Buchen</a></li>
                             <li><a href="none.html">Feedback</a></li>
                         </ul>
                         <ul>
