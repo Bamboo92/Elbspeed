@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://elb-speed.de/sitemap.xml
+
+Host: elb-speed.de

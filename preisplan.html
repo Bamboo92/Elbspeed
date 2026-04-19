@@ -15,151 +15,92 @@
 
         <h1>Preisplan</h1>
         <main id="price-plan-main">
-            <section class="plan" id="hour-plan">
-                <article class="card basic-plan-article">
-                    <h2 class="price-plan-h2">Stundenmiete</h2>
-                    <h3 class="price-plan-h3"><span class="price-plan-h3-currency">€</span><span class="price-plan-h3-amount">199</span><span class="price-plan-h3-job">/8 Std.</span></h3>
-                    <button class="btn unselectable price-plan-btn outline-btn" onclick="selectPlan('Stundenmiete: ', 'Mo-Do')">Fortfahren</button>
-                    <p class="price-plan-free-km"><span class="price-plan-p-free">80</span><span class="price-plan-p-km">/Frei-km</span></p>
-                    <p class="price-plan-p">Tage:<br>Montag - Donnerstag</p>
-                    <footer class="price-plan-footer">
-                        <details class="price-plan-details price-plan-p">
-                            <summary class="price-plan-details-summary unselectable">Mehr Frei KM</summary>
-                            <p class="price-plan-details-p">Hinzubuchung von Kilometern vor Mietbeginn:</p>
-                            <p class="price-plan-details-p"><span class="price-plan-details-currency">€</span><span class="price-plan-details-amount">1,50</span><span class="price-plan-details-job">/km.</span></p>
-                            <p class="price-plan-details-p">Überzogene Kilometer bei Fahrzeugabgabe:</p>
-                            <p class="price-plan-details-p"><span class="price-plan-details-currency">€</span><span class="price-plan-details-amount">2,00</span><span class="price-plan-details-job">/km.</span></p>
-                        </details>
-                    </footer>
-                </article>
+            <section class="plan" id="basic-plans">
 
-                <article class="card basic-plan-article">
-                    <h2 class="price-plan-h2">Stundenmiete</h2>
-                    <h3 class="price-plan-h3"><span class="price-plan-h3-currency">€</span><span class="price-plan-h3-amount">229</span><span class="price-plan-h3-job">/8 Std.</span></h3>
-                    <button class="btn unselectable price-plan-btn outline-btn" onclick="selectPlan('Stundenmiete: ', 'Fr-Mo')">Fortfahren</button>
-                    <p class="price-plan-free-km"><span class="price-plan-p-free">80</span><span class="price-plan-p-km">/Frei-km</span></p>
-                    <p class="price-plan-p">Tage:<br>Freitag - Montag</p>
-                    <footer class="price-plan-footer">
-                        <details class="price-plan-details price-plan-p">
-                            <summary class="price-plan-details-summary unselectable">Mehr Frei KM</summary>
-                            <p class="price-plan-details-p">Hinzubuchung von Kilometern vor Mietbeginn:</p>
-                            <p class="price-plan-details-p"><span class="price-plan-details-currency">€</span><span class="price-plan-details-amount">1,50</span><span class="price-plan-details-job">/km.</span></p>
-                            <p class="price-plan-details-p">Überzogene Kilometer bei Fahrzeugabgabe:</p>
-                            <p class="price-plan-details-p"><span class="price-plan-details-currency">€</span><span class="price-plan-details-amount">2,00</span><span class="price-plan-details-job">/km.</span></p>
-                        </details>
-                    </footer>
-                </article>
             </section>
-            <section class="plan" id="day-plan">
-                <article class="card basic-plan-article day-plan">
-                    <h2 class="price-plan-h2">Tagesmiete</h2>
-                    <h3 class="price-plan-h3"><span class="price-plan-h3-currency day-plan">€</span><span class="price-plan-h3-amount">250</span><span class="price-plan-h3-job day-plan">/24 Std.</span></h3>
-                    <button class="btn unselectable price-plan-btn outline-btn" onclick="selectPlan('Tagesmiete: ', 'Mo-Do')">Fortfahren</button>
-                    <p class="price-plan-free-km"><span class="price-plan-p-free">180</span><span class="price-plan-p-km day-plan">/Frei-km</span></p>
-                    <p class="price-plan-p day-plan">Tage:<br>Montag - Donnerstag</p>
-                    <footer class="price-plan-footer">
-                        <details class="price-plan-details price-plan-p day-plan">
-                            <summary class="price-plan-details-summary unselectable">Mehr Frei KM</summary>
-                            <p class="price-plan-details-p">Hinzubuchung von Kilometern vor Mietbeginn:</p>
-                            <p class="price-plan-details-p"><span class="price-plan-details-currency day-plan">€</span><span class="price-plan-details-amount">1,50</span><span class="price-plan-details-job day-plan">/km.</span></p>
-                            <p class="price-plan-details-p">Überzogene Kilometer bei Fahrzeugabgabe:</p>
-                            <p class="price-plan-details-p"><span class="price-plan-details-currency day-plan">€</span><span class="price-plan-details-amount">2,00</span><span class="price-plan-details-job day-plan">/km.</span></p>
-                        </details>
-                    </footer>
-                </article>
+            <aside class="elite-plan">
+                <h1 class="elite-plan-h1">Elite-Plan</h1>
+                <section class="plan" id="elite-plans">
 
-                <article class="card basic-plan-article day-plan">
-                    <h2 class="price-plan-h2">Tagesmiete</h2>
-                    <h3 class="price-plan-h3"><span class="price-plan-h3-currency day-plan">€</span><span class="price-plan-h3-amount">300</span><span class="price-plan-h3-job day-plan">/24 Std.</span></h3>
-                    <button class="btn unselectable price-plan-btn outline-btn" onclick="selectPlan('Tagesmiete: ', 'Fr-So')">Fortfahren</button>
-                    <p class="price-plan-free-km"><span class="price-plan-p-free">200</span><span class="price-plan-p-km day-plan">/Frei-km</span></p>
-                    <p class="price-plan-p day-plan">Tage:<br>Freitag - Sontag</p>
-                    <footer class="price-plan-footer">
-                        <details class="price-plan-details price-plan-p day-plan">
-                            <summary class="price-plan-details-summary unselectable">Mehr Frei KM</summary>
-                            <p class="price-plan-details-p">Hinzubuchung von Kilometern vor Mietbeginn:</p>
-                            <p class="price-plan-details-p"><span class="price-plan-details-currency day-plan">€</span><span class="price-plan-details-amount">1,50</span><span class="price-plan-details-job day-plan">/km.</span></p>
-                            <p class="price-plan-details-p">Überzogene Kilometer bei Fahrzeugabgabe:</p>
-                            <p class="price-plan-details-p"><span class="price-plan-details-currency day-plan">€</span><span class="price-plan-details-amount">2,00</span><span class="price-plan-details-job day-plan">/km.</span></p>
-                        </details>
-                    </footer>
-                </article>
-            </section>
+                </section>
+            </aside>
         </main>
-        <aside class="elite-plan">
-            <h1 class="elite-plan-h1">Elite-Plan</h1>
-            <section class="plan" id="elite-section">
-                <article class="card basic-plan-article elite-plan-color">
-                    <h2 class="price-plan-h2">Wochentage</h2>
-                    <h3 class="price-plan-h3"><span class="price-plan-h3-currency elite-plan-color">€</span><span class="price-plan-h3-amount">649</span><span class="price-plan-h3-job elite-plan-color">/72 Std.</span></h3>
-                    <button class="btn unselectable price-plan-btn outline-btn" onclick="selectPlan('Wochentage: ', 'Mo-Do')">Fortfahren</button>
-                    <p class="price-plan-free-km"><span class="price-plan-p-free">350</span><span class="price-plan-p-km elite-plan-color">/Frei-km</span></p>
-                    <p class="price-plan-p elite-plan-color">Tage:<br>Montag - Donnerstag</p>
-                    <footer class="price-plan-footer">
-                        <details class="price-plan-details price-plan-p">
-                            <summary class="price-plan-details-summary unselectable elite-plan-color">Mehr Frei KM</summary>
-                            <p class="price-plan-details-p elite-plan-color">Hinzubuchung von Kilometern vor Mietbeginn:</p>
-                            <p class="price-plan-details-p elite-plan-color"><span class="price-plan-details-currency elite-plan-color">€</span><span class="price-plan-details-amount">1,50</span><span class="price-plan-details-job elite-plan-color">/km.</span></p>
-                            <p class="price-plan-details-p elite-plan-color">Überzogene Kilometer bei Fahrzeugabgabe:</p>
-                            <p class="price-plan-details-p elite-plan-color"><span class="price-plan-details-currency elite-plan-color">€</span><span class="price-plan-details-amount">2,00</span><span class="price-plan-details-job elite-plan-color">/km.</span></p>
-                        </details>
-                    </footer>
-                </article>
+        <script type="module">
+            import { cars } from '/data/cars.js'
 
-                <article class="card basic-plan-article elite-plan-color-special">
-                    <h2 class="price-plan-h2">Wochenmiete</h2>
-                    <h3 class="price-plan-h3"><span class="price-plan-h3-currency elite-plan-color-special">€</span><span class="price-plan-h3-amount elite-plan-color-special-amount">1400</span></h3>
-                    <button class="btn unselectable price-plan-btn gradient-btn" id="elite-plan-btn" onclick="selectPlan('Wochenmiete: ', '7 Tage')">Fortfahren</button>
-                    <p class="price-plan-free-km"><span class="price-plan-p-free elite-plan-color-special-amount">1000</span><span class="price-plan-p-km elite-plan-color-special">/Frei-km</span></p>
-                    <p class="price-plan-p elite-plan-color-special">Tage:<br>7 Tage</p>
-                    <footer class="price-plan-footer">
-                        <details class="price-plan-details price-plan-p">
-                            <summary class="price-plan-details-summary unselectable elite-plan-color-special">Mehr Frei KM</summary>
-                            <p class="price-plan-details-p elite-plan-color-special">Hinzubuchung von Kilometern vor Mietbeginn:</p>
-                            <p class="price-plan-details-p elite-plan-color-special"><span class="price-plan-details-currency elite-plan-color-special">€</span><span class="price-plan-details-amount">1,50</span><span class="price-plan-details-job elite-plan-color-special">/km.</span></p>
-                            <p class="price-plan-details-p elite-plan-color-special">Überzogene Kilometer bei Fahrzeugabgabe:</p>
-                            <p class="price-plan-details-p elite-plan-color-special"><span class="price-plan-details-currency elite-plan-color-special">€</span><span class="price-plan-details-amount">2,00</span><span class="price-plan-details-job elite-plan-color-special">/km.</span></p>
-                        </details>
-                    </footer>
-                </article>
-
-                <article class="card basic-plan-article elite-plan-color">
-                    <h2 class="price-plan-h2">Wochenende</h2>
-                    <h3 class="price-plan-h3"><span class="price-plan-h3-currency elite-plan-color elite-plan-color">€</span><span class="price-plan-h3-amount">550</span><span class="price-plan-h3-job elite-plan-color elite-plan-color">/48 Std.</span></h3>
-                    <button class="btn unselectable price-plan-btn outline-btn" onclick="selectPlan('Wochenende: ', 'Fr-So')">Fortfahren</button>
-                    <p class="price-plan-free-km"><span class="price-plan-p-free">400</span><span class="price-plan-p-km elite-plan-color">/Frei-km</span></p>
-                    <p class="price-plan-p elite-plan-color">Tage:<br>Freitag bis Sonntag</p>
-                    <footer class="price-plan-footer">
-                        <details class="price-plan-details price-plan-p">
-                            <summary class="price-plan-details-summary unselectable elite-plan-color">Mehr Frei KM</summary>
-                            <p class="price-plan-details-p elite-plan-color">Hinzubuchung von Kilometern vor Mietbeginn:</p>
-                            <p class="price-plan-details-p elite-plan-color"><span class="price-plan-details-currency elite-plan-color">€</span><span class="price-plan-details-amount">1,50</span><span class="price-plan-details-job elite-plan-color">/km.</span></p>
-                            <p class="price-plan-details-p elite-plan-color">Überzogene Kilometer bei Fahrzeugabgabe:</p>
-                            <p class="price-plan-details-p elite-plan-color"><span class="price-plan-details-currency elite-plan-color">€</span><span class="price-plan-details-amount">2,00</span><span class="price-plan-details-job elite-plan-color">/km.</span></p>
-                        </details>
-                    </footer>
-                </article>
-            </section>
-        </aside>
-
-        <script>
             document.addEventListener('DOMContentLoaded', function() {
-                const accessFromIndex = localStorage.getItem('accessFromIndex');
-
-                if (!accessFromIndex) {
+                const accessFromInventory = localStorage.getItem('accessFromInventory');
+                
+                if (!accessFromInventory) {
                     // If the user didn't come from index.html, redirect them
                     window.location.href = '/';
                 } else {
                     // Clear the flag and set a new one for navigation to buchung.html
-                    localStorage.removeItem('accessFromIndex');
+                    localStorage.removeItem('accessFromInventory');
                     localStorage.setItem('accessFromPreisplan', 'true');
                 }
+
+                const selectedCarId = localStorage.getItem('selectedCarId');
+                const car = cars.find(c => c.id === selectedCarId);
+
+                const getPlanType = (p) => (p.plan || '').toLowerCase().replace(/\s+/g, '');
+                const isEliteType = (t) => t === 'elite' || t === 'special-elite' || t === 'specialelite';
+                const isSpecialType = (t) => t === 'special-elite';
+                const isBasicType = (t) => t === 'basic';
+
+                const renderCard = (p) => {
+                    const t = getPlanType(p);
+                    const classes = ['card plan-card'];
+                    const buttonClasses = ['btn unselectable price-plan-btn'];
+                    if (isSpecialType(t)) classes.push(' special'), buttonClasses.push(' gradient-btn')
+                    else buttonClasses.push(' outline-btn');
+                    if (isEliteType(t)) classes.push(' elite');
+            
+                    return `
+                        <article class="${classes.join('')}">
+                            <h2 class="price-plan-h2">${p.name}</h2>
+                            <h3 class="price-plan-h3"><span class="price-plan-h3-currency">${p.currency}</span><span class="price-plan-h3-amount">${p.price}</span><span class="price-plan-h3-job">/<span>${p.duration_h}</span> Std.</span></h3>
+                            <button class="${buttonClasses.join('')}" data-price-id="${p.id}">Fortfahren</button>
+                            <p class="price-plan-free-km"><span class="price-plan-p-free">${p.included_km}</span><span class="price-plan-p-km">/Frei-km</span></p>
+                            <p class="price-plan-p">Tage:<br><span class="price-plan-wochentage">${p.days}</span></p>
+                            <footer class="price-plan-footer">
+                                <details class="price-plan-details price-plan-p">
+                                    <summary class="price-plan-details-summary unselectable">Mehr Frei KM</summary>
+                                    <p class="price-plan-details-p">Hinzubuchung von Kilometern vor Mietbeginn:</p>
+                                    <p class="price-plan-details-p"><span class="price-plan-details-currency">${p.currency}</span><span class="price-plan-details-amount">${p.added_km}</span><span class="price-plan-details-job">/km.</span></p>
+                                    <p class="price-plan-details-p">Überzogene Kilometer bei Fahrzeugabgabe:</p>
+                                    <p class="price-plan-details-p"><span class="price-plan-details-currency">${p.currency}</span><span class="price-plan-details-amount">${p.penalty_km}</span><span class="price-plan-details-job">/km.</span></p>
+                                </details>
+                            </footer>
+                        </article>
+                    `
+                };
+
+                const basicCards = [];
+                const eliteCards = [];
+
+                (car?.prices || []).forEach(p => {
+                    const t = getPlanType(p);
+                    const card = renderCard(p);
+                    if (isBasicType(t))
+                        basicCards.push(card);
+                    else if (isEliteType(t) || isSpecialType(t))
+                        eliteCards.push(card);
+                });
+
+                const basicPlans = document.getElementById('basic-plans');
+                basicPlans.innerHTML = basicCards.join('');
+                const elitePlans = document.getElementById('elite-plans');
+                elitePlans.innerHTML = eliteCards.join('');
+
+                document.querySelectorAll('.price-plan-btn').forEach(btn => {
+                    btn.addEventListener('click', () => selectPlan(btn.dataset.priceId));
+                });
             });
 
-            function selectPlan(planType, planDetails) {
-                localStorage.setItem('planType', planType);
-                localStorage.setItem('planDetails', planDetails);
-                window.location.href = 'buchung.html';
+            function selectPlan(selectedPriceId) {
+                localStorage.setItem('selectedPriceId', selectedPriceId);
+                window.location.href = 'buchung';
             }
         </script>
     </body>

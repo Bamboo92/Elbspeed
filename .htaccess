@@ -1,0 +1,76 @@
+# Set UTF-8 charset for all documents
+AddDefaultCharset UTF-8
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Ensure HTTPS is used
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.reihana\.shop$ [NC]
+RewriteRule ^(.*)$ https://reihana.shop/$1 [L,R=301]
+
+# Custom Error Documents (e.g., 404 and 500 pages)
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# Disable directory listing
+Options -Indexes
+
+# Make .html extension optional: if the requested file is not a directory and a corresponding .html file exists,
+# then internally rewrite the URL to include the .html extension.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+##############################################################################
+# CACHE RULES FOR STATIC ASSETS
+#
+# The following block sets caching rules for static assets (images, CSS, JS, etc.)
+# using mod_expires. This improves performance by instructing the browser to cache
+# these assets for a specified duration. For example, images and CSS are cached for 1 month.
+#
+# During development you might want to disable caching so that updates load on every
+# page load. In this file, caching is disabled by the mod_headers block below.
+#
+# To enable caching in production, comment out the mod_headers block and uncomment
+# the block below.
+##############################################################################
+#
+# <IfModule mod_expires.c>
+#   ExpiresActive On
+#   ExpiresByType image/jpg "access plus 1 month"
+#   ExpiresByType image/jpeg "access plus 1 month"
+#   ExpiresByType image/gif "access plus 1 month"
+#   ExpiresByType image/png "access plus 1 month"
+#   ExpiresByType text/css "access plus 1 month"
+#   ExpiresByType application/pdf "access plus 1 month"
+#   ExpiresByType application/javascript "access plus 1 month"
+#   ExpiresByType application/x-javascript "access plus 1 month"
+#   ExpiresByType application/font-woff2 "access plus 1 month"
+#   ExpiresByType application/font-woff "access plus 1 month"
+#   ExpiresByType application/vnd.ms-fontobject "access plus 1 month"
+#   ExpiresByType font/ttf "access plus 1 month"
+#   ExpiresByType font/otf "access plus 1 month"
+#   ExpiresByType font/woff "access plus 1 month"
+#   ExpiresDefault "access plus 2 days"
+# </IfModule>
+#
+# <IfModule mod_headers.c>
+#   <FilesMatch "\.(html|css|js|jpg|jpeg|png|gif|svg)$">
+#     Header set Cache-Control "max-age=2592000, public"
+#   </FilesMatch>
+# </IfModule>
+#
+##############################################################################
+# DEVELOPMENT CACHE RULES: Disable caching so that updates always load
+##############################################################################
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|jpg|jpeg|png|gif|svg)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>

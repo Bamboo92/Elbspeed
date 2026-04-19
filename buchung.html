@@ -27,7 +27,7 @@
                     <label id="contact-label-car" for="car"></label>
                     <label id="contact-label-plan" for="plan"></label>
                     <div class="rent-dates">
-                        <input class="contact-input" type="text" id="car" name="car" placeholder="car" value="BMW M4 Competition" readonly><br>
+                        <input class="contact-input" type="text" id="car" name="car" placeholder="car" value="Selected Car" readonly><br>
                         <p></p>
                         <input class="contact-input" type="text" id="plan" name="plan" placeholder="plan" readonly><br>
                     </div><br class="no-br">
@@ -54,11 +54,11 @@
                     <footer class="rent-agree">
                         <div class="required">
                             <input class="" type="checkbox" id="agree1" name="agree" required>
-                            <label for="agree1">Ich akzeptiere die <a href="datenschutzerklärung.html">Datenschutzerklärung</a>.</label>
+                            <label for="agree1">Ich akzeptiere die <a href="datenschutzerklärung">Datenschutzerklärung</a>.</label>
                         </div>
                         <div class="required">
                             <input class="" type="checkbox" id="agree2" name="agree" required>
-                            <label for="agree2">Ich akzeptiere die <a href="guides.html">Allgemeinen Mietbedingungen</a>.</label>
+                            <label for="agree2">Ich akzeptiere die <a href="guides">Allgemeinen Mietbedingungen</a>.</label>
                         </div>
                     </footer>
                     <br class="no-br">
@@ -107,16 +107,7 @@
                     </li>
                     <li class="rent-li">
                         <article class="card contact-article" id="price-article">
-                                <details id="price-article-dropdown">
-                                    <summary>Extra km:</summary>
-                                    <p>
-                                        <ul>
-                                            <li>Hinzubuchung von Kilometern vor Mietbeginn: 1,50 € /km</li>
-                                            <li>Überzogene Kilometer bei Fahrzeugabgabe: 2,00 € /km</li>
-                                        </ul>
-                                    </p>
-                                </details>
-                                <p class="detail"><span class="detail-title"></span><span class="detail-value">Alles inkl. mwst.</span></p>
+                
                         </article>
                     </li>
                     <li>
@@ -242,14 +233,17 @@
 
             <footer>
                 <nav class="legal-nav">
-                    <span>ElbSpeed GmbH © 2024</span>
-                    <a class="legal-link" href="impressum.html">Impressum</a>
-                    <a class="legal-link" href="datenschutzerklärung.html">Datenschutzerklärung</a>
-                    <a class="legal-link" href="guides.html">Allgemeine Mietbedingungen</a>
+                    <span>ElbSpeed GmbH © 2025</span>
+                    <a class="legal-link" href="impressum">Impressum</a>
+                    <a class="legal-link" href="datenschutzerklaerung">Datenschutzerklärung</a>
+                    <a class="legal-link" href="strafkatalog">Strafkatalog</a>
+                    <a class="legal-link" href="guides">Allgemeine Mietbedingungen</a>
                 </nav>
             </footer>
         </div>
-        <script>
+        <script type="module">
+            import { cars } from '/data/cars.js'
+
             document.addEventListener('DOMContentLoaded', function() {
                 // Überprüfung, ob der Benutzer von der Preisplan-Seite kommt
                 const accessFromPreisplan = localStorage.getItem('accessFromPreisplan');
@@ -262,150 +256,62 @@
                 }
 
                 // Fahrzeug- und Plan-Daten aus dem localStorage laden
-                const car = localStorage.getItem('car');
-                const planType = localStorage.getItem('planType');
-                const planDetails = localStorage.getItem('planDetails');
+                const selectedCarId = localStorage.getItem('selectedCarId');
+                const selectedPriceId = localStorage.getItem('selectedPriceId');
+
+                const car = cars.find(c => c.id === selectedCarId);
+                const pricePlan = car?.prices.find(p => p.id === selectedPriceId);
 
                 // Formularfelder mit den gespeicherten Werten füllen
-                if (car && planType && planDetails) {
-                    document.getElementById('car').value = car;
-                    document.getElementById('plan').value = planType + planDetails;
+                if (selectedCarId && selectedPriceId) {
+                    document.getElementById('car').value = selectedCarId;
+                    document.getElementById('plan').value = pricePlan.name + " " + pricePlan.days;
                 }
 
-                // Fahrzeugdaten
-                const carData = {
-                    'BMW M4 Competition': {
-                        'Hersteller': 'BMW',
-                        'Modell': 'M4',
-                        'Erstzulassung': '2021',
-                        'Leistung': '510PS',
-                        'Motor': 'R6',
-                        'Kraftstoff': 'Benzin',
-                    },
-                    'Mercedes AMG E53': {
-                        'Hersteller': 'Mercedes',
-                        'Modell': '4M+',
-                        'Erstzulassung': '2022',
-                        'Leistung': '435PS',
-                        'Motor': 'R6',
-                        'Kraftstoff': 'Benzin',
-                    },
-                };
+                const specs = document.getElementById('details-article');
+                specs.innerHTML = `
+                    <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">${car.specs.power_hp}</span></p>
+                    <p class="detail"><span class="detail-title">Drehmomment:</span><span class="detail-value">${car.specs.torque_nm}</span></p>
+                    <p class="detail"><span class="detail-title">VMAX:</span><span class="detail-value">${car.specs.vmax_kmh}</span></p>
+                    <p class="detail"><span class="detail-title">0-100 km/h:</span><span class="detail-value">${car.specs.acceleration_0_100}</span></p>
+                `;
 
-                // Fahrzeugdetails aktualisieren
-                if (carData[car]) {
-                    const details = carData[car];
-                    const contactArticle = document.getElementById('details-article');
+                const price = document.getElementById('price-article');
+                price.innerHTML = `
+                    <p id="detail-cost" class="detail"><span class="detail-title">${pricePlan.price}${pricePlan.currency}</span><span class="detail-value">/ ${pricePlan.duration_h} Std.</span></p>
+                    <p class="detail"></p>
+                    <p class="detail"><span class="detail-title">Kaution:</span><span class="detail-value">1 000€ oder KfZ*</span></p>
+                    <p class="detail"><span class="detail-title">SB:</span><span class="detail-value">2 500€</span></p>
+                    <details id="price-article-dropdown">
+                        <summary>Extra km:</summary>
+                        <p>
+                            <ul>
+                                <li>Hinzubuchung von Kilometern vor Mietbeginn: ${pricePlan.added_km}€ /km</li>
+                                <li>Überzogene Kilometer bei Fahrzeugabgabe: ${pricePlan.penalty_km}€ /km</li>
+                            </ul>
+                        </p>
+                    </details>
+                    <br>
+                    <p class="detail"><span class="detail-title"></span><span class="detail-value">Alles inkl. mwst.</span></p>
+                    <p class="detail" style="font-size: clamp(10px, 2.2vmin, 25px); margin: 0">*Eigenes KfZ muss ein Mindestwert von 1000€ haben</p>
 
-                    // Clear previous content if any
-                    contactArticle.innerHTML = '';
-
-                    // Dynamisch <p> Elemente mit den Fahrzeugdetails erstellen
-                    for (const [key, value] of Object.entries(details)) {
-                        const pElement = document.createElement('p');
-                        pElement.classList.add('detail');
-
-                        const spanTitle = document.createElement('span');
-                        spanTitle.classList.add('detail-title');
-                        spanTitle.innerText = `${key}:`;
-
-                        const spanValue = document.createElement('span');
-                        spanValue.classList.add('detail-value');
-                        spanValue.innerText = value;
-
-                        pElement.appendChild(spanTitle);
-                        pElement.appendChild(spanValue);
-                        contactArticle.appendChild(pElement);
-                    }
-                }
-
-                // Beispielhafte Fahrzeugdaten
-                const priceData = {
-                    'BMW M4 Competition': {
-                        'Kaution': '1 000€',
-                        'SB': '2 500€'
-                    },
-                    'Mercedes AMG E53': {
-                        'Kaution': '1 000€',
-                        'SB': '2 500€'
-                    },
-                };
-
-                // Fahrzeugdetails aktualisieren
-                if (priceData[car]) {
-                    const details = priceData[car];
-                    const contactArticle = document.getElementById('price-article');
-
-                    // Wähle das <details> Element mit der spezifischen ID
-                    const detailsElement = document.getElementById('price-article-dropdown');
-
-                    // Überprüfen, ob das <details>-Element existiert
-                    if (detailsElement) {
-                        // Dynamisch <p> Elemente mit den Fahrzeugdetails erstellen
-                        for (const [key, value] of Object.entries(details)) {
-                            const pElement = document.createElement('p');
-                            pElement.classList.add('detail');
-
-                            const spanTitle = document.createElement('span');
-                            spanTitle.classList.add('detail-title');
-                            spanTitle.innerText = `${key}:`;
-
-                            const spanValue = document.createElement('span');
-                            spanValue.classList.add('detail-value');
-                            spanValue.innerText = value;
-
-                            pElement.appendChild(spanTitle);
-                            pElement.appendChild(spanValue);
-
-                            // Füge das <p> Element vor dem <details> Element ein
-                            contactArticle.insertBefore(pElement, detailsElement);
-                        }
-                    } else {
-                        console.error('Das <details>-Element mit der ID "price-article-dropdown" wurde nicht gefunden.');
-                    }
-                }
-
-                // Beispielhafte Fahrzeugbilder
-                const carImages = {
-                    'BMW M4 Competition': [
-                        'images/bmw_m4_competition_front.jpg',
-                        'images/bmw_m4_competition_front_left_corner.jpg',
-                        'images/bmw_m4_competition_left_side.jpg',
-                        'images/bmw_m4_competition_m4_logo_rear.jpg',
-                        'images/bmw_m4_competition_m4_logo_side.jpg',
-                        'images/bmw_m4_competition_rear.jpg',
-                        'images/bmw_m4_competition_rear_right_corner.jpg',
-                    ],
-                    'Mercedes AMG E53': [
-                        'images/mercedes_amg_e53_front.jpg',
-                        'images/mercedes_amg_e53_front_left_corner.jpg',
-                        'images/mercedes_amg_e53_left_side_front.jpg',
-                        'images/mercedes_amg_e53_left_side_middle.jpg',
-                        'images/mercedes_amg_e53_left_side_rear.jpg',
-                        'images/mercedes_amg_e53_dirver_stearing_wheel.jpg',
-                        'images/mercedes_amg_e53_rear_left_corner.jpg',
-                        'images/mercedes_amg_e53_amg_logo_rear.jpg',
-                        'images/mercedes_amg_e53_rear.jpg',
-                        'images/mercedes_amg_e53_rear_right_corner.jpg',
-                        'images/mercedes_amg_e53_turbo_logo_side.jpg',
-                        'images/mercedes_amg_e53_passenger_seat.jpg',
-                        'images/mercedes_amg_e53_dirver_stearing_wheel_inside.jpg',
-                    ],
-                };
+                `;
 
                 // Slideshow dynamisch laden
-                if (carImages[car]) {
+                const images = car?.images || [];
+                if (!images.length) return;
+                {
                     const slideshowContainer = document.querySelector('.figure-div');
                     const dotsContainer = document.querySelector('.dots');
                     slideshowContainer.innerHTML = '';
                     dotsContainer.innerHTML = '';
 
-                    carImages[car].forEach((imageSrc, index) => {
+                    images.forEach((imagePath, index) => {
                         const slideFigure = document.createElement('figure');
                         slideFigure.classList.add('mySlides', 'fade');
                         slideFigure.innerHTML = `
-                            <figcaption class="numbertext">${index + 1} / ${carImages[car].length}</figcaption>
-                            <img src="${imageSrc}" class="rent_advertising" alt="${car}" title="${car}" loading="lazy" onclick="openFullscreen(${index})"/>
+                            <figcaption class="numbertext">${index + 1} / ${images.length}</figcaption>
+                            <img src="${imagePath}" class="rent_advertising" alt="${selectedCarId}" title="${selectedCarId}" loading="lazy" onclick="openFullscreen(${index})"/>
                         `;
                         slideshowContainer.appendChild(slideFigure);
 
@@ -473,6 +379,7 @@
                 // Add touch gestures
                 addTouchNavigation(fullscreenContainer);
             }
+            window.openFullscreen = openFullscreen;
 
             function navigateFullscreen(direction) {
                 currentFullscreenIndex = (currentFullscreenIndex + direction + fullscreenImages.length) % fullscreenImages.length;
@@ -521,10 +428,13 @@
             function plusSlides(n) {
                 showSlides(slideIndex += n);
             }
+            window.plusSlides = plusSlides;
+
 
             function currentSlide(n) {
                 showSlides(slideIndex = n);
             }
+            window.currentSlide = currentSlide;
 
             function showSlides(n) {
                 let i;

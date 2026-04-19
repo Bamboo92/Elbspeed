@@ -9,6 +9,10 @@
         <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
         <link rel="stylesheet" href="style.css">
+        
+        <script id="shapo-embed-js" type="text/javascript" src="https://cdn.shapo.io/js/embed.js" defer></script>
+        <script type="application/ld+json" id="shapo-ratingschema-f574a517d5"></script>
+
         <title>Elbspeed Autovermietung</title>
     </head>
     <body>
@@ -17,9 +21,9 @@
                 <a class="app-nav-img" href="/"><img src="images/logo.svg" id="app-logo" alt="elbspeed-logo" title="Elbspeed"/></a>
                 <div class="app-nav-links">
                     <a class="app-nav-hidden" href="/#sortiment-h2">Buchen</a>
-                    <a class="" href="FAQ.html">FAQ</a>
-                    <a class="" href="kontakt.html">Kontakt</a>
-                    <a class="app-nav-hidden" href="aboutus.html">Unternehmen</a>
+                    <a class="" href="FAQ">FAQ</a>
+                    <a class="" href="kontakt">Kontakt</a>
+                    <a class="app-nav-hidden" href="aboutus">Unternehmen</a>
                 </div>
             </nav>
 
@@ -27,12 +31,14 @@
                 <div class="slider-container" id="sliderContainer"></div> 
                 <h1 class="App-title">Buche jetzt ein<br>
                     <strong class="App-title-special-word">Auto</strong><br>
-                    <button onclick="window.location.href='voucher.html'" class="gradient-btn btn" id="start-btn">Jetzt ein Freund beschenken</button>
+                    <button onclick="window.location.href='voucher'" class="gradient-btn btn" id="start-btn">Jetzt ein Freund beschenken</button>
                 </h1>
             </header>
             <script>
                 const images = [
                     'images/BMW-M4-Competition.jpg',
+                    'images/Audi-RS3-Sportback.jpg',
+                    'images/Volkswagen-Golf-GTI-Clubsport.jpg',
                     'images/Mercedes-AMG-E53.jpg',
                     'images/Volkswagen-Golf-R.jpg'
                 ];
@@ -156,41 +162,70 @@
             </h2>
 
             <section id="inventory">
-                <img src="images/bmw_m4_competition_front_left_corner.jpg" class="inventory-thumbnail unselectable" alt="BMW M4 Competition" title="BMW M4 Competition Desert Road" loading="lazy"/>
+                <!--
+                <img src="images/bmw_m4_competition_front_left_corner.jpg" class="inventory-thumbnail unselectable" alt="BMW M4 Competition" title="BMW M4 Competition" loading="lazy"/>
                 <article class="card">
-                    <h3 id="inventory-header">M4 Competition</h3>
+                    <h3 id="inventory-header">BMW M4</h3>
                     <aside class="inventory-aside">
-                        <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">510PS</span></p>
-                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">M4</span></p>
-                        <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2021</span></p>
-                        <p id="detail-cost" class="detail"><span class="detail-title">199€</span><span class="detail-value">am Tag</span></p>
+                        <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">510 PS</span></p>
+                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">Competition</span></p>
+                        <p class="detail"><span class="detail-title">VMAX:</span><span class="detail-value">290 km/h</span></p>
+                        <p class="detail"><span class="detail-title">0-100 km/h:</span><span class="detail-value">3,9 sek</span></p>
+                        <p id="detail-cost" class="detail"><span class="detail-title">300€</span><span class="detail-value">am Tag</span></p>
                     </aside>
                     <button type="button" onclick="selectCar('BMW M4 Competition')" class="gradient-btn btn unselectable inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
                 </article>
 
-                <img src="images/mercedes_amg_e53_front_left_corner.jpg" class="inventory-thumbnail unselectable" alt="Mercedes-AMG E53" title="Mercedes-AMG GT Coupe on race track" loading="lazy"/>
+                <img src="images/audi_rs3_sportback_front_left_corner_thumbnail.jpg" class="inventory-thumbnail unselectable" alt="Audi RS3 Sportback" title="Audi RS3 Sportback" loading="lazy"/>
+                <article class="card">
+                    <h3 id="inventory-header">Audi RS3</h3>
+                    <aside class="inventory-aside">
+                        <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">400 PS</span></p>
+                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">Sportback</span></p>
+                        <p class="detail"><span class="detail-title">VMAX:</span><span class="detail-value">280 km/h</span></p>
+                        <p class="detail"><span class="detail-title">0-100 km/h:</span><span class="detail-value">3,7 sek</span></p>
+                        <p id="detail-cost" class="detail"><span class="detail-title">220€</span><span class="detail-value">am Tag</span></p>
+                    </aside>
+                    <button type="button" onclick="selectCar('Audi RS3 Sportback')" class="gradient-btn btn unselectable inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                </article>
+
+                <img src="images/vw_golf_8_r_front_left_corner_thumbnail.jpeg" class="inventory-thumbnail unselectable" alt="VW Golf 8 R" title="VW Golf 8 R" loading="lazy"/>
+                <article class="card">
+                    <h3 id="inventory-header">VW Golf 8</h3>
+                    <aside class="inventory-aside">
+                        <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">320 PS</span></p>
+                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">8R</span></p>
+                        <p class="detail"><span class="detail-title">VMAX:</span><span class="detail-value">280 km/h</span></p>
+                        <p class="detail"><span class="detail-title">0-100 km/h:</span><span class="detail-value">4,3 sek</span></p>
+                        <p id="detail-cost" class="detail"><span class="detail-title">170€</span><span class="detail-value">am Tag</span></p>
+                    </aside>
+                    <button type="button" onclick="selectCar('VW Golf 8 R')" class="gradient-btn btn unselectable inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                </article>
+
+                <img src="images/vw_golf_8_gti_front_left_corner_thumbnail.jpeg" class="inventory-thumbnail unselectable" alt="VW Golf 8 GTI Clubsport" title="VW Golf 8 GTI Clubsport" loading="lazy"/>
+                <article class="card">
+                    <h3 id="inventory-header">VW Golf 8</h3>
+                    <aside class="inventory-aside">
+                        <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">300 PS</span></p>
+                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">GTI Clubsport</span></p>
+                        <p class="detail"><span class="detail-title">VMAX:</span><span class="detail-value">250 km/h</span></p>
+                        <p class="detail"><span class="detail-title">0-100 km/h:</span><span class="detail-value">5,5 sek</span></p>
+                        <p id="detail-cost" class="detail"><span class="detail-title">160€</span><span class="detail-value">am Tag</span></p>
+                    </aside>
+                    <button type="button" onclick="selectCar('VW Golf 8 GTI')" class="gradient-btn btn unselectable inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                </article>
+
+                <img src="images/mercedes_amg_e53_front_left_corner.jpg" class="inventory-thumbnail unselectable" alt="Mercedes-AMG E53" title="Mercedes-AMG GT Coupe" loading="lazy"/>
                 <article class="card">
                     <h3 id="inventory-header">Mercedes-Benz E53</h3>
                     <aside class="inventory-aside">
                         <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">435PS</span></p>
-                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">E53 AMG 4matic+</span></p>
+                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">AMG 4matic+</span></p>
                         <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2022</span></p>
                         <p id="detail-cost" class="detail"><span class="detail-title">199</span><span class="detail-value">am Tag</span></p>
                     </aside>
-                    <button type="button" onclick="selectCar('Mercedes AMG E53')" class="gradient-btn btn unselectable inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
-                </article>
-
-                <img src="images/porsche_718_cayman_thumbnail.svg" class="inventory-thumbnail unselectable " alt="Porsche 718 Cayman" title="Porsche 718 Cayman Desert Road" loading="lazy"/>
-                <article class="card">
-                    <h3 id="inventory-header">Porsche 718 Cayman</h3>
-                    <aside class="inventory-aside">
-                        <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">300 PS</span></p>
-                        <p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">GTS 4.0</span></p>
-                        <p class="detail"><span class="detail-title">Erstzulassung:</span><span class="detail-value">2020</span></p>
-                        <p id="detail-cost" class="detail"><span class="detail-title">280€</span><span class="detail-value">am Tag</span></p>
-                    </aside>
-                    <button type="button" onclick="window.location.href='preisplan.html'" class="gradient-btn btn unselectable inventory-btn" disabled><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
-                </article>
+                    <button type="button" onclick="selectCar('Mercedes AMG E53')" class="gradient-btn btn unselectable inventory-btn" disabled><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                </article>-->
 
                 <script>
                     // Warten bis das Dokument vollständig geladen ist
@@ -203,15 +238,45 @@
                         inventory.scrollLeft += e.deltaY * 2; // Die 2 ist ein Faktor für die Scroll-Geschwindigkeit, anpassbar
                         }, {passive: false}); // 'passive: false' verhindert, dass die Seite scrollt, während wir unser eigenes Scroll-Verhalten definieren
                     });
+                </script>
+                <script type="module">
+                    import { cars } from '/data/cars.js';
 
-                    function selectCar(car) {
+                    document.addEventListener('DOMContentLoaded', function() {
+                    function renderInventory() {
+                        const inv = document.getElementById('inventory');
+                        inv.innerHTML = cars.map(car =>`
+                                <img src="${car.thumbnail}" class="inventory-thumbnail unselectable" alt="${car.name} ${car.model}" title="${car.name} ${car.model}" loading="lazy"/>
+                                <article class="card" data-car-id="${car.id}">
+                                    <h3 id="inventory-header">${car.name}</h3>
+                                    <aside class="inventory-aside">
+                                        <!--<p class="detail"><span class="detail-title">Modell:</span><span class="detail-value">${car.model}</span></p>-->
+                                        <p class="detail"><span class="detail-title">Leistung:</span><span class="detail-value">${car.specs.power_hp}</span></p>
+                                        <p class="detail"><span class="detail-title">Drehmomment:</span><span class="detail-value">${car.specs.torque_nm}</span></p>
+                                        <p class="detail"><span class="detail-title">VMAX:</span><span class="detail-value">${car.specs.vmax_kmh}</span></p>
+                                        <p class="detail"><span class="detail-title">0-100 km/h:</span><span class="detail-value">${car.specs.acceleration_0_100}</span></p>
+                                        <p id="detail-cost" class="detail"><span class="detail-title">${car.prices[0].price}${car.prices[0].currency}</span><span class="detail-value">am Tag</span></p>
+                                    </aside>
+                                    <button type="button" data-car-id="${car.id}" class="gradient-btn btn unselectable inventory-btn"><span class="detail-title">Mieten</span><span class="detail-value">ᐳ</span></button>
+                                </article>
+                        `).join('');
+                        
+                        inv.querySelectorAll('.inventory-btn').forEach(btn => {
+                            btn.addEventListener('click', () => selectCar(btn.dataset.carId));
+                        });
+                    };
+
+                    renderInventory();
+
+                    function selectCar(carId) {
                         // Speichern der ausgewählten Werte im localStorage
-                        localStorage.setItem('car', car);
-                        localStorage.setItem('accessFromIndex', 'true');
+                        localStorage.setItem('selectedCarId', carId);
+                        localStorage.setItem('accessFromInventory', 'true');
 
                         // Weiterleitung zur Buchungsseite
-                        window.location.href = 'preisplan.html';
+                        window.location.href = 'preisplan';
                     }
+                    });
                 </script>
             </section>
 
@@ -224,7 +289,7 @@
             <h4></h4>
 
             <div id="voucher-glassmorphism">
-                <section id="voucher" onclick="window.location.href='voucher.html'">
+                <section id="voucher" onclick="window.location.href='voucher'">
                         <img src="images/voucher_card.webp" id="voucher-card-img" class="unselectable" alt="voucher-card" title="Voucher Card" loading="lazy"/>
                         <article class="glassmorphism" id="voucher-article">
                             <h3>Schenken Sie Mobilität</h3>
@@ -265,7 +330,7 @@
                 <article class="card" id="special-card">
                     <h3 class="special-header">About Us</h3>
                     <p>Erfahren Sie mehr über uns und unser Unternehem.</p>
-                    <button onclick="window.location.href='aboutus.html'" class="gradient-btn btn unselectable" id="special-btn"><span class="detail-title">Mehr dazu</span><img src="images/open_arrow_right.svg" class="detail-value" id="special-arrow" alt="Arrow" title="Arrow" loading="lazy"/></button>
+                    <button onclick="window.location.href='aboutus'" class="gradient-btn btn unselectable" id="special-btn"><span class="detail-title">Mehr dazu</span><img src="images/open_arrow_right.svg" class="detail-value" id="special-arrow" alt="Arrow" title="Arrow" loading="lazy"/></button>
                 </article>
             </section>
 
@@ -278,38 +343,8 @@
             <h4 id="feedback-h4"></h4>
 
             <section id="feedback">
-                <article class="card" id="feedback-card">
-                    <figure id="feedback-figure">
-                        <img src="images/ismail_zamar_avatar.jpg" class="feedback-icon unselectable" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
-                        <figcaption id="feedback-figcaption">
-                            <h3 id="feedback-h3">Ismail Zamar</h3>
-                            <h6>M4 Competition für 1 Tag gemietet</h6>
-                        </figcaption>
-                    </figure>
-                    <blockquote id="feedback-blockquote">Das Personal war ausgesprochen nett und empathisch. Sie haben sich hervorragend um uns gekümmert und waren sehr zuvorkommend. Wir haben uns wirklich gut aufgehoben gefühlt.</blockquote>
-                </article>
-                <article class="card" id="feedback-card">
-                    <figure id="feedback-figure">
-                        <img src="images/imrahn_avatar.jpg" class="feedback-icon unselectable" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
-                        <figcaption id="feedback-figcaption">
-                            <h3 id="feedback-h3">Imrahn Yasar</h3>
-                            <h6>M4 Competition für 9 Tage gemietet</h6>
-                        </figcaption>
-                    </figure>
-                    <blockquote id="feedback-blockquote">Gute Konditionen , Top Service, Abwicklung erfolgte sehr zügig. Zu Anfang habe ich eine sehr ausführliche Einweisung bezüglich der Funktionen des Autos bekommen, das war sehr hilfreich. Vorallem für jemanden wie mich , der noch nie solch ein Auto gefahren ist.
-                        Meines erachtens, eine Sehr kompetente Sportwagenvermietung.
-                        Immer wieder gerne!!</blockquote>
-                </article>
-                <article class="card" id="feedback-card">
-                    <figure id="feedback-figure">
-                        <img src="images/matin_raoufi_avatar.jpg" class="feedback-icon unselectable" alt="avatar" title="Feedback User Profile Picture" loading="lazy"/>
-                        <figcaption id="feedback-figcaption">
-                            <h3 id="feedback-h3">Matin Raoufi</h3>
-                            <h6>M4 Competition für eine Woche gemietet</h6>
-                        </figcaption>
-                    </figure>
-                    <blockquote id="feedback-blockquote">Ich hatte das Auto über ein ganzes Wochenende. Von der Übergabe bis hin zur Rückgabe hat alles perfekt geklappt! Keinerlei Probleme oder Anmerkungen. Extra Kilometer waren kein Problem. Das Auto hat mit seinen 510 PS sehr sehr viel Spaß gemacht!<br>Super Zufrieden! Gerne wieder! 😎</blockquote>
-                </article>
+                <div id="shapo-widget-2a4a57330d4e07b12f03"></div>
+                <script id="shapo-embed-js" type="text/javascript" src="https://cdn.shapo.io/js/embed.js" defer></script>
             </section>
             
             <footer class="app-footer">
@@ -341,27 +376,28 @@
                         <ul>
                             <li><h5>Vermietung</h5></li>
                             <li><a href="/#sortiment-h2">Auto Buchen</a></li>
-                            <li><a href="none.html">Feedback</a></li>
+                            <li><a href="strafkatalog">Strafkatalog</a></li>
                         </ul>
                         <ul>
                             <li><h5>Ressourcen</h5></li>
-                            <li><a href="guides.html">Guides</a></li>
-                            <li><a href="FAQ.html">FAQ</a></li>
+                            <li><a href="guides">Guides</a></li>
+                            <li><a href="FAQ">FAQ</a></li>
                         </ul>
                         <ul>
                             <li><h5>Über uns</h5></li>
-                            <li><a href="aboutus.html">Unternehmen</a></li>
-                            <li><a href="kontakt.html">Kontakt</a></li>
+                            <li><a href="aboutus">Unternehmen</a></li>
+                            <li><a href="kontakt">Kontakt</a></li>
                         </ul>
                     </nav>
                 </div>
             </footer>
             <footer>
                 <nav class="legal-nav">
-                    <span>ElbSpeed GmbH © 2024</span>
-                    <a class="legal-link" href="impressum.html">Impressum</a>
-                    <a class="legal-link" href="datenschutzerklärung.html">Datenschutzerklärung</a>
-                    <a class="legal-link" href="guides.html">Allgemeine Mietbedingungen</a>
+                    <span>ElbSpeed GmbH © 2025</span>
+                    <a class="legal-link" href="impressum">Impressum</a>
+                    <a class="legal-link" href="datenschutzerklaerung">Datenschutzerklärung</a>
+                    <a class="legal-link" href="strafkatalog">Strafkatalog</a>
+                    <a class="legal-link" href="guides">Allgemeine Mietbedingungen</a>
                 </nav>
             </footer>
         </div>
